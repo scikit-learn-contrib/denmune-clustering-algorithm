@@ -1,6 +1,6 @@
 # DenMune: Density peak based clustering using mutual nearest neighbors
 
-This is the source code of DenMune clustering algorithm which is published in Elsvier Pattern Recognition, Volume 109, January 2021, 107589
+This is the source code of DenMune clustering algorithm which is published in Elsevier Pattern Recognition, Volume 109, January 2021, 107589
 https://doi.org/10.1016/j.patcog.2020.107589
 
 Abstract
