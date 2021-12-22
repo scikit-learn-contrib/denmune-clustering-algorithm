@@ -77,49 +77,7 @@ class Functions():
          
         return val
     
-    def match_Labels(self, labels_pred, labels_true):
        
-        list_pred = labels_pred.tolist()
-        pred_set = set(list_pred) 
-
-        index = []
-        x = 1
-        old_item = labels_true[0]
-        old_x = 0
-
-        for item in labels_true:
-
-            if item != old_item:
-                count = x - old_x
-                index.append([old_x, old_item, count])
-                old_item = item
-                old_x = x
-            x+= 1    
-
-        ln = len(labels_true)
-        count = x - old_x
-        index.append([old_x, old_item, count])
-        index[0][2] = index[0][2] -1
-
-        index.sort(key=lambda x: x[2], reverse=True)
-
-        lebeled = []
-        for n in range (len(index)):
-            newval = index[n][1]
-            max_class = max(set(list_pred), key = list_pred[index[n][0]:index[n][0]+index[n][2]-1].count)
-            if max_class not in lebeled:
-                list_pred = [newval if x==max_class else x for x in list_pred]
-                lebeled.append(newval)
-
-        list_pred = np.array(list_pred)
-        list_pred = list_pred.astype(np.int64)
-
-        return list_pred
-    
-       
-        
-   
-    
     def plot_clusters(self, data, labels, alg_name, dp_name, show=False):
         
         palette = sns.color_palette('deep', np.unique(labels).max() + 1) #deep, dark, bright, muted, pastel, colorblind
@@ -160,26 +118,43 @@ class Functions():
         text_file.close()
 
         return file_to_save
+
+    def match_Labels(self, labels_pred, labels_true):
+       
+        list_pred = labels_pred.tolist()
+        pred_set = set(list_pred) 
+
+        index = []
+        x = 1
+        old_item = labels_true[0]
+        old_x = 0
+
+        for item in labels_true:
+
+            if item != old_item:
+                count = x - old_x
+                index.append([old_x, old_item, count])
+                old_item = item
+                old_x = x
+            x+= 1    
+
+        ln = len(labels_true)
+        count = x - old_x
+        index.append([old_x, old_item, count])
+        index[0][2] = index[0][2] -1
+
+        index.sort(key=lambda x: x[2], reverse=True)
+
+        lebeled = []
+        for n in range (len(index)):
+            newval = index[n][1]
+            max_class = max(set(list_pred), key = list_pred[index[n][0]:index[n][0]+index[n][2]-1].count)
+            if max_class not in lebeled:
+                list_pred = [newval if x==max_class else x for x in list_pred]
+                lebeled.append(newval)
+
+        list_pred = np.array(list_pred)
+        list_pred = list_pred.astype(np.int64)
+
+        return list_pred
     
-    
-    def labels_Patterns (self, mylist):
-        #mylist = [1, 26, 27, 51, 52, 77, 78, 103, 105]
-        mylist = [str(i) for i in mylist]
-        if  int(max (mylist)) <= 103:
-
-            x = 0
-            for item  in mylist:
-                if item <= '25':
-                    mylist[x] = chr(int(item)+66)
-                elif item <= '51':
-                    mylist[x] = 'A' + chr(int(item)+39)
-                elif item <= '77':
-                    mylist[x] = 'B' + chr(int(item)+13)
-                else:
-                    mylist[x] = 'C' + chr(int(item)-13)
-
-                x += 1 
-            return mylist    
-
-        else:
-            return 'Max classes numbers are 103 classes'
