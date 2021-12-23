@@ -7,6 +7,9 @@ Authors: Mohamed Abbas, Adel El-Zoghbi, and Amin Shoukry
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
 
+[![Documentation Status](https://readthedocs.org/projects/denmune-docs/badge/?version=latest)](https://denmune-docs.readthedocs.io/en/latest/?badge=latest)
+      
+
 
 Abstract
 ----
