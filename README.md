@@ -21,5 +21,8 @@ Installation
 1- You may use it as docker using this 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
 
-2- You may install it using pip using the command
+2- You may downloadd the source code  from this repositoy
+
+/**we reserved the package but not configured to work properly at the momnet. so please do not install using pip for now **/
+2- You may install it using pip using the command 
 <code>pip install denmune</code>
