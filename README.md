@@ -3,7 +3,7 @@
 This is the source code of DenMune Clustering Algorithm accompanied with the experimental work, which is published in Elsevier Pattern Recognition, Volume 109, January 2021, 107589
 https://doi.org/10.1016/j.patcog.2020.107589
 
-Authors: Mohamed Abbas, Adel El-Zoghbi, and Amin Shoukry
+Authors: Mohamed Abbas, Adel El-Zoghabi, and Amin Shoukry
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
 
