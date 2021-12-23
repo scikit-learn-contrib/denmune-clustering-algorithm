@@ -23,6 +23,7 @@ Installation
 
 2- You may downloadd the source code  from this repositoy
 
+
+3- You may install it using pip using the command 
 /**we reserved the package but not configured to work properly at the momnet. so please do not install using pip for now **/
-2- You may install it using pip using the command 
 <code>pip install denmune</code>
