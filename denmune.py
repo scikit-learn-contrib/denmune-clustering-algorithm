@@ -1,5 +1,4 @@
 import numpy as np
-#import faiss
 import ngtpy
 from numpy import genfromtxt
 from anytree import Node, RenderTree
@@ -21,18 +20,17 @@ class DataPoint():
         self.homogeneity = 0
         
         
-class DenMuneCLS():
+class DenMune():
     
          
-    def __init__ (self, data, k_nearest=0, max_knn=200, dp_dis=[]):
+    def __init__ (self, data, k_nearest=0):
         
        
         self.data = data
         self.dp_count = self.data.shape[0] 
         self.dp_dim = self.data.shape[1]
         self.k_nearest = k_nearest
-        self.max_knn =max_knn
-        self.dp_dis = dp_dis
+        self.dp_dis = []
                
         self.DataPoints = []
         self.ClassPoints = {}
@@ -42,21 +40,16 @@ class DenMuneCLS():
         self.kd_NGT()
         self.load_DataPoints() # load_DataPoints must come after kd_NGT()
         self.compute_Links()
-        #self.semi_init_DataPoints #I think it is usuful with csharp and cnune only
+        #self.semi_init_DataPoints #it is usuful with csharp and cnune algorithms only
         self.find_Noise()
         self.sort_DataPoints()
         self.prepare_Clusters()
         self.attach_Points()
         self.print_Clusters()
-        self.save_Dis()
-        
+               
         return None # __init__ should return Nine
     
-    def save_Dis(self):
-        return self.dp_dis
-    
-    def save_Data(self):
-        return self.data
+      
     
     def kd_NGT(self):
         
@@ -67,7 +60,7 @@ class DenMuneCLS():
             index.batch_insert(self.data)
             index.save()
 
-            k= self.max_knn
+            k= self.k_nearest
 
             start = time.time()
             self.dp_dis = []
