@@ -17,68 +17,8 @@ plot_kwds = {'alpha' : 0.99, 's' : 80, 'linewidths':0}
 
 class Functions():
                
-      
-    def backline(self):
-        print('\r', end='') 
         
-    def calc_Metrics(self, labels_true, labels_pred):
-       
-        # Score the clustering
-        from sklearn.metrics.cluster import adjusted_mutual_info_score #2010
-        from sklearn.metrics.cluster import adjusted_rand_score # 1985
-        from sklearn.metrics import f1_score
-        from sklearn.metrics import accuracy_score
-        from sklearn.metrics import precision_score
-        from sklearn.metrics import recall_score
-
-        #from sklearn.metrics import davies_bouldin_score 
-        # #1975 - 2001    ## no ground truth   ##Values closer to zero indicate a better partition.
-
-        from sklearn.metrics import pairwise_distances # for calinski_harabasz_score
-        ## also known as the Variance Ratio Criterion - can be used to evaluate the model, 
-        ## where a higher Calinski-Harabasz score relates to a model with better defined clusters.
-
-        from sklearn import metrics # for homogeneity, completeness, fowlkes
-        ##  homogeneity: each cluster contains only members of a single class.
-        ## completeness: all members of a given class are assigned to the same cluster.
-        #v-measure the harmonic mean of homogeneity and completeness called V-measure 2007
-
-        acc = metrics.accuracy_score(labels_true, labels_pred, normalize=False)
-
-        #mi = metrics.mutual_info_score(labels_true, labels_pred)
-        #print("mutual_info_score: %f." %  mi)
-
-        nmi = metrics.normalized_mutual_info_score(labels_true, labels_pred, average_method='arithmetic')
-        #print("normalized_mutual_info_score: %f." % nmi)
-
-        ami = adjusted_mutual_info_score(labels_true, labels_pred, average_method='arithmetic')
-            #print("Adjusted_mutual_info_score: %f." %  adj_nmi)
-
-        homogeneity = metrics.homogeneity_score(labels_true, labels_pred)
-        #print("homogeneity_score: %f." % homogeneity_score)
-
-        completeness = metrics.completeness_score(labels_true, labels_pred)
-        #print("completeness_score: %f." % completeness_score)
-
-        f1_weight = metrics.f1_score(labels_true, labels_pred, average='weighted')
-        #f1_micro = metrics.f1_score(labels_true, labels_pred, average='micro')
-        #f1_macro = metrics.f1_score(labels_true, labels_pred, average='macro')
-        #print("f1_score: %f." % f1_score)
-        
-        
-    
-        ari = adjusted_rand_score(labels_true, labels_pred)
-        #print("adjusted_rand_score: %f." % adj_rand)
-
-        
-
-        f1 =  f1_weight
-        val = ['0', acc, f1, nmi, ami, ari, homogeneity, completeness, '0' ]
-         
-        return val
-    
-       
-    def plot_clusters(self, data, labels, alg_name, dp_name, show=False):
+    def plot_clusters(data, labels, alg_name, dp_name):
         
         palette = sns.color_palette('deep', np.unique(labels).max() + 1) #deep, dark, bright, muted, pastel, colorblind
         colors = [palette[x] if x >= 0 else (0.0, 0.0, 0.0) for x in labels]
@@ -86,16 +26,12 @@ class Functions():
         frame = plt.gca()
         frame.axes.get_xaxis().set_visible(False)
         frame.axes.get_yaxis().set_visible(False)
-        plt.savefig('results/' + alg_name +'/images/' + alg_name + '_' + dp_name +  '.png')
-        
-        if show == True:
-            plt.show()
-        
+        plt.show()
         plt.clf()    # this is a must to clear figures if you plot continously
 
         return 0
     
-    def generate_tsne(self, f_name, k):
+    def generate_tsne(f_name, k):
         
         filename = f_name
         filename2 = 'data/' + filename + '-2d'
@@ -119,7 +55,7 @@ class Functions():
 
         return file_to_save
 
-    def match_Labels(self, labels_pred, labels_true):
+    def match_Labels(labels_pred, labels_true):
        
         list_pred = labels_pred.tolist()
         pred_set = set(list_pred) 
@@ -158,3 +94,4 @@ class Functions():
 
         return list_pred
     
+ 

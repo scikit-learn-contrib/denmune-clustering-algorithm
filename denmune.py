@@ -5,6 +5,7 @@ from anytree import Node, RenderTree
 import operator
 import os.path
 import time
+from functions import Functions as func
 
 
 class DataPoint():
@@ -23,9 +24,32 @@ class DataPoint():
 class DenMune():
     
          
-    def __init__ (self, data, k_nearest=0):
+    def __init__ (self, dataset, k_nearest=1, data_path='', verpose=True, show_plot=False):
         
-       
+                     
+        file_2d = data_path + dataset + '-2d.txt'
+        #if os.path.isfile(file_2d):
+        #print('dataset has been allready reduced to 2-d' )
+        if  not os.path.isfile(file_2d):
+            start = time.time()
+            func.generate_tsne(dataset, 2)
+            end = time.time()
+            if verpose:
+                print('using t-SNE', dataset, ' dataset has been reduced to 2-d in ', end-start, ' seconds')
+                
+            
+                
+        #if verpose:
+        #    print('k= ', k_nearest)  
+        
+        data = genfromtxt(file_2d , delimiter='\t')
+        start_time = time.time()
+        
+        self.alg_name = 'denmune'
+        self.show_plot = show_plot
+        self.verpose = verpose
+        self.data_path = data_path     
+        self.dataset = dataset
         self.data = data
         self.dp_count = self.data.shape[0] 
         self.dp_dim = self.data.shape[1]
@@ -45,8 +69,12 @@ class DenMune():
         self.sort_DataPoints()
         self.prepare_Clusters()
         self.attach_Points()
-        self.print_Clusters()
-               
+        #self.output_Clusters()
+        
+        end_time = time.time()  
+        #if verpose:
+        #    print('DenMune took' , end_time-start_time, ' seconds' )
+            
         return None # __init__ should return Nine
     
       
@@ -70,8 +98,9 @@ class DenMune():
                 self.dp_dis.append(result)
 
             end =  time.time()
-            #print ('Calc proximity tooks: ', end-start)
-            self.data = None
+            if self.verpose:
+                print ('using NGT, Proximity matrix has been calculated  in: ', end-start, ' seconds')
+            #self.data = None
                        
         
     def getValue(self, dic, what, who, other=False):
@@ -319,7 +348,6 @@ class DenMune():
             if len (weight_map) != 0:
                 weight_map = dict(sorted(weight_map.items()))
                 max_class = self.getValue(dic=weight_map, what='max', who='value', other=True)
-
                 
         return max_class # this will return get_Root(max_class) as we computed earlier _class_id = get_Root(_cls) 
 
@@ -355,11 +383,12 @@ class DenMune():
 
                    
 
-    def print_Clusters(self):
+    def output_Clusters(self):
         solution_file = 'solution.txt'
-        #solution_file = alg_name + "/" + data_type + "/solution.txt"
+        #validity_idx = 2   ==> so we are measuring best F1-score
+        
         if  os.path.isfile(solution_file):
-                os.remove(solution_file)
+            os.remove(solution_file)
                 
         pred_list = []
         for dp in self.DataPoints:
@@ -367,5 +396,72 @@ class DenMune():
             
         with open(solution_file, 'w') as f:
             f.writelines("%s\n" % pred for pred in pred_list)
-        return  0  
-   
+            
+        file_labels = self.dataset +'-gt.txt' #dataset + '-gt.txt'
+        labels_true = genfromtxt(self.data_path+file_labels)
+        labels_true = labels_true.astype(np.int64)
+        
+        labels_pred = []
+        labels_pred = genfromtxt(solution_file)
+        labels_pred = func.match_Labels(labels_pred, labels_true) 
+        
+        if self.show_plot or self.verpose:
+            func.plot_clusters(data=self.data, labels=labels_pred, alg_name=self.alg_name, dp_name=self.dataset)
+        
+           
+        return  labels_true, labels_pred 
+    
+    
+    def validate_Clusters(self, labels_true, labels_pred):
+       
+        # Score the clustering
+        from sklearn.metrics.cluster import adjusted_mutual_info_score #2010
+        from sklearn.metrics.cluster import adjusted_rand_score # 1985
+        from sklearn.metrics import f1_score
+        from sklearn.metrics import accuracy_score
+        from sklearn.metrics import precision_score
+        from sklearn.metrics import recall_score
+
+        #from sklearn.metrics import davies_bouldin_score 
+        # #1975 - 2001    ## no ground truth   ##Values closer to zero indicate a better partition.
+
+        from sklearn.metrics import pairwise_distances # for calinski_harabasz_score
+        ## also known as the Variance Ratio Criterion - can be used to evaluate the model, 
+        ## where a higher Calinski-Harabasz score relates to a model with better defined clusters.
+
+        from sklearn import metrics # for homogeneity, completeness, fowlkes
+        ##  homogeneity: each cluster contains only members of a single class.
+        ## completeness: all members of a given class are assigned to the same cluster.
+        #v-measure the harmonic mean of homogeneity and completeness called V-measure 2007
+
+        acc = metrics.accuracy_score(labels_true, labels_pred, normalize=False)
+
+        #mi = metrics.mutual_info_score(labels_true, labels_pred)
+        #print("mutual_info_score: %f." %  mi)
+
+        nmi = metrics.normalized_mutual_info_score(labels_true, labels_pred, average_method='arithmetic')
+        #print("normalized_mutual_info_score: %f." % nmi)
+
+        ami = adjusted_mutual_info_score(labels_true, labels_pred, average_method='arithmetic')
+            #print("Adjusted_mutual_info_score: %f." %  adj_nmi)
+
+        homogeneity = metrics.homogeneity_score(labels_true, labels_pred)
+        #print("homogeneity_score: %f." % homogeneity_score)
+
+        completeness = metrics.completeness_score(labels_true, labels_pred)
+        #print("completeness_score: %f." % completeness_score)
+
+        f1_weight = metrics.f1_score(labels_true, labels_pred, average='weighted')
+        #f1_micro = metrics.f1_score(labels_true, labels_pred, average='micro')
+        #f1_macro = metrics.f1_score(labels_true, labels_pred, average='macro')
+        #print("f1_score: %f." % f1_score)
+        
+        
+        ari = adjusted_rand_score(labels_true, labels_pred)
+        #print("adjusted_rand_score: %f." % adj_rand)
+
+        f1 =  f1_weight
+        val = ['0', acc, f1, nmi, ami, ari, homogeneity, completeness, '0' ]
+         
+        return val    
+    
