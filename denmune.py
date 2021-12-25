@@ -26,17 +26,21 @@ class DenMune():
          
     def __init__ (self, dataset, k_nearest=1, data_path='', verpose=True, show_plot=False):
         
-                     
-        file_2d = data_path + dataset + '-2d.txt'
-        #if os.path.isfile(file_2d):
-        #print('dataset has been allready reduced to 2-d' )
-        if  not os.path.isfile(file_2d):
-            start = time.time()
-            func.generate_tsne(dataset, 2)
-            end = time.time()
-            if verpose:
-                print('using t-SNE', dataset, ' dataset has been reduced to 2-d in ', end-start, ' seconds')
-                
+        file_nd = data_path + dataset + '.txt'
+        data = genfromtxt(file_nd , delimiter='\t')
+        if data.shape[1] == 2:
+            file_2d = file_nd
+        else:   
+            file_2d = data_path + dataset + '-2d.txt'
+            #if os.path.isfile(file_2d):
+            #print('dataset has been allready reduced to 2-d' )
+            if  not os.path.isfile(file_2d):
+                start = time.time()
+                func.generate_tsne(dataset, 2)
+                end = time.time()
+                if verpose:
+                    print('using t-SNE', dataset, ' dataset has been reduced to 2-d in ', end-start, ' seconds')
+
             
                 
         #if verpose:
@@ -385,7 +389,7 @@ class DenMune():
 
     def output_Clusters(self):
         solution_file = 'solution.txt'
-        #validity_idx = 2   ==> so we are measuring best F1-score
+        GroundTruth = False
         
         if  os.path.isfile(solution_file):
             os.remove(solution_file)
@@ -398,18 +402,32 @@ class DenMune():
             f.writelines("%s\n" % pred for pred in pred_list)
             
         file_labels = self.dataset +'-gt.txt' #dataset + '-gt.txt'
-        labels_true = genfromtxt(self.data_path+file_labels)
-        labels_true = labels_true.astype(np.int64)
+        if  os.path.isfile(self.data_path+file_labels):
+            # Avoid the Case of Cham 01==>Cham_04 which have no groundtruth
+            GroundTruth = True
+            labels_true = genfromtxt(self.data_path+file_labels)
+            labels_true = labels_true.astype(np.int64)
+            
+            
+            
         
         labels_pred = []
         labels_pred = genfromtxt(solution_file)
-        labels_pred = func.match_Labels(labels_pred, labels_true) 
+        if  GroundTruth:
+            labels_pred = func.match_Labels(labels_pred, labels_true)
+        else: # Case of Cham 01==>Cham_04 which have no groundtruth
+            labels_pred = np.array(labels_pred)
+            labels_pred = labels_pred.astype(np.int64)
+            
         
         if self.show_plot or self.verpose:
             func.plot_clusters(data=self.data, labels=labels_pred, alg_name=self.alg_name, dp_name=self.dataset)
         
-           
-        return  labels_true, labels_pred 
+        if GroundTruth:
+            return  labels_true, labels_pred 
+        else:
+            return  0, labels_pred 
+            
     
     
     def validate_Clusters(self, labels_true, labels_pred):

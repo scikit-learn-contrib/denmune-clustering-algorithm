@@ -21,7 +21,7 @@ class Functions():
     def plot_clusters(data, labels, alg_name, dp_name):
         
         palette = sns.color_palette('deep', np.unique(labels).max() + 1) #deep, dark, bright, muted, pastel, colorblind
-        colors = [palette[x] if x >= 0 else (0.0, 0.0, 0.0) for x in labels]
+        colors = [palette[x] if x > 0 else (1.0, 1.0, 1.0) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
         plt.scatter(data.T[0], data.T[1], c=colors, **plot_kwds)
         frame = plt.gca()
         frame.axes.get_xaxis().set_visible(False)
@@ -37,7 +37,6 @@ class Functions():
         filename2 = 'data/' + filename + '-2d'
         file_to_save = filename2 + ".txt"
 
-        data = genfromtxt('data/' + filename + '.txt' , delimiter='\t')
         dim_two = TSNE(n_components=k).fit_transform(data)
 
         mystr = ""
