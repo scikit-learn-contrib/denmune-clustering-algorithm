@@ -25,5 +25,4 @@ Installation
 
 
 3- You may install it using pip using the command 
-/**we reserved the package but not configured to work properly at the momnet. so please do not install using pip for now **/
 <code>pip install denmune</code>
