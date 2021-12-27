@@ -18,12 +18,11 @@ Many clustering algorithms fail when clusters are of arbitrary shapes, of varyin
 
 Installation
 ====
-1- You may use it as docker using this 
+1- You may use it as docker using MyBinder docker 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
 
 2- You may downloadd the source code  from this repositoy
 
 
 3- You may install it using pip using the command 
-/**we reserved the package but not configured to work properly at the momnet. so please do not install using pip for now **/
 <code>pip install denmune</code>
