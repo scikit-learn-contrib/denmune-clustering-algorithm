@@ -1,3 +1,20 @@
+# ==================================================================================================================
+# This is the source code of DenMune Clustering Algorithm accompanied with the experimental work
+# which is published in Elsevier Pattern Recognition, Volume 109, January 2021
+# paper can be accessed from 107589 https://doi.org/10.1016/j.patcog.2020.107589
+# source code and several examples on using it, can be accessed from 
+# Gitbub's repository at https://github.com/egy1st/denmune-clustering-algorithm
+# Authors: Mohamed Abbas, Adel El-Zoghabi, and Amin Shoukry
+# Edition 0.0.0.2 updated 27-12-2021
+# ====================================================================================================================
+
+# DenMune Clustering Algorithm's Highlights
+# DenMune is a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions.
+# Higher dimensions are first reduced to 2-D using the t-sne.
+# The algorithm relies on a single parameter K (the number of nearest neighbors).
+# The results show the superiority of DenMune.
+# =====================================================================================================================
+
 import numpy as np
 import ngtpy
 import seaborn as sns
