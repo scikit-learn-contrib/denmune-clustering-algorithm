@@ -533,7 +533,7 @@ class DenMune():
     
     
         
-    def plot_clusters(self, data, labels, show_noise=False, ground=False):
+    def plot_clusters(self, labels, show_noise=False, ground=False):
         i= 1
         outlier_count = list(labels).count(-1)
         weak_count = list(labels).count(0)
@@ -559,7 +559,7 @@ class DenMune():
         else :
             colors = [palette[x] if x > 0 else ( (0.0, 0.0, 0.0) if x == -1 else (0.9, 0.9, 0.9)) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
                           
-        plt.scatter(data.T[0], data.T[1], c=colors, **plot_kwds)
+        plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds)
         frame = plt.gca()
         frame.axes.get_xaxis().set_visible(False)
         frame.axes.get_yaxis().set_visible(False)
