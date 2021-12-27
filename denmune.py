@@ -1,11 +1,24 @@
 import numpy as np
 import ngtpy
+import seaborn as sns
+import matplotlib.pyplot as plt
 from numpy import genfromtxt
 from anytree import Node, RenderTree
+from sklearn.manifold import TSNE
 import operator
 import os.path
 import time
-from functions import Functions as func
+
+sns.set_context('poster')
+sns.set_color_codes()
+plot_kwds = {'alpha' : 0.99, 's' : 80, 'linewidths':0}
+
+# import for possible needs
+#from sklearn.metrics import confusion_matrix
+#from sklearn import metrics
+#import sklearn.cluster as cluster
+
+
 
 
 class DataPoint():
@@ -23,34 +36,31 @@ class DataPoint():
         
 class DenMune():
     
-         
-    def __init__ (self, dataset, k_nearest=1, data_path='', verpose=True, show_plot=False):
-        
+    
+    #def __init__ (self, dataset, k_nearest=1, data_path='', verpose=True, show_plot=True, show_noise=False):
+    def __init__ (self, dataset, k_nearest=1, data_path='', verpose=True, show_noise=False):     
+          
         file_nd = data_path + dataset + '.txt'
         data = genfromtxt(file_nd , delimiter='\t')
         if data.shape[1] == 2:
             file_2d = file_nd
         else:   
             file_2d = data_path + dataset + '-2d.txt'
-            #if os.path.isfile(file_2d):
-            #print('dataset has been allready reduced to 2-d' )
             if  not os.path.isfile(file_2d):
                 start = time.time()
-                func.generate_tsne(dataset, 2)
+                self.generate_tsne(data, file_2d, 2)
                 end = time.time()
                 if verpose:
                     print('using t-SNE', dataset, ' dataset has been reduced to 2-d in ', end-start, ' seconds')
+                    
+            data = genfromtxt(file_2d , delimiter='\t')
 
-            
-                
-        #if verpose:
-        #    print('k= ', k_nearest)  
-        
-        data = genfromtxt(file_2d , delimiter='\t')
+
         start_time = time.time()
         
         self.alg_name = 'denmune'
-        self.show_plot = show_plot
+        #self.show_plot = show_plot
+        self.show_noise = show_noise
         self.verpose = verpose
         self.data_path = data_path     
         self.dataset = dataset
@@ -408,26 +418,63 @@ class DenMune():
             labels_true = genfromtxt(self.data_path+file_labels)
             labels_true = labels_true.astype(np.int64)
             
-            
-            
         
         labels_pred = []
         labels_pred = genfromtxt(solution_file)
         if  GroundTruth:
-            labels_pred = func.match_Labels(labels_pred, labels_true)
+            labels_pred = self.match_Labels(labels_pred, labels_true)
         else: # Case of Cham 01==>Cham_04 which have no groundtruth
             labels_pred = np.array(labels_pred)
             labels_pred = labels_pred.astype(np.int64)
             
         
-        if self.show_plot or self.verpose:
-            func.plot_clusters(data=self.data, labels=labels_pred, alg_name=self.alg_name, dp_name=self.dataset)
+        #if self.show_plot:
+        #    self.plot_clusters(self.data, labels_pred, self.show_noise)
         
         if GroundTruth:
             return  labels_true, labels_pred 
         else:
             return  0, labels_pred 
+        
             
+    def match_Labels(self, labels_pred, labels_true):
+       
+        list_pred = labels_pred.tolist()
+        pred_set = set(list_pred) 
+
+        index = []
+        x = 1
+        old_item = labels_true[0]
+        old_x = 0
+
+        for item in labels_true:
+
+            if item != old_item:
+                count = x - old_x
+                index.append([old_x, old_item, count])
+                old_item = item
+                old_x = x
+            x+= 1    
+
+        ln = len(labels_true)
+        count = x - old_x
+        index.append([old_x, old_item, count])
+        index[0][2] = index[0][2] -1
+
+        index.sort(key=lambda x: x[2], reverse=True)
+
+        lebeled = []
+        for n in range (len(index)):
+            newval = index[n][1]
+            max_class = max(set(list_pred), key = list_pred[index[n][0]:index[n][0]+index[n][2]-1].count)
+            if max_class not in lebeled:
+                list_pred = [newval if x==max_class else x for x in list_pred]
+                lebeled.append(newval)
+
+        list_pred = np.array(list_pred)
+        list_pred = list_pred.astype(np.int64)
+
+        return list_pred
     
     
     def validate_Clusters(self, labels_true, labels_pred):
@@ -483,3 +530,124 @@ class DenMune():
          
         return val    
     
+    
+    
+        
+    def plot_clusters(self, data, labels, show_noise=False, ground=False):
+        i= 1
+        outlier_count = list(labels).count(-1)
+        weak_count = list(labels).count(0)
+        if self.show_noise and self.verpose and not ground:
+            print('There are', outlier_count , 'outlier point(s) in black (noise of type-1)', 'represent', f"{outlier_count/len(labels):.0%}", 'of total points')
+            print('There are', weak_count , 'weak point(s) in light grey (noise of type-2)', 'represent', f"{weak_count/len(labels):.0%}", 'of total points')
+        unique_labels = np.unique(labels)
+        num_of_clusters = len(unique_labels)
+       
+        fake_clusters = 0 #otlier = -1 and weak points that fail to merge (noise) = 0
+        for n in (unique_labels):
+            if n > 0:
+                labels = np.where(labels==n, i, labels) 
+                i +=1
+            else:
+                fake_clusters+=1
+        if self.verpose and not ground:
+            print('DenMune detected', num_of_clusters - fake_clusters , 'clusters', '\n')
+        palette = sns.color_palette( 'deep', np.unique(labels).max()+2) #deep, dark, bright, muted, pastel, colorblind
+               
+        if show_noise == False:
+            colors = [palette[x] if x > 0 else (1.0, 1.0, 1.0) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
+        else :
+            colors = [palette[x] if x > 0 else ( (0.0, 0.0, 0.0) if x == -1 else (0.9, 0.9, 0.9)) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
+                          
+        plt.scatter(data.T[0], data.T[1], c=colors, **plot_kwds)
+        frame = plt.gca()
+        frame.axes.get_xaxis().set_visible(False)
+        frame.axes.get_yaxis().set_visible(False)
+        plt.show()
+        plt.clf()    # this is a must to clear figures if you plot continously
+
+        return 0
+    
+    
+    def generate_tsne(self, data, file_2d, d):
+        
+        
+        dim_two = TSNE(n_components=d).fit_transform(data)
+
+        mystr = ""
+        data_len = len (dim_two)
+        for i in range(data_len):
+            for n in range(d):
+                mystr += str(round(dim_two[i][n],6))
+                if (n  < d-1):mystr += '\t'
+                if (n  == d-1): mystr += '\n'
+
+        text_file = open(file_2d, "w")
+        text_file.write(mystr)
+        text_file.close()
+
+        return 0
+    
+    
+    def flattenPred(self, labels_pred, labels_true): #this function for future use
+    
+        list_pred = labels_pred.tolist()
+        pred_set = set(list_pred) 
+
+        index = []
+        x = 0
+        old_item = labels_true[0]
+        for item in labels_true:
+            x+= 1
+            if item != old_item:
+                old_item = item
+                index.append(x)
+
+        ln = len(labels_true)
+        res = []
+        old_idx = 0
+        for idx in index:
+            mx = max(set(list_pred), key = list_pred[old_idx:idx].count) 
+            old_idx = idx
+            res.append(mx)
+        mx = max(set(list_pred), key = list_pred[idx:ln].count) 
+        res.append(mx)
+
+        index.insert(0, 0)
+        n = 0
+        for item in res:
+            newval = labels_true[index[n]]
+            list_pred = [newval if x==item else x for x in list_pred]
+            n+=1
+
+        list_pred = np.array(list_pred)
+        list_pred = list_pred.astype(np.int64)
+        return list_pred
+        
+   
+
+    def labels_Patterns (self, mylist): # this function for future use
+        #mylist = [1, 26, 27, 51, 52, 77, 78, 103, 105]
+        mylist = [str(i) for i in mylist]
+        if  int(max (mylist)) <= 103:
+
+            x = 0
+            for item  in mylist:
+                if item <= '25':
+                    mylist[x] = chr(int(item)+66)
+                elif item <= '51':
+                    mylist[x] = 'A' + chr(int(item)+39)
+                elif item <= '77':
+                    mylist[x] = 'B' + chr(int(item)+13)
+                else:
+                    mylist[x] = 'C' + chr(int(item)-13)
+
+                x += 1 
+            return mylist    
+
+        else:
+            return 'Max classes numbers are 103 classes'
+
+
+    
+   
