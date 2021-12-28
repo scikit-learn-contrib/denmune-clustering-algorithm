@@ -20,11 +20,13 @@ after installing DenMune, you just need to import it
 from denmune import DenMune
 ```
 
-Please note that first denmune (the file) in small letters, while the other one(the class itself) has D and M in capital cas while other letters are small
+Please note that first denmune (the file) in small letters, while the other one(the class itself) has D and M in capital case while other letters are small
 
 How to run and test
 ======
 Simply use our repo2docker offered by mybinder.org, which encapsulate the algorithm and all required data in one place and allow you to test over 11 examples. 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
+
 
 Need to test examples one by one, then here another option. Use colab offered by google to test each example seperately.
 
