@@ -43,8 +43,16 @@ here is a list of Google CoLab URL to use
 | Iris dataset | https://colab.research.google.com/drive/1nKql57Xh7xVVu6NpTbg3vRdRg42R7hjm?usp=sharing |
 | Jain dataset | https://colab.research.google.com/drive/1QJxXoZtoaMi3gvagZ2FPUtri4qbXOGl9?usp=sharing |
 | Mouse dataset | https://colab.research.google.com/drive/11IpU1yaVaCa4H-d9yuwkjzywBfEfQGIp?usp=sharing |
-| Pathbased | https://colab.research.google.com/drive/17DofhHs5I2xyhnNPJ6RWETDf7Te71TKm?usp=sharing |
-| Spiral |https://colab.research.google.com/drive/1yW0Y14AiQYM6g7X4bJmUb3x3nson7Xup?usp=sharing |
+| Pathbased dataset| https://colab.research.google.com/drive/17DofhHs5I2xyhnNPJ6RWETDf7Te71TKm?usp=sharing |
+| Spiral dataset|https://colab.research.google.com/drive/1yW0Y14AiQYM6g7X4bJmUb3x3nson7Xup?usp=sharing |
+
+
+- [x] Update Github with the DenMune sourcode
+- [x] create repo2docker repository
+- [x] Create pip Package
+- [x] create colab shared examples
+- [ ] create documentation
+- [ ] create conda package
 
 
 
