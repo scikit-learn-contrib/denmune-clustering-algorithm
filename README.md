@@ -4,16 +4,15 @@ How to install denMune
 ====
 Simply install DenMune clustering algorithm using pip command from the official Python repository
 
-<code>pip install denmune</code>
-
+```shell
+pip install denmune
+```
 How to use  DenMune
 ====
 after installing DenMune, you just need to import it 
 
 ```python
-!pip install denmune
 from denmune import DenMune
-}
 ```
 
 Please note that first denmune (the file) in small letters, while the other one(the class itself) has D and M in capital cas while other letters are small
