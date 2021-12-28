@@ -4,8 +4,13 @@ How to install denMune
 ====
 Simply install DenMune clustering algorithm using pip command from the official Python repository
 
+from the shell run the command
 ```shell
 pip install denmune
+```
+from jupyter notebook cell run the command
+```jupyter
+!pip install denmune
 ```
 How to use  DenMune
 ====
