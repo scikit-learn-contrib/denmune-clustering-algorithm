@@ -1,4 +1,6 @@
-# ==================================================================================================================
+# ====================================================================================================================
+# About the source code and the associated published paper               
+# ====================================================================================================================
 # This is the source code of DenMune Clustering Algorithm accompanied with the experimental work
 # which is published in Elsevier Pattern Recognition, Volume 109, January 2021
 # paper can be accessed from 107589 https://doi.org/10.1016/j.patcog.2020.107589
@@ -8,12 +10,34 @@
 # Edition 0.0.0.2 updated 27-12-2021
 # ====================================================================================================================
 
+
+# ====================================================================================================================
+# About the DenMune Algorithm
+# ====================================================================================================================
 # DenMune Clustering Algorithm's Highlights
 # DenMune is a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions.
 # Higher dimensions are first reduced to 2-D using the t-sne.
 # The algorithm relies on a single parameter K (the number of nearest neighbors).
 # The results show the superiority of DenMune.
 # =====================================================================================================================
+
+
+# =====================================================================================================================
+# About me
+# =====================================================================================================================
+# Name: Mohamed Ali Abbas
+# Egypt - Alexandria - Smouha
+# Cell-phone: +20-01007500290
+# Personal E-mail: mohamed.alyabbas@outlook.com
+# Business E-meal: 01@zerobytes.one
+# website: https://zerobytes.one
+# LinkedIn: https://www.linkedin.com/in/mohabbas/
+# Github: https://github.com/egy1st
+# Kaggle: https://www.kaggle.com/egyfirst
+# Udemy: https://www.udemy.com/user/mohammad-ali-abbas/
+# Facebook: https://www.facebook.com/ZeroBytes.One
+# =====================================================================================================================
+
 
 import numpy as np
 import ngtpy
@@ -664,7 +688,3 @@ class DenMune():
 
         else:
             return 'Max classes numbers are 103 classes'
-
-
-    
-   
