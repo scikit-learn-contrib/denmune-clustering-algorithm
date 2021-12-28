@@ -1,28 +1,37 @@
-# DenMune: Density-Peak based Clustering Using Mutual Nearest Neighbors
+DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of DenMune. Enjoy the simplicty but the power of DenMune.
 
-This is the source code of DenMune Clustering Algorithm accompanied with the experimental work, which is published in Elsevier Pattern Recognition, Volume 109, January 2021, 107589
-https://doi.org/10.1016/j.patcog.2020.107589
-
-Authors: Mohamed Abbas, Adel El-Zoghabi, and Amin Shoukry
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
-
-[![Documentation Status](https://readthedocs.org/projects/denmune-docs/badge/?version=latest)](https://denmune-docs.readthedocs.io/en/latest/?badge=latest)
-      
-
-
-Abstract
-----
-
-Many clustering algorithms fail when clusters are of arbitrary shapes, of varying densities, or the data classes are unbalanced and close to each other, even in two dimensions. A novel clustering algorithm “DenMune” is presented to meet this challenge. It is based on identifying dense regions using mutual nearest neighborhoods of size K, where K is the only parameter required from the user, besides obeying the mutual nearest neighbor consistency principle. The algorithm is stable for a wide range of values of K. Moreover, it is able to automatically detect and remove noise from the clustering process as well as detecting the target clusters. It produces robust results on various low and high dimensional datasets relative to several known state of the art clustering algorithms.
-
-Installation
+How to install denMune
 ====
-1- You may use it as docker using MyBinder docker 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
-
-2- You may downloadd the source code  from this repositoy
-
-
-3- You may install it using pip using the command 
+Simply install DenMune clustering algorithm using pip command from the official Python repository
 <code>pip install denmune</code>
+
+How to use  DenMune
+====
+after installing DenMune, you just need to import it 
+<code>from denmune import DenMune</code>
+please note that first denmune (the file) in small letters, while the other one(the class itself) has D and M in capital cas while other letters are small
+
+How to run and test
+======
+Simply use our repo2docker offered by mybinder.org, which encapsulate the algorithm and all required data in one place and allow you to test over 11 examples. 
+
+Need to test examples one by one, then here another option. Use colab offered by google to test each example seperately.
+
+here is a list of Google CoLab URL to use
+
+| Dataset | CoLab URL |
+------------------------
+| Aggregation dataset | https://colab.research.google.com/drive/1K-Uqp-fmETmic4VZoZvV5t5XgRTzf4KO?usp=sharing |
+| Chameleon DS1 | https://colab.research.google.com/drive/1LixPie1pZdWHxF1CXJIlwh1uTq-4iFYp?usp=sharing |
+| Chameleon DS2 | https://colab.research.google.com/drive/16Ve-1JJCgTQrX7ITJjDrSXWmwT9tG1AA?usp=sharing |
+| Chameleon DS3 | https://colab.research.google.com/drive/1mU5tV1sYWJpxqwyG-uA0yHMPZW7AzNuc?usp=sharing |
+| Chameleon DS4 | https://colab.research.google.com/drive/1bDlsp1lVTDDXrDM8uWvo0_UY6ek73vUu?usp=sharing |
+| Compound dataset | https://colab.research.google.com/drive/1TOv1mCLvAN24qvkh1f9H-ZERDgfoSMP6?usp=sharing |
+| Iris dataset | https://colab.research.google.com/drive/1nKql57Xh7xVVu6NpTbg3vRdRg42R7hjm?usp=sharing |
+| Jain dataset | https://colab.research.google.com/drive/1QJxXoZtoaMi3gvagZ2FPUtri4qbXOGl9?usp=sharing |
+| Mouse dataset | https://colab.research.google.com/drive/11IpU1yaVaCa4H-d9yuwkjzywBfEfQGIp?usp=sharing |
+| Pathbased | https://colab.research.google.com/drive/17DofhHs5I2xyhnNPJ6RWETDf7Te71TKm?usp=sharing |
+| Spiral |https://colab.research.google.com/drive/1yW0Y14AiQYM6g7X4bJmUb3x3nson7Xup?usp=sharing |
+
+
+
