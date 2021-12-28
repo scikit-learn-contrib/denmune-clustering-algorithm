@@ -3,6 +3,7 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 How to install denMune
 ====
 Simply install DenMune clustering algorithm using pip command from the official Python repository
+
 <code>pip install denmune</code>
 
 How to use  DenMune
