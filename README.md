@@ -33,7 +33,7 @@ Need to test examples one by one, then here another option. Use colab offered by
 here is a list of Google CoLab URL to use
 
 | Dataset | CoLab URL |
----------------------------------------------------------------------------------------------------------------
+----------| ---------------------------------------------------------------------------------------------------|
 | Aggregation dataset | https://colab.research.google.com/drive/1K-Uqp-fmETmic4VZoZvV5t5XgRTzf4KO?usp=sharing |
 | Chameleon DS1 | https://colab.research.google.com/drive/1LixPie1pZdWHxF1CXJIlwh1uTq-4iFYp?usp=sharing |
 | Chameleon DS2 | https://colab.research.google.com/drive/16Ve-1JJCgTQrX7ITJjDrSXWmwT9tG1AA?usp=sharing |
