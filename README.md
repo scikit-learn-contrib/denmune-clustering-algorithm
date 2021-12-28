@@ -47,6 +47,8 @@ here is a list of Google CoLab URL to use
 | Spiral dataset|https://colab.research.google.com/drive/1yW0Y14AiQYM6g7X4bJmUb3x3nson7Xup?usp=sharing |
 
 
+Task List
+====
 - [x] Update Github with the DenMune sourcode
 - [x] create repo2docker repository
 - [x] Create pip Package
@@ -56,3 +58,22 @@ here is a list of Google CoLab URL to use
 
 
 
+How to cite
+=====
+please cite our work as
+
+```bib
+@article{ABBAS2021107589,
+title = {DenMune: Density peak based clustering using mutual nearest neighbors},
+journal = {Pattern Recognition},
+volume = {109},
+pages = {107589},
+year = {2021},
+issn = {0031-3203},
+doi = {https://doi.org/10.1016/j.patcog.2020.107589},
+url = {https://www.sciencedirect.com/science/article/pii/S0031320320303927},
+author = {Mohamed Abbas and Adel El-Zoghabi and Amin Shoukry},
+keywords = {Clustering, Mutual neighbors, Dimensionality reduction, Arbitrary shapes, Pattern recognition, Nearest neighbors, Density peak},
+abstract = {Many clustering algorithms fail when clusters are of arbitrary shapes, of varying densities, or the data classes are unbalanced and close to each other, even in two dimensions. A novel clustering algorithm “DenMune” is presented to meet this challenge. It is based on identifying dense regions using mutual nearest neighborhoods of size K, where K is the only parameter required from the user, besides obeying the mutual nearest neighbor consistency principle. The algorithm is stable for a wide range of values of K. Moreover, it is able to automatically detect and remove noise from the clustering process as well as detecting the target clusters. It produces robust results on various low and high dimensional datasets relative to several known state of the art clustering algorithms.}
+}
+```
