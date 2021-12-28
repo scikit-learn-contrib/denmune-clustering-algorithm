@@ -7,7 +7,8 @@
 # source code and several examples on using it, can be accessed from 
 # Gitbub's repository at https://github.com/egy1st/denmune-clustering-algorithm
 # Authors: Mohamed Abbas, Adel El-Zoghabi, and Amin Shoukry
-# Edition 0.0.0.2 updated 27-12-2021
+# Edition 0.0.2.3 Released 29-12-2021
+# PyPi package installation from  https://pypi.org/project/denmune/
 # ====================================================================================================================
 
 
