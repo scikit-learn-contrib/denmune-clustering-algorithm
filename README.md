@@ -1,6 +1,6 @@
 DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of DenMune. Enjoy the simplicty but the power of DenMune.
 
-How to install denMune
+How to install DenMune
 ====
 Simply install DenMune clustering algorithm using pip command from the official Python repository
 
@@ -20,7 +20,7 @@ after installing DenMune, you just need to import it
 from denmune import DenMune
 ```
 
-Please note that first denmune (the file) in small letters, while the other one(the class itself) has D and M in capital case while other letters are small
+Please note that first denmune (the package) in small letters, while the other one(the class itself) has D and M in capital case while other letters are small
 
 How to run and test
 ======
