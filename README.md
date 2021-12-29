@@ -1,5 +1,9 @@
 DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of DenMune. Enjoy the simplicty but the power of DenMune.
 
+Association
+======
+This code is associated with the research published in Elsvier Pattern Recognition Journal under DOI: https://doi.org/10.1016/j.patcog.2020.107589
+
 How to install DenMune
 ====
 Simply install DenMune clustering algorithm using pip command from the official Python repository
@@ -72,7 +76,7 @@ How to cite
 If you use auto-sklearn in scientific publications, we would appreciate citations.
 
 ==DenMune: Density peak based clustering using mutual nearest neighbors==
-Abbas MEl-Zoghabi AShoukry A
+Mohame Abbas, Adel El-Zoghabi, and Amin AShoukry
 Pattern Recognition, (2021), 107589, 109
 
 ```bib
