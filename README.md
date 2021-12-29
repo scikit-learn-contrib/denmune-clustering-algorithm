@@ -71,6 +71,10 @@ How to cite
 =====
 If you use auto-sklearn in scientific publications, we would appreciate citations.
 
+==DenMune: Density peak based clustering using mutual nearest neighbors==
+Abbas MEl-Zoghabi AShoukry A
+Pattern Recognition, (2021), 107589, 109
+
 ```bib
 @article{ABBAS2021107589,
 title = {DenMune: Density peak based clustering using mutual nearest neighbors},
