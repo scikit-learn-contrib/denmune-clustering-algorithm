@@ -47,10 +47,14 @@ here is a list of Google CoLab URL to use
 | Spiral dataset|https://colab.research.google.com/drive/1yW0Y14AiQYM6g7X4bJmUb3x3nson7Xup?usp=sharing |
 
 
+
+
 Documentation
 ====
 in progress ........
 [![Documentation Status](https://readthedocs.org/projects/denmune-docs/badge/?version=latest)](https://denmune-docs.readthedocs.io/en/latest/?badge=latest)
+
+
 
 Task List
 ====
@@ -65,7 +69,7 @@ Task List
 
 How to cite
 =====
-please cite our work as
+If you use auto-sklearn in scientific publications, we would appreciate citations.
 
 ```bib
 @article{ABBAS2021107589,
