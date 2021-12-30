@@ -66,7 +66,7 @@ Task List
 - [x] create repo2docker repository
 - [x] Create pip Package
 - [x] create colab shared examples
-- [ ] create documentation
+- [x] create documentation
 - [ ] create conda package
 
 
