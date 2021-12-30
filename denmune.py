@@ -94,7 +94,7 @@ class DenMune():
                 end = time.time()
                 if verpose:
                     print('using t-SNE', dataset, ' dataset has been reduced to 2-d in ', end-start, ' seconds')
-                    
+
             data = genfromtxt(file_2d , delimiter='\t')
 
 
@@ -614,7 +614,7 @@ class DenMune():
     def generate_tsne(self, data, file_2d, d):
         
         
-        dim_two = TSNE(n_components=d).fit_transform(data)
+        dim_two = TSNE(n_components=d, random_state=1971, init='random').fit_transform(data)
 
         mystr = ""
         data_len = len (dim_two)
@@ -689,3 +689,4 @@ class DenMune():
 
         else:
             return 'Max classes numbers are 103 classes'
+            
