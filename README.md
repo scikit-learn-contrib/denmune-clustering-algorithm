@@ -55,7 +55,7 @@ here is a list of Google CoLab URL to use
 
 Documentation
 ====
-in progress ........
+Rich documentation can be reached at:
 [![Documentation Status](https://readthedocs.org/projects/denmune-docs/badge/?version=latest)](https://denmune-docs.readthedocs.io/en/latest/?badge=latest)
 
 
