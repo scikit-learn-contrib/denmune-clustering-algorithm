@@ -1,7 +1,5 @@
 DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of DenMune. Enjoy the simplicty but the power of DenMune.
 
-|pypi| |license|
-
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
 [![Documentation Status](https://readthedocs.org/projects/denmune-docs/badge/?version=latest)](https://denmune-docs.readthedocs.io/en/latest/?badge=latest)
 [![CircleCI](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=svg)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
