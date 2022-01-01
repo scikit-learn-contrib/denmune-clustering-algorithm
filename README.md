@@ -3,7 +3,8 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
 [![Documentation Status](https://readthedocs.org/projects/denmune-docs/badge/?version=latest)](https://denmune-docs.readthedocs.io/en/latest/?badge=latest)
 [![CircleCI](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=svg)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
-[![BSD 3-Clause “New” or “Revised” License](https://upload.wikimedia.org/wikipedia/commons/d/d5/License_icon-bsd-88x31.svg "BSD 3-Clause “New” or “Revised” License")](https://choosealicense.com/licenses/bsd-3-clause/)
+[![BSD 3-Clause “New” or “Revised” License](https://img.shields.io/badge/license-BSD-green "BSD 3-Clause “New” or “Revised” License")](https://choosealicense.com/licenses/bsd-3-clause/)
+
 
 Association
 ======
