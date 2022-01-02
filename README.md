@@ -7,6 +7,9 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 [![BSD 3-Clause “New” or “Revised” License](https://img.shields.io/badge/license-BSD-green "BSD 3-Clause “New” or “Revised” License")](https://choosealicense.com/licenses/bsd-3-clause/)
 [![elsevier publisher](https://img.shields.io/badge/elsevier-published-orange "elsevier publisher")](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927)
 [![mendeley data](https://img.shields.io/badge/mendeley-data-yellowgreen "mendeley data")](https://data.mendeley.com/datasets/b73cw5n43r/3)
+[![interactive jupyter notebooks](https://img.shields.io/badge/notebook-interactive-brightgreen "interactive jupyter notebooks")](#colab)
+
+
 
 
 
@@ -45,6 +48,7 @@ Simply use our repo2docker offered by mybinder.org, which encapsulate the algori
 
 Need to test examples one by one, then here another option. Use colab offered by google to test each example seperately.
 
+<a name="colab"></a>
 here is a list of Google CoLab URL to use
 
 | Dataset | CoLab URL |
