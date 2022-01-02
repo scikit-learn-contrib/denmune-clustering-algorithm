@@ -90,11 +90,17 @@ Task List
 
 How to cite
 =====
-If you use auto-sklearn in scientific publications, we would appreciate citations.
+If you use DenMune code in scientific publications, we would appreciate citations.
 
-==DenMune: Density peak based clustering using mutual nearest neighbors==
-Mohame Abbas, Adel El-Zoghabi, and Amin AShoukry
-Pattern Recognition, (2021), 107589, 109
+```json
+  "Title": "DenMune: Density peak based clustering using mutual nearest neighbors"
+  "Authors": "Mohame Abbas, Adel El-Zoghabi, and Amin AShoukry"
+  "Journal":"Pattern Recognition, (2021), 107589, 109"
+```
+
+
+
+
 
 ```bib
 @article{ABBAS2021107589,
