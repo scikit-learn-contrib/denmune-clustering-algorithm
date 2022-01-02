@@ -5,6 +5,11 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 [![Documentation Status](https://readthedocs.org/projects/denmune-docs/badge/?version=latest)](https://denmune-docs.readthedocs.io/en/latest/?badge=latest)
 [![CircleCI](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=svg)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
 [![BSD 3-Clause “New” or “Revised” License](https://img.shields.io/badge/license-BSD-green "BSD 3-Clause “New” or “Revised” License")](https://choosealicense.com/licenses/bsd-3-clause/)
+![dependencies continuously updated” License](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen "dependencies continuously updated")
+[![elsevier publisher](https://img.shields.io/badge/elsevier-published-orange "elsevier publisher")](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927)
+[![mendeley data](https://img.shields.io/badge/mendeley-data-yellowgreen "mendeley data")](https://data.mendeley.com/datasets/b73cw5n43r/3)
+
+
 
 
 Association
