@@ -49,7 +49,9 @@ Simply use our repo2docker offered by mybinder.org, which encapsulate the algori
 Need to test examples one by one, then here another option. Use colab offered by google to test each example seperately.
 
 <a name="colab"></a>
-here is a list of Google CoLab URL to use
+Here is a list of Google CoLab URL to use
+---------------------------------------------
+
 
 | Dataset | CoLab URL |
 ----------| ---------------------------------------------------------------------------------------------------|
