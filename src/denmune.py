@@ -669,15 +669,14 @@ class DenMune():
                 
       
     def plot_clusters(self, labels, show_noise=False, ground=False):
-        
+        data2 = []
+        colors2 = []
         #labels = np.array(labels, dtype=np.int64)
         labels = self.preplot_Clusters(labels, ground=ground)
         palette = sns.color_palette( 'deep', np.unique(labels).max()+2) #deep, dark, bright, muted, pastel, colorblind
         
       
         if self.prop_step:
-            data2 = []
-            colors2 = []
             colors = [palette[x] if x > 0 else ( (0.0, 0.0, 0.0) if x == -1 else (0.0, 0.0, 0.0)) for x in labels]
             v = 0
             for c in colors:
@@ -698,8 +697,11 @@ class DenMune():
                 colors = [palette[x] if x > 0 else ( (0.0, 0.0, 0.0) if x == -1 else (0.9, 0.9, 0.9)) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
 
         plt.figure(figsize=(12, 8))
-      
-        plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
+        
+        if self.prop_step:
+            plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
+        else:
+             plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
        
         frame = plt.gca()
         frame.axes.get_xaxis().set_visible(False)
