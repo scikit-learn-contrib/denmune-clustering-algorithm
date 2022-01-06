@@ -11,7 +11,9 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 
 
 
-
+This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
+===============
+<iframe src="https://player.vimeo.com/video/663107261?h=08270149a9" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 
 Association
