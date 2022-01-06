@@ -13,7 +13,7 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 
 This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
 ===============
-[![Propagation in DenMune](https://github.com/egy1st/denmune-clustering-algorithm/blob/main/img/denmune_propagation.png)](https://player.vimeo.com/video/663107261?h=08270149a9 "Propagation in DenMune")
+[![Propagation in DenMune](https://github.com/egy1st/denmune-clustering-algorithm/blob/main/images/denmune_propagation.png)](https://player.vimeo.com/video/663107261?h=08270149a9 "Propagation in DenMune")
 
 
 
