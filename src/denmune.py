@@ -75,9 +75,7 @@ class DataPoint():
         
          
 class DenMune():
-    
-    
-    #def __init__ (self, dataset, k_nearest=1, data_path='', verpose=True, show_plot=True, show_noise=False):
+   
     def __init__ (self, data, file_2d ='', k_nearest=1, verpose=True, show_noise=False, rgn_tsne=False, prop_step=0):     
          
         self.analyzer = {}
@@ -99,11 +97,8 @@ class DenMune():
                 self.generate_tsne(data, file_2d, 2)
                 end = time.time()
                 self.analyzer["exec_time"]["t_SNE"] = end-start
-                #if verpose:
-                #    print('using t-SNE dataset has been reduced to 2-d in ', self.analyzer["exec_time"]["t_SNE"], ' seconds')
-
+               
             data = genfromtxt(file_2d , delimiter='\t')
-
 
         start_time = time.time()
         
@@ -132,8 +127,7 @@ class DenMune():
         self.sort_DataPoints()
         self.prepare_Clusters()
         self.attach_Points()
-        #self.fit_predict()
-       
+              
         end_time = time.time() 
         self.analyzer["exec_time"]["DenMune"] = end_time-start_time
         #if verpose:
@@ -306,7 +300,7 @@ class DenMune():
         itr = 0
         for dp_kern in self.KernelPoints:
             itr+=1
-            if self.prop_step <= itr :
+            if self.prop_step and self.prop_step <= itr :
                 continue
                 
             dp_core = self.DataPoints[dp_kern[0]]
@@ -458,7 +452,7 @@ class DenMune():
 
                    
 
-    def fit_predict(self, data_labels=None):
+    def fit_predict(self):
         solution_file = 'solution.txt'
         GroundTruth = False
         
@@ -471,38 +465,8 @@ class DenMune():
             
         with open(solution_file, 'w') as f:
             f.writelines("%s\n" % pred for pred in pred_list)
-            
-        file_labels = data_labels
-        if file_labels is not None:
-            # Avoid the Case of Cham 01==>Cham_04 which have no groundtruth
-            GroundTruth = True
-            labels_true = data_labels.astype(np.int64)
-            
-        
-        labels_pred = []
-        labels_pred = genfromtxt(solution_file)
-        
-        if self.prop_step: # any step greater than zero will be evaluated to true
-            #labels_pred = np.array(labels_pred)
-            #labels_pred = labels_pred.astype(np.int64)
-            dummy = 0 # nothing to do
-        elif  GroundTruth:
-            labels_pred = self.match_Labels(labels_pred, labels_true)
-        else: # Case of Cham 01==>Cham_04 which have no groundtruth
-            #labels_pred = np.array(labels_pred)
-            #labels_pred = labels_pred.astype(np.int64)
-            dummy = 0 # nothing to do
-            
-        
-        #if self.show__:
-        #    self.plot_clusters(self.data, labels_pred, self.show_noise)
-        
-        # self.preplot_Clusters(labels_pred, ground=False)
-        
-        #if self.verpose == 1 or self.verpose == 3 :
-        #    self.show_Analyzer(root="DenMune Clustering")
        
-        return  labels_pred 
+        return  pred_list 
        
         
             
@@ -511,8 +475,8 @@ class DenMune():
         if 0 in labels_true: # let us start with class number 1 since class 0 in denmune is noise
             labels_true += 1
                        
-        list_pred = labels_pred.tolist()
-        pred_set = set(list_pred) 
+        #list_pred = labels_pred.tolist()
+        pred_set = set(labels_pred) 
 
         index = []
         x = 1
@@ -538,22 +502,20 @@ class DenMune():
         lebeled = []
         for n in range (len(index)):
             newval = index[n][1]
-            max_class = max(set(list_pred), key = list_pred[index[n][0]:index[n][0]+index[n][2]-1].count)
+            max_class = max(set(labels_pred), key = labels_pred[index[n][0]:index[n][0]+index[n][2]-1].count)
             if max_class not in lebeled:
-                list_pred = [newval if x==max_class else x for x in list_pred]
+                labels_pred = [newval if x==max_class else x for x in labels_pred]
                 lebeled.append(newval)
 
-        list_pred = np.array(list_pred)
-        list_pred = list_pred.astype(np.int64)
-        
-        #with open('solumatch', 'w') as f:
-        #    f.writelines("%s\n" % pred for pred in list_pred)
-            
-        return list_pred
+        labels_pred = np.array(labels_pred, dtype=np.int64)
+                   
+        return labels_pred
     
     
     def validate_Clusters(self, labels_true, labels_pred):
-       
+        
+        labels_pred = self.match_Labels(labels_pred, labels_true)
+              
         if 0 in labels_true: # let us start with class number 1 since, in denmune class 0 is noise
             labels_true+=1
         self.analyzer["n_clusters"]["actual"] = len(np.unique(labels_true))
@@ -630,6 +592,7 @@ class DenMune():
         
         
     def preplot_Clusters(self, labels, ground=False):
+        
         labels = np.array(labels, dtype=np.int64)
              
         noise_1 = list(labels).count(-1)
@@ -638,10 +601,6 @@ class DenMune():
         noise_2 = list(labels).count(0)
         self.analyzer["n_points"]["noise"]["type-2"]  = noise_2
         
-        #if self.show_noise and self.verpose and not ground:
-        #    print('There are', noise_1 , 'outlier point(s) in black (noise of type-1)', 'represent',
-        #          f"{ noise_1 /len(labels):.0%}", 'of total points')
-        #    print('There are', noise_2 , 'weak point(s) in light grey (noise of type-2)', 'represent', f"{noise_2/len(labels):.0%}", 'of total points')
         unique_labels = np.unique(labels)
         num_of_clusters = len(unique_labels)
                   
@@ -656,9 +615,6 @@ class DenMune():
                 fake_clusters+=1
                
         self.analyzer["n_clusters"]["detected"]=   num_of_clusters - fake_clusters  
-        
-        #if self.verpose and not ground:
-        #    print('DenMune detected', self.analyzer["n_clusters"], 'clusters', '\n')
         palette = sns.color_palette( 'deep', np.unique(labels).max()+2) #deep, dark, bright, muted, pastel, colorblind
         
         if ground:
@@ -696,7 +652,7 @@ class DenMune():
             else :
                 colors = [palette[x] if x > 0 else ( (0.0, 0.0, 0.0) if x == -1 else (0.9, 0.9, 0.9)) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
 
-        # plt.figure(figsize=(12, 8))
+        #plt.figure(figsize=(12, 8))
         
         if self.prop_step:
             plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
@@ -706,8 +662,6 @@ class DenMune():
         frame = plt.gca()
         frame.axes.get_xaxis().set_visible(False)
         frame.axes.get_yaxis().set_visible(False)
-       
-        #plt.savefig('mydata/foo.png')
         plt.show()
         #plt.clf()    # this is a must to clear figures if you plot continously
 
@@ -763,63 +717,3 @@ class DenMune():
                             creat_TreefromDict(self, tree, subsubdic, z, parent=v)
 
         tree.show()    
-    
-    
-    def flattenPred(self, labels_pred, labels_true): #this function for future use
-    
-        list_pred = labels_pred.tolist()
-        pred_set = set(list_pred) 
-
-        index = []
-        x = 0
-        old_item = labels_true[0]
-        for item in labels_true:
-            x+= 1
-            if item != old_item:
-                old_item = item
-                index.append(x)
-
-        ln = len(labels_true)
-        res = []
-        old_idx = 0
-        for idx in index:
-            mx = max(set(list_pred), key = list_pred[old_idx:idx].count) 
-            old_idx = idx
-            res.append(mx)
-        mx = max(set(list_pred), key = list_pred[idx:ln].count) 
-        res.append(mx)
-
-        index.insert(0, 0)
-        n = 0
-        for item in res:
-            newval = labels_true[index[n]]
-            list_pred = [newval if x==item else x for x in list_pred]
-            n+=1
-
-        list_pred = np.array(list_pred)
-        list_pred = list_pred.astype(np.int64)
-        return list_pred
-        
-   
-
-    def labels_Patterns (self, mylist): # this function for future use
-        #mylist = [1, 26, 27, 51, 52, 77, 78, 103, 105]
-        mylist = [str(i) for i in mylist]
-        if  int(max (mylist)) <= 103:
-
-            x = 0
-            for item  in mylist:
-                if item <= '25':
-                    mylist[x] = chr(int(item)+66)
-                elif item <= '51':
-                    mylist[x] = 'A' + chr(int(item)+39)
-                elif item <= '77':
-                    mylist[x] = 'B' + chr(int(item)+13)
-                else:
-                    mylist[x] = 'C' + chr(int(item)-13)
-
-                x += 1 
-            return mylist    
-
-        else:
-            return 'Max classes numbers are 103 classes'
