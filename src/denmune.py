@@ -39,7 +39,6 @@
 # Facebook: https://www.facebook.com/ZeroBytes.One
 # =====================================================================================================================
 
-
 import numpy as np
 import ngtpy
 import seaborn as sns
@@ -50,6 +49,7 @@ from sklearn.manifold import TSNE
 import operator
 import os.path
 import time
+from treelib import Node as nd, Tree as tr
 
 sns.set_context('poster')
 sns.set_color_codes()
@@ -59,8 +59,6 @@ plot_kwds = {'alpha' : 0.99, 's' : 80, 'linewidths':0}
 #from sklearn.metrics import confusion_matrix
 #from sklearn import metrics
 #import sklearn.cluster as cluster
-
-
 
 
 class DataPoint():
@@ -75,25 +73,34 @@ class DataPoint():
         self.visited = False
         self.homogeneity = 0
         
-        
+         
 class DenMune():
     
     
     #def __init__ (self, dataset, k_nearest=1, data_path='', verpose=True, show_plot=True, show_noise=False):
-    def __init__ (self, dataset, k_nearest=1, data_path='', verpose=True, show_noise=False):     
-          
-        file_nd = data_path + dataset + '.txt'
-        data = genfromtxt(file_nd , delimiter='\t')
-        if data.shape[1] == 2:
-            file_2d = file_nd
-        else:   
-            file_2d = data_path + dataset + '-2d.txt'
-            if  not os.path.isfile(file_2d):
+    def __init__ (self, data, file_2d ='', k_nearest=1, verpose=True, show_noise=False, rgn_tsne=False, prop_step=0):     
+         
+        self.analyzer = {}
+        self.analyzer['exec_time'] = {}
+        self.analyzer['n_points'] = {}
+        self.analyzer['n_points']["noise"] = {}
+        self.analyzer['n_points']["weak"] = {}
+        self.analyzer["n_points"]["weak"]["all"] = 0
+        self.analyzer["n_points"]["size"] = data.shape[0]
+        self.analyzer["n_points"]["dim"] = data.shape[1]
+        self.analyzer["validity"] = {}
+        self.analyzer["n_clusters"] = {}
+        self.analyzer["n_clusters"]["actual"] = 0
+        self.analyzer["n_clusters"]["detected"] = 0
+        
+        if data.shape[1] != 2:
+            if  not os.path.isfile(file_2d) or rgn_tsne == True:
                 start = time.time()
                 self.generate_tsne(data, file_2d, 2)
                 end = time.time()
-                if verpose:
-                    print('using t-SNE', dataset, ' dataset has been reduced to 2-d in ', end-start, ' seconds')
+                self.analyzer["exec_time"]["t_SNE"] = end-start
+                #if verpose:
+                #    print('using t-SNE dataset has been reduced to 2-d in ', self.analyzer["exec_time"]["t_SNE"], ' seconds')
 
             data = genfromtxt(file_2d , delimiter='\t')
 
@@ -101,16 +108,16 @@ class DenMune():
         start_time = time.time()
         
         self.alg_name = 'denmune'
-        #self.show_plot = show_plot
         self.show_noise = show_noise
+        self.prop_step = prop_step
         self.verpose = verpose
-        self.data_path = data_path     
-        self.dataset = dataset
         self.data = data
         self.dp_count = self.data.shape[0] 
         self.dp_dim = self.data.shape[1]
         self.k_nearest = k_nearest
         self.dp_dis = []
+        self.labels = []
+        #self.n_noise = {}
                
         self.DataPoints = []
         self.ClassPoints = {}
@@ -125,11 +132,12 @@ class DenMune():
         self.sort_DataPoints()
         self.prepare_Clusters()
         self.attach_Points()
-        #self.output_Clusters()
-        
-        end_time = time.time()  
+        #self.fit_predict()
+       
+        end_time = time.time() 
+        self.analyzer["exec_time"]["DenMune"] = end_time-start_time
         #if verpose:
-        #    print('DenMune took' , end_time-start_time, ' seconds' )
+        #    print('DenMune took',  self.analyzer["exec_time"]["DenMune"] , ' seconds', 'to cluster the dataset' )
             
         return None # __init__ should return Nine
     
@@ -154,8 +162,10 @@ class DenMune():
                 self.dp_dis.append(result)
 
             end =  time.time()
-            if self.verpose:
-                print ('using NGT, Proximity matrix has been calculated  in: ', end-start, ' seconds')
+            self.analyzer["exec_time"]["NGT"] = end-start
+          
+            #if self.verpose:
+            #    print ('using NGT, Proximity matrix has been calculated  in: ', self.analyzer["exec_time"]["NGT"], ' seconds')
             #self.data = None
                        
         
@@ -240,9 +250,14 @@ class DenMune():
                         self.DataPoints[i].reference.append(pos)
                         break
                                                 
-                        
+        self.analyzer["n_points"]["strong"] =   0
         for i  in range (self.dp_count) :
             self.DataPoints[i].referred_by = self.sort_Tuple(self.DataPoints[i].referred_by, reverse=False)
+            if len(self.DataPoints[i].referred_by) >= self.k_nearest:
+                 self.analyzer["n_points"]["strong"]  += 1
+            else:
+                self.analyzer["n_points"]["weak"]["all"] += 1
+                
             self.DataPoints[i].reference = self.sort_Tuple(self.DataPoints[i].reference, reverse=False)
             homogeneity = (100 * len(self.DataPoints[i].referred_by)) + len(self.DataPoints[i].reference)
             self.DataPoints[i].homogeneity = homogeneity
@@ -288,7 +303,12 @@ class DenMune():
         start = time.time()
         class_id = 0
         
+        itr = 0
         for dp_kern in self.KernelPoints:
+            itr+=1
+            if self.prop_step <= itr :
+                continue
+                
             dp_core = self.DataPoints[dp_kern[0]]
            
             #remember no strong points & weak points in Tirann
@@ -377,7 +397,6 @@ class DenMune():
         #print ('Attach points tooks:', end-start)
     
     def attach_StrongPoint(self, point_id):
-              
         weight_map = {}
         max_class = 0 # max_class in attach point = 0 , thus if a point faild to merge with any cluster, it has one more time 
             #to merge in attach weak point
@@ -439,7 +458,7 @@ class DenMune():
 
                    
 
-    def output_Clusters(self):
+    def fit_predict(self, data_labels=None):
         solution_file = 'solution.txt'
         GroundTruth = False
         
@@ -453,34 +472,45 @@ class DenMune():
         with open(solution_file, 'w') as f:
             f.writelines("%s\n" % pred for pred in pred_list)
             
-        file_labels = self.dataset +'-gt.txt' #dataset + '-gt.txt'
-        if  os.path.isfile(self.data_path+file_labels):
+        file_labels = data_labels
+        if file_labels is not None:
             # Avoid the Case of Cham 01==>Cham_04 which have no groundtruth
             GroundTruth = True
-            labels_true = genfromtxt(self.data_path+file_labels)
-            labels_true = labels_true.astype(np.int64)
+            labels_true = data_labels.astype(np.int64)
             
         
         labels_pred = []
         labels_pred = genfromtxt(solution_file)
-        if  GroundTruth:
+        
+        if self.prop_step: # any step greater than zero will be evaluated to true
+            #labels_pred = np.array(labels_pred)
+            #labels_pred = labels_pred.astype(np.int64)
+            dummy = 0 # nothing to do
+        elif  GroundTruth:
             labels_pred = self.match_Labels(labels_pred, labels_true)
         else: # Case of Cham 01==>Cham_04 which have no groundtruth
-            labels_pred = np.array(labels_pred)
-            labels_pred = labels_pred.astype(np.int64)
+            #labels_pred = np.array(labels_pred)
+            #labels_pred = labels_pred.astype(np.int64)
+            dummy = 0 # nothing to do
             
         
-        #if self.show_plot:
+        #if self.show__:
         #    self.plot_clusters(self.data, labels_pred, self.show_noise)
         
-        if GroundTruth:
-            return  labels_true, labels_pred 
-        else:
-            return  0, labels_pred 
+        # self.preplot_Clusters(labels_pred, ground=False)
+        
+        #if self.verpose == 1 or self.verpose == 3 :
+        #    self.show_Analyzer(root="DenMune Clustering")
+       
+        return  labels_pred 
+       
         
             
     def match_Labels(self, labels_pred, labels_true):
        
+        if 0 in labels_true: # let us start with class number 1 since class 0 in denmune is noise
+            labels_true += 1
+                       
         list_pred = labels_pred.tolist()
         pred_set = set(list_pred) 
 
@@ -515,12 +545,19 @@ class DenMune():
 
         list_pred = np.array(list_pred)
         list_pred = list_pred.astype(np.int64)
-
+        
+        #with open('solumatch', 'w') as f:
+        #    f.writelines("%s\n" % pred for pred in list_pred)
+            
         return list_pred
     
     
     def validate_Clusters(self, labels_true, labels_pred):
        
+        if 0 in labels_true: # let us start with class number 1 since, in denmune class 0 is noise
+            labels_true+=1
+        self.analyzer["n_clusters"]["actual"] = len(np.unique(labels_true))
+        
         # Score the clustering
         from sklearn.metrics.cluster import adjusted_mutual_info_score #2010
         from sklearn.metrics.cluster import adjusted_rand_score # 1985
@@ -568,45 +605,109 @@ class DenMune():
         #print("adjusted_rand_score: %f." % adj_rand)
 
         f1 =  f1_weight
-        val = ['0', acc, f1, nmi, ami, ari, homogeneity, completeness, '0' ]
+        
+        validity = {"ACC" : acc,
+                    "F1"  : f1,
+                    "NMI" : nmi,
+                    "AMI" : ami,
+                    "ARI" : ari,
+                    "homogeneity"  : homogeneity,
+                    "completeness" : completeness
+                   }
+        
+
+       # val = [acc, f1, nmi, ami, ari, homogeneity, completeness]
+        self.analyzer["validity"]  =  validity
+        self.analyzer["n_points"]["weak"]["succeeded to merge"] = self.analyzer["n_points"]["weak"]["all"] - self.analyzer["n_points"]["noise"]["type-2"]
+        self.analyzer["n_points"]["weak"]["failed to merge"] = self.analyzer["n_points"]["noise"]["type-2"]   
+                                    
+        if self.verpose:
+            self.show_Analyzer(self.analyzer, root="DenMune Analyzer")
          
-        return val    
-    
-    
+
+        return validity  
     
         
-    def plot_clusters(self, labels, show_noise=False, ground=False):
-        i= 1
-        outlier_count = list(labels).count(-1)
-        weak_count = list(labels).count(0)
-        if self.show_noise and self.verpose and not ground:
-            print('There are', outlier_count , 'outlier point(s) in black (noise of type-1)', 'represent', f"{outlier_count/len(labels):.0%}", 'of total points')
-            print('There are', weak_count , 'weak point(s) in light grey (noise of type-2)', 'represent', f"{weak_count/len(labels):.0%}", 'of total points')
+        
+    def preplot_Clusters(self, labels, ground=False):
+        labels = np.array(labels, dtype=np.int64)
+             
+        noise_1 = list(labels).count(-1)
+        self.analyzer["n_points"]["noise"]["type-1"] = noise_1
+        
+        noise_2 = list(labels).count(0)
+        self.analyzer["n_points"]["noise"]["type-2"]  = noise_2
+        
+        #if self.show_noise and self.verpose and not ground:
+        #    print('There are', noise_1 , 'outlier point(s) in black (noise of type-1)', 'represent',
+        #          f"{ noise_1 /len(labels):.0%}", 'of total points')
+        #    print('There are', noise_2 , 'weak point(s) in light grey (noise of type-2)', 'represent', f"{noise_2/len(labels):.0%}", 'of total points')
         unique_labels = np.unique(labels)
         num_of_clusters = len(unique_labels)
-       
+                  
         fake_clusters = 0 #otlier = -1 and weak points that fail to merge (noise) = 0
+        
+        i= 1
         for n in (unique_labels):
             if n > 0:
                 labels = np.where(labels==n, i, labels) 
                 i +=1
             else:
                 fake_clusters+=1
-        if self.verpose and not ground:
-            print('DenMune detected', num_of_clusters - fake_clusters , 'clusters', '\n')
-        palette = sns.color_palette( 'deep', np.unique(labels).max()+2) #deep, dark, bright, muted, pastel, colorblind
                
-        if show_noise == False:
-            colors = [palette[x] if x > 0 else (1.0, 1.0, 1.0) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
-        else :
-            colors = [palette[x] if x > 0 else ( (0.0, 0.0, 0.0) if x == -1 else (0.9, 0.9, 0.9)) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
-                          
-        plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds)
+        self.analyzer["n_clusters"]["detected"]=   num_of_clusters - fake_clusters  
+        
+        #if self.verpose and not ground:
+        #    print('DenMune detected', self.analyzer["n_clusters"], 'clusters', '\n')
+        palette = sns.color_palette( 'deep', np.unique(labels).max()+2) #deep, dark, bright, muted, pastel, colorblind
+        
+        if ground:
+            if 0 in labels: # let us start with class number 1 to match with results in denmune
+                labels +=1
+                
+        return  labels       
+                
+      
+    def plot_clusters(self, labels, show_noise=False, ground=False):
+        
+        #labels = np.array(labels, dtype=np.int64)
+        labels = self.preplot_Clusters(labels, ground=ground)
+        palette = sns.color_palette( 'deep', np.unique(labels).max()+2) #deep, dark, bright, muted, pastel, colorblind
+        
+      
+        if self.prop_step:
+            data2 = []
+            colors2 = []
+            colors = [palette[x] if x > 0 else ( (0.0, 0.0, 0.0) if x == -1 else (0.0, 0.0, 0.0)) for x in labels]
+            v = 0
+            for c in colors:
+                if (c[0]+c[1] + c[2]) > 0.0:  # outlier :: keep it in black 
+                    colors2.append((c[0], c[1] , c[2], 1.0))
+                    data2.append((self.data[v][0],self.data[v][1]))
+                v+=1 
+            data2 = np.array(data2) 
+     
+        elif ground:
+            if 0 in labels: # let us start with class number 1 to match with results in denmune
+                labels +=1
+            colors = [palette[x]  for x in labels]
+        else:
+            if show_noise == False:
+                colors = [palette[x] if x > 0 else (1.0, 1.0, 1.0) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
+            else :
+                colors = [palette[x] if x > 0 else ( (0.0, 0.0, 0.0) if x == -1 else (0.9, 0.9, 0.9)) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
+
+        plt.figure(figsize=(12, 8))
+      
+        plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
+       
         frame = plt.gca()
         frame.axes.get_xaxis().set_visible(False)
         frame.axes.get_yaxis().set_visible(False)
+       
+        #plt.savefig('mydata/foo.png')
         plt.show()
-        plt.clf()    # this is a must to clear figures if you plot continously
+        #plt.clf()    # this is a must to clear figures if you plot continously
 
         return 0
     
@@ -629,6 +730,37 @@ class DenMune():
         text_file.close()
 
         return 0
+    
+    def show_Analyzer(self, mydic=None, root="DenMune"):
+        
+        if mydic is None:
+            mydic=self.analyzer
+        
+        
+        tree = tr()
+        tree.create_node(root, "root")
+
+        def creat_TreefromDict(self, tree, mydict, key, parent):
+            if type(mydict[key]) is not dict:
+                val = key + ': ' + str(round(mydict[key],3))
+                tree.create_node(val, key,  parent=parent)
+
+        for d in mydic:
+            if type(mydic[d]) is not dict:
+                creat_TreefromDict(self, tree, mydic, d, parent='root')
+            else:
+                tree.create_node(d, d,  parent="root")
+                subdic =mydic[d]
+                for v in subdic:
+                    if type(subdic[v]) is not dict:
+                        creat_TreefromDict(self, tree, subdic, v, parent=d)
+                    else:
+                        tree.create_node(v, v,  parent=d)
+                        subsubdic =subdic[v]
+                        for z in subsubdic:
+                            creat_TreefromDict(self, tree, subsubdic, z, parent=v)
+
+        tree.show()    
     
     
     def flattenPred(self, labels_pred, labels_true): #this function for future use
@@ -689,4 +821,3 @@ class DenMune():
 
         else:
             return 'Max classes numbers are 103 classes'
-            
