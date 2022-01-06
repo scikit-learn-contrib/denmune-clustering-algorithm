@@ -1,14 +1,19 @@
 DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of DenMune. Enjoy the simplicity but the power of DenMune.
 
-[![BSD 3-Clause “New” or “Revised” License](https://img.shields.io/badge/pypi-v0.0.3.9-blue "pypi repository")](https://pypi.org/project/denmune/)
+[![pypi repository](https://img.shields.io/pypi/v/denmune?logo=pypi "pypi repository")](https://pypi.org/project/denmune/)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
 [![Documentation Status](https://readthedocs.org/projects/denmune-docs/badge/?version=latest)](https://denmune-docs.readthedocs.io/en/latest/?badge=latest)
 [![CircleCI](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=svg)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
 [![BSD 3-Clause “New” or “Revised” License](https://img.shields.io/badge/license-BSD-green "BSD 3-Clause “New” or “Revised” License")](https://choosealicense.com/licenses/bsd-3-clause/)
-![dependencies continuously updated” License](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen "dependencies continuously updated")
 [![elsevier publisher](https://img.shields.io/badge/elsevier-published-orange "elsevier publisher")](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927)
 [![mendeley data](https://img.shields.io/badge/mendeley-data-yellowgreen "mendeley data")](https://data.mendeley.com/datasets/b73cw5n43r/3)
+[![interactive jupyter notebooks](https://img.shields.io/badge/notebook-interactive-brightgreen "interactive jupyter notebooks")](#colab)
 
+
+
+This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
+===============
+[![Propagation in DenMune](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://player.vimeo.com/video/663107261?h=08270149a9 "Propagation in DenMune")
 
 
 
@@ -46,7 +51,10 @@ Simply use our repo2docker offered by mybinder.org, which encapsulate the algori
 
 Need to test examples one by one, then here another option. Use colab offered by google to test each example seperately.
 
-here is a list of Google CoLab URL to use
+<a name="colab"></a>
+Here is a list of Google CoLab URL to use the algorithm interactively
+----------------------------------------------------------------------
+
 
 | Dataset | CoLab URL |
 ----------| ---------------------------------------------------------------------------------------------------|
@@ -72,24 +80,11 @@ Rich documentation can be reached at:
 
 
 
-Task List
-====
-- [x] Update Github with the DenMune sourcode
-- [x] create repo2docker repository
-- [x] Create pip Package
-- [x] create colab shared examples
-- [x] create documentation
-- [ ] create conda package
-
-
 
 How to cite
 =====
-If you use auto-sklearn in scientific publications, we would appreciate citations.
+If you use DenMune code in scientific publications, we would appreciate citations.
 
-==DenMune: Density peak based clustering using mutual nearest neighbors==
-Mohame Abbas, Adel El-Zoghabi, and Amin AShoukry
-Pattern Recognition, (2021), 107589, 109
 
 ```bib
 @article{ABBAS2021107589,
@@ -106,3 +101,15 @@ keywords = {Clustering, Mutual neighbors, Dimensionality reduction, Arbitrary sh
 abstract = {Many clustering algorithms fail when clusters are of arbitrary shapes, of varying densities, or the data classes are unbalanced and close to each other, even in two dimensions. A novel clustering algorithm “DenMune” is presented to meet this challenge. It is based on identifying dense regions using mutual nearest neighborhoods of size K, where K is the only parameter required from the user, besides obeying the mutual nearest neighbor consistency principle. The algorithm is stable for a wide range of values of K. Moreover, it is able to automatically detect and remove noise from the clustering process as well as detecting the target clusters. It produces robust results on various low and high dimensional datasets relative to several known state of the art clustering algorithms.}
 }
 ```
+
+
+Task List
+====
+- [x] Update Github with the DenMune sourcode
+- [x] create repo2docker repository
+- [x] Create pip Package
+- [x] create colab shared examples
+- [x] create documentation
+- [ ] create conda package
+
+
