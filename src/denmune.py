@@ -696,7 +696,7 @@ class DenMune():
             else :
                 colors = [palette[x] if x > 0 else ( (0.0, 0.0, 0.0) if x == -1 else (0.9, 0.9, 0.9)) for x in labels] # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
 
-        plt.figure(figsize=(12, 8))
+        # plt.figure(figsize=(12, 8))
         
         if self.prop_step:
             plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
