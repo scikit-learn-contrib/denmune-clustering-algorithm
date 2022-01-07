@@ -17,10 +17,12 @@ Based on the papers:
 Documentation
 ---------------
    Documentation, including tutorials, are available on ReadTheDocs at https://denmune-docs.readthedocs.io/en/latest/. 
-   .. image:: https://denmune-docs.readthedocs.io/en/latest/?badge=latest
-    :target: https://hdbscan.readthedocs.org
+   .. image:: https://readthedocs.org/projects/denmune-docs/badge
+        :target: https://denmune-docs.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+        
     
-    [![Documentation Status](https://readthedocs.org/projects/denmune-docs/badge/?version=latest)](https://denmune-docs.readthedocs.io/en/latest/?badge=latest)
+   
 
 
 
@@ -78,7 +80,7 @@ If you have used this codebase in a scientific publication and wish to cite it, 
 
 ------------
 Licensing
------------
+------------
 
 The DenMune algorithm is 3-clause BSD licensed. Enjoy.
 
