@@ -1,3 +1,55 @@
+============================================
+DenMune: A density-peak clustering algorithm
+============================================
+
+DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of the algorithm. Enjoy the simplicity but the power of DenMune.
+
+
+Based on the papers:
+
+    Mohamed Abbas McInnes, Adel El-Zoghaby, Amin Ahoukry, *DenMune: Density peak based clustering using mutual nearest neighbors*
+    In: Journal of Pattern Recognition, Elsevier, volume 109, number 107589, January 2021
+    
+    DOI: https://doi.org/10.1016/j.patcog.2020.107589
+    
+ 
+
+Documentation
+---------------
+   Documentation, including tutorials, are available on ReadTheDocs at https://denmune-docs.readthedocs.io/en/latest/. 
+   .. image:: https://denmune-docs.readthedocs.io/en/latest/?badge=latest
+    :target: https://hdbscan.readthedocs.org
+    
+    [![Documentation Status](https://readthedocs.org/projects/denmune-docs/badge/?version=latest)](https://denmune-docs.readthedocs.io/en/latest/?badge=latest)
+
+
+
+ 
+ 
+
+
+How to install DenMune
+--------------------------
+
+Simply install DenMune clustering algorithm using pip command from the official Python repository
+
+from the shell run the command
+```shell
+pip install denmune
+```
+from jupyter notebook cell run the command
+```jupyter
+!pip install denmune
+```
+How to use  DenMune
+----------------------
+after installing DenMune, you just need to import it 
+
+```python
+from denmune import DenMune
+```
+
+
 ------
 Citing
 ------
@@ -24,6 +76,13 @@ If you have used this codebase in a scientific publication and wish to cite it, 
       }
    
 
+------------
+Licensing
+-----------
+
+The DenMune algorithm is 3-clause BSD licensed. Enjoy.
+
+
 Task List
 ===========
 - [x] Update Github with the DenMune sourcode
@@ -32,5 +91,6 @@ Task List
 - [x] create colab shared examples
 - [x] create documentation
 - [ ] create conda package
+
 
 
