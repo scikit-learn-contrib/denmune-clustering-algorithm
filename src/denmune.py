@@ -86,8 +86,8 @@ class DenMune():
         self.analyzer["n_points"]["noise"]["type-2"] = 0
         self.analyzer['n_points']["weak"] = {}
         self.analyzer["n_points"]["weak"]["all"] = 0
-        self.analyzer["n_points"]["weak"]["succeeded to merge"]
-        self.analyzer["n_points"]["weak"]["failed to merge"]
+        self.analyzer["n_points"]["weak"]["succeeded to merge"] = 0
+        self.analyzer["n_points"]["weak"]["failed to merge"] = 0
         self.analyzer["n_points"]["size"] = data.shape[0]
         self.analyzer["n_points"]["dim"] = data.shape[1]
         self.analyzer["validity"] = {}
