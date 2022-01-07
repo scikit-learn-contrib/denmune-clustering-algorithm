@@ -93,7 +93,8 @@ The DenMune algorithm is 3-clause BSD licensed. Enjoy.
 
 
 Task List
-===========
+------------
+
 - [x] Update Github with the DenMune sourcode
 - [x] create repo2docker repository
 - [x] Create pip Package
