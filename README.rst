@@ -235,5 +235,6 @@ Task List
    :target: https://colab.research.google.com/drive/1yW0Y14AiQYM6g7X4bJmUb3x3nson7Xup?usp=sharing  
 
 .. |scimagojr| image:: https://www.scimagojr.com/journal_img.php?id=24823
-   :target: https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0  
+   :target: https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0
+  
    
