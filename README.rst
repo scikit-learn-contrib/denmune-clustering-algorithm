@@ -121,7 +121,7 @@ How to run and test
 
 	Here is a list of Google CoLab URL to use the algorithm interactively:
 
-#colab
+.. _colab:
 	+------------------------------+-------------------+        
 	| Aggregation dataset          | |aggregation|     | 
 	+------------------------------+-------------------+
