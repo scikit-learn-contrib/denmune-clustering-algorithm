@@ -38,8 +38,7 @@ DenMune: A density-peak clustering algorithm
     :alt: CircleCI, continuous integration 
     
     
-.. contents:: Table of Contents 
-     
+    
 Based on the paper
 -------------------
 
@@ -119,9 +118,9 @@ How to run and test
      :target: #colab
      :alt: Launch example notebooks in Colaboratory, Google Research
 
-	Here is a list of Google CoLab URL to use the algorithm interactively:
+Here is a list of Google CoLab URL to use the algorithm interactively:
 
-.. _colab:
+
 	+------------------------------+-------------------+        
 	| Aggregation dataset          | |aggregation|     | 
 	+------------------------------+-------------------+
