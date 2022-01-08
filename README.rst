@@ -70,28 +70,31 @@ Simply install DenMune clustering algorithm using pip command from the official 
 .. image:: https://img.shields.io/pypi/v/denmune.svg
     :target: https://pypi.org/project/denmune/
     :alt: PyPI Version
+    
 
 from the shell run the command
 
-.. code:: python
+    .. code:: python
 
-    pip install denmune
+        pip install denmune
 
 
 from jupyter notebook cell run the command
 
-.. code:: jupyter
+    .. code:: jupyter
 
-    !pip install denmune
+        !pip install denmune
+        
 
 How to use  DenMune
 --------------------
 Once DenMune is installed, you just need to import it 
 
-.. code:: python
+    .. code:: python
 
-    from denmune import DenMune
-    # Please note that first denmune (the package) in small letters, while the other one(the class itself) has D and M in capital case.
+        from denmune import DenMune
+        # Please note that first denmune (the package) in small letters, while the other one(the class itself) has D and M in capital case.
+
 
 ------
 Citing
