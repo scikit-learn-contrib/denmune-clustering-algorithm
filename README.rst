@@ -56,14 +56,11 @@ Documentation:
  
 Watch it in action
 -------------------
-    This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
-    
-.. image:: https://github.com/egy1st/denmune-clustering-algorithm/blob/main/images/denmune_propagation.png
-    :target: https://player.vimeo.com/video/663107261?h=08270149a9
-    :alt: Propagation in DenMune      
-    
+This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
 
-    [![Propagation in DenMune]()]( "Propagation in DenMune")
+.. image:: https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/denmune_propagation.png
+ :target: https://player.vimeo.com/video/663107261?h=08270149a9
+ :alt: Propagation in DenMune  
 
 
     
