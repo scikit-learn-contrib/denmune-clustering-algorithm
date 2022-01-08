@@ -2,7 +2,7 @@
 DenMune: A density-peak clustering algorithm
 =============================================
 
-DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of the algorithm. Enjoy the simplicity but the power of DenMune.
+    DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of the algorithm. Enjoy the simplicity but the power of DenMune.
 
 .. image:: https://img.shields.io/pypi/v/denmune.svg
     :target: https://pypi.org/project/denmune/
@@ -56,7 +56,7 @@ Documentation:
  
 Watch it in action
 -------------------
-This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
+    This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
 
 .. image:: https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/denmune_propagation.png
  :target: https://player.vimeo.com/video/663107261?h=08270149a9
@@ -65,7 +65,7 @@ This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
 How to install DenMune
 ------------------------
 
-Simply install DenMune clustering algorithm using pip command from the official Python repository
+    Simply install DenMune clustering algorithm using pip command from the official Python repository
 
 .. image:: https://img.shields.io/pypi/v/denmune.svg
     :target: https://pypi.org/project/denmune/
@@ -126,7 +126,7 @@ If you have used this codebase in a scientific publication and wish to cite it, 
 Licensing
 ------------
 
-The DenMune algorithm is 3-clause BSD licensed. Enjoy.
+    The DenMune algorithm is 3-clause BSD licensed. Enjoy.
 
 .. image:: https://img.shields.io/badge/license-BSD-green
     :target: https://choosealicense.com/licenses/bsd-3-clause/
