@@ -4,9 +4,32 @@ DenMune: A density-peak clustering algorithm
 
 DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of the algorithm. Enjoy the simplicity but the power of DenMune.
 
+.. image:: https://img.shields.io/pypi/v/denmune.svg
+    :target: https://pypi.org/project/denmune/
+    :alt: PyPI Version
+    
+.. image:: https://static.mybinder.org/badge_logo.svg
+    :target: https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD
+    :alt: Launch example notebooks in Binder
+
+
 .. image:: https://readthedocs.org/projects/denmune-docs/badge
     :target: https://denmune-docs.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
+       
+.. image:: https://colab.research.google.com/assets/colab-badge.svg
+    :target: #colab
+    :alt: Launch example notebooks in Colaboratory, Google Research
+    
+.. image:: https://img.shields.io/badge/mendeley-data-yellowgreen
+    :target: https://data.mendeley.com/datasets/b73cw5n43r/4
+    :alt: Research datasets at  Mendeley    
+           
+    
+    
+  
+
+
  
        
    
