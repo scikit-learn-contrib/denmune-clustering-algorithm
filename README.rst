@@ -1,6 +1,6 @@
-============================================
+=============================================
 DenMune: A density-peak clustering algorithm
-============================================
+=============================================
 
 DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of the algorithm. Enjoy the simplicity but the power of DenMune.
 
@@ -54,7 +54,18 @@ Documentation:
     :target: https://denmune-docs.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
  
-       
+Watch it in action
+-------------------
+    This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
+    
+.. image:: https://github.com/egy1st/denmune-clustering-algorithm/blob/main/images/denmune_propagation.png
+    :target: https://player.vimeo.com/video/663107261?h=08270149a9
+    :alt: Propagation in DenMune      
+    
+
+    [![Propagation in DenMune]()]( "Propagation in DenMune")
+
+
     
    
 
