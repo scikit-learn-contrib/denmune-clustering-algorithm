@@ -67,19 +67,26 @@ How to install DenMune
 
 Simply install DenMune clustering algorithm using pip command from the official Python repository
 
+.. image:: https://img.shields.io/pypi/v/denmune.svg
+    :target: https://pypi.org/project/denmune/
+    :alt: PyPI Version
+
 from the shell run the command
 
 .. code:: python
+
     pip install denmune
+
 
 from jupyter notebook cell run the command
 
 .. code:: jupyter
-!pip install denmune
+
+    !pip install denmune
 
 How to use  DenMune
 --------------------
-after installing DenMune, you just need to import it 
+Once DenMune is installed, you just need to import it 
 
 .. code:: python
 
