@@ -12,7 +12,6 @@ DenMune: A density-peak clustering algorithm
     :target: https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD
     :alt: Launch example notebooks in Binder
 
-
 .. image:: https://readthedocs.org/projects/denmune-docs/badge
     :target: https://denmune-docs.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
@@ -42,10 +41,18 @@ DenMune: A density-peak clustering algorithm
 Based on the paper
 -------------------
 
-    Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry, *DenMune: Density peak based clustering using mutual nearest neighbors*
-    In: Journal of Pattern Recognition, Elsevier, volume 109, number 107589, January 2021
++-------------------------------------------------------------------------------------------+-----------------------------+        
+|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                              |                             |
+|*DenMune: Density peak based clustering using mutual nearest neighbors*                    |                             |
+|In: Journal of Pattern Recognition, Elsevier,                                              |                             |
+|volume 109, number 107589, January 2021                                                    |                             |
+|DOI: https://doi.org/10.1016/j.patcog.2020.107589                                          | |scimagojr|                 | 
++-------------------------------------------------------------------------------------------+-----------------------------+
+
     
-    DOI: https://doi.org/10.1016/j.patcog.2020.107589
+    
+  
+    
     
  
 Documentation:
@@ -226,4 +233,7 @@ Task List
    
 .. |spiral| image:: https://colab.research.google.com/assets/colab-badge.svg
    :target: https://colab.research.google.com/drive/1yW0Y14AiQYM6g7X4bJmUb3x3nson7Xup?usp=sharing  
-         
+
+.. |scimagojr| image:: https://www.scimagojr.com/journal_img.php?id=24823
+   :target: https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0  
+   
