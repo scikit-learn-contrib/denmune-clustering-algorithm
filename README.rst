@@ -62,37 +62,29 @@ This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
  :target: https://player.vimeo.com/video/663107261?h=08270149a9
  :alt: Propagation in DenMune  
 
-
-    
-   
-
-
-
- 
- 
-
-
 How to install DenMune
---------------------------
+------------------------
 
 Simply install DenMune clustering algorithm using pip command from the official Python repository
 
 from the shell run the command
-```shell
-pip install denmune
-```
+
+.. code:: python
+    pip install denmune
+
 from jupyter notebook cell run the command
-```jupyter
+
+.. code:: jupyter
 !pip install denmune
-```
+
 How to use  DenMune
-----------------------
+--------------------
 after installing DenMune, you just need to import it 
 
-```python
-from denmune import DenMune
-```
+.. code:: python
 
+    from denmune import DenMune
+    # Please note that first denmune (the package) in small letters, while the other one(the class itself) has D and M in capital case.
 
 ------
 Citing
