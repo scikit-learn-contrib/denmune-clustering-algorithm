@@ -21,18 +21,22 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
     :target: #colab
     :alt: Launch example notebooks in Colaboratory, Google Research
     
-.. image:: https://img.shields.io/badge/mendeley-data-yellowgreen
-    :target: https://data.mendeley.com/datasets/b73cw5n43r/4
+.. image:: https://img.shields.io/badge/elsevier-published-orange
+    :target: https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927
     :alt: Research datasets at  Mendeley    
            
+.. image:: https://img.shields.io/badge/mendeley-data-bluegreen
+    :target: https://data.mendeley.com/datasets/b73cw5n43r/4
+    :alt: Elsevier, journal's article publisher  
     
+.. image:: https://img.shields.io/badge/license-BSD-green
+    :target: https://choosealicense.com/licenses/bsd-3-clause/
+    :alt: BSD 3-Clause “New” or “Revised” License"   
     
-  
-
-
- 
-       
-   
+.. image:: https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=svg
+    :target: https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main
+    :alt: CircleCI, continuous integration     
+     
 Based on the paper
 -------------------
 
@@ -113,6 +117,11 @@ Licensing
 ------------
 
 The DenMune algorithm is 3-clause BSD licensed. Enjoy.
+
+.. image:: https://img.shields.io/badge/license-BSD-green
+    :target: https://choosealicense.com/licenses/bsd-3-clause/
+    :alt: BSD 3-Clause “New” or “Revised” License"    
+   
 
 
 Task List
