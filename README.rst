@@ -24,7 +24,7 @@ DenMune: A density-peak clustering algorithm
      :target: https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset?scriptVersionId=84775816\
      :alt: Launch example notebooks in Kaggle, the workspace where data scientist meet    
     
-.. image:: https://img.shields.io/badge/elsevier-published-orange
+.. image:: https://img.shields.io/badge/zerobytes-documented-orange
     :target: https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927
     :alt: Research datasets at  Mendeley    
            
@@ -61,8 +61,8 @@ Documentation:
    Documentation, including tutorials, are available on ReadTheDocs at https://denmune-docs.readthedocs.io/en/latest/. 
    
    .. image:: https://readthedocs.org/projects/denmune-docs/badge
-    :target: https://denmune-docs.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
+    :target: https://docs.zerobytes.one/denmune/
+    :alt: Documentation at ZeroBytes
  
 Watch it in action
 -------------------
