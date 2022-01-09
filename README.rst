@@ -128,7 +128,7 @@ How to run and test
      
 #. Launch each Example in Kaggle workspace
 
-    If you are a kaggler like me, then this should be best place to test the algorithm with great experince. (in progress ..........)
+    If you are a kaggler like me, then Kaggle, the best workspace where data scientist meet, should fit you to test the algorithm with great experince. (in progress ..........)
   
     .. image:: https://kaggle.com/static/images/open-in-kaggle.svg
      :target: https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset?scriptVersionId=84775816\
