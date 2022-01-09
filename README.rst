@@ -24,13 +24,13 @@ DenMune: A density-peak clustering algorithm
      :target: https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset?scriptVersionId=84775816\
      :alt: Launch example notebooks in Kaggle, the workspace where data scientist meet    
     
-.. image:: https://img.shields.io/badge/zerobytes-documented-orange
+.. image:: https://img.shields.io/badge/elsevier-published-orange
     :target: https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927
-    :alt: Research datasets at  Mendeley    
+    :alt: Elsevier, journal's article publisher 
            
 .. image:: https://img.shields.io/badge/mendeley-data-bluegreen
     :target: https://data.mendeley.com/datasets/b73cw5n43r/4
-    :alt: Elsevier, journal's article publisher  
+    :alt: Research datasets at  Mendeley  
     
 .. image:: https://img.shields.io/badge/license-BSD-green
     :target: https://choosealicense.com/licenses/bsd-3-clause/
