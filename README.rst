@@ -20,6 +20,10 @@ DenMune: A density-peak clustering algorithm
     :target: #colab
     :alt: Launch example notebooks in Colaboratory, Google Research
     
+.. image:: https://kaggle.com/static/images/open-in-kaggle.svg
+     :target: https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset?scriptVersionId=84775816\
+     :alt: Launch example notebooks in Kaggle, the workspace where data scientist meet    
+    
 .. image:: https://img.shields.io/badge/elsevier-published-orange
     :target: https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927
     :alt: Research datasets at  Mendeley    
@@ -50,10 +54,7 @@ Based on the paper
 +-------------------------------------------------------------------------------------------+-----------------------------+
 
     
-    
-  
-    
-    
+      
  
 Documentation:
 ---------------
@@ -124,6 +125,14 @@ How to run and test
     .. image:: https://colab.research.google.com/assets/colab-badge.svg
      :target: #colab
      :alt: Launch example notebooks in Colaboratory, Google Research
+     
+#. Launch each Example in Kaggle workspace
+
+    If you are a kaggler like me, then this should be best place to test the algorithm with great experince. (in progress ..........)
+  
+    .. image:: https://kaggle.com/static/images/open-in-kaggle.svg
+     :target: https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset?scriptVersionId=84775816\
+     :alt: Launch example notebooks in Kaggle, the workspace where data scientist meet
 
 Here is a list of Google CoLab URL to use the algorithm interactively:
 
