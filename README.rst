@@ -60,9 +60,9 @@ Documentation:
 ---------------
    Documentation, including tutorials, are available on ReadTheDocs at https://denmune-docs.readthedocs.io/en/latest/. 
    
-   .. image:: https://readthedocs.org/projects/denmune-docs/badge
+   .. image:: https://img.shields.io/badge/read_the-docs-orange
     :target: https://docs.zerobytes.one/denmune/
-    :alt: Documentation at ZeroBytes
+    :alt: read the documentation
  
 Watch it in action
 -------------------
