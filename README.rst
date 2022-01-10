@@ -12,9 +12,9 @@ DenMune: A density-peak clustering algorithm
     :target: https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD
     :alt: Launch example notebooks in Binder
 
-.. image:: https://readthedocs.org/projects/denmune-docs/badge
+.. image:: https://img.shields.io/badge/read_the-docs-orange
     :target: https://docs.zerobytes.one/denmune/
-    :alt: Documentation status
+    :alt: read the documentation
        
 .. image:: https://colab.research.google.com/assets/colab-badge.svg
     :target: #colab
