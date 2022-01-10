@@ -13,8 +13,8 @@ DenMune: A density-peak clustering algorithm
     :alt: Launch example notebooks in Binder
 
 .. image:: https://readthedocs.org/projects/denmune-docs/badge
-    :target: https://denmune-docs.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
+    :target: https://docs.zerobytes.one/denmune/
+    :alt: Documentation status
        
 .. image:: https://colab.research.google.com/assets/colab-badge.svg
     :target: #colab
