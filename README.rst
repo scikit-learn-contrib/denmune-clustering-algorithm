@@ -91,7 +91,7 @@ from the shell run the command
 
 from jupyter notebook cell run the command
 
-    .. code:: jupyter
+    .. code:: ipython3
 
         !pip install denmune
         
