@@ -58,7 +58,7 @@ Based on the paper
  
 Documentation:
 ---------------
-   Documentation, including tutorials, are available on ReadTheDocs at https://denmune-docs.readthedocs.io/en/latest/. 
+   Documentation, including tutorials, are available on https://docs.zerobytes.one/denmune/
    
    .. image:: https://img.shields.io/badge/read_the-docs-orange
     :target: https://docs.zerobytes.one/denmune/
