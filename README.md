@@ -38,28 +38,34 @@ This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
 
 [![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/denmune_propagation.png)](https://player.vimeo.com/video/663107261?h=08270149a9)
 
-
 How to install DenMune
-====
+------------------------
 Simply install DenMune clustering algorithm using pip command from the official Python repository
 
-from the shell run the command
+[![PyPI Version](https://img.shields.io/pypi/v/denmune.svg)]( https://pypi.org/project/denmune/)
+
+From the shell run the command
+
 ```shell
 pip install denmune
 ```
-from jupyter notebook cell run the command
-```jupyter
+
+From jupyter notebook cell run the command
+
+```ipython3
 !pip install denmune
 ```
+
 How to use  DenMune
-====
-after installing DenMune, you just need to import it 
+--------------------
+Once DenMune is installed, you just need to import it 
 
 ```python
 from denmune import DenMune
 ```
+###### Please note that first denmune (the package) in small letters, while the other one(the class itself) has D and M in capital case.
 
-Please note that first denmune (the package) in small letters, while the other one(the class itself) has D and M in capital case while other letters are small
+
 
 How to run and test
 ======
