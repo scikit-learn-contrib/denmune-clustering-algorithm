@@ -122,12 +122,13 @@ abstract = {Many clustering algorithms fail when clusters are of arbitrary shape
 
 
 Task List
-====
+------------
+
 - [x] Update Github with the DenMune sourcode
 - [x] create repo2docker repository
 - [x] Create pip Package
-- [x] create colab shared examples
+- [x] create CoLab shared examples
 - [x] create documentation
+- [ ] create Kaggle shared examples
 - [ ] create conda package
-
 
