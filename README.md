@@ -79,6 +79,7 @@ How to run and test
 2. Launch each Example in Kaggle workspace
 
    If you are a kaggler like me, then Kaggle, the best workspace where data scientist meet, should fit you to test the algorithm with great experince. (in progress ..........)
+   
    [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset?scriptVersionId=84775816)
   
 3. Launch each Example in Google Research, CoLab
@@ -108,7 +109,7 @@ How to run and test
 
 How to cite
 =====
-If you have used this codebase in a scientific publication and wish to cite it, please use the `Journal of Pattern Recognition article <https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927>`_.
+If you have used this codebase in a scientific publication and wish to cite it, please use the [Journal of Pattern Recognition article](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927)
 
     Mohamed Abbas McInnes, Adel El-Zoghaby, Amin Ahoukry, *DenMune: Density peak based clustering using mutual nearest neighbors*
     In: Journal of Pattern Recognition, Elsevier, volume 109, number 107589.
