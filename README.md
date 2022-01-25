@@ -14,20 +14,30 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 [![BSD 3-Clause “New” or “Revised” License" ](https://img.shields.io/badge/license-BSD-green)](https://choosealicense.com/licenses/bsd-3-clause/)
 [![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=svg)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
 
+Based on the paper
+-------------------
 
+|Paper|Journal|      
+|-------------------------------------------------------------------------------------------|-----------------------------|
+|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                              |                             |
+|*DenMune: Density peak based clustering using mutual nearest neighbors*                    |                             |
+|In: Journal of Pattern Recognition, Elsevier,                                              |                             |
+|volume 109, number 107589, January 2021                                                    |                             |
+|DOI: https://doi.org/10.1016/j.patcog.2020.107589                                          | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0)              | 
 
+Documentation:
+---------------
+   Documentation, including tutorials, are available on https://docs.zerobytes.one/denmune
+   
+   [![read the documentation](https://img.shields.io/badge/read_the-docs-orange)](https://docs.zerobytes.one/denmune/)
+   
+ 
+Watch it in action
+-------------------
+This 30 seconds will tell you how a density-baased algorithm, DenMune propagates:
 
+[![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/denmune_propagation.png)](https://player.vimeo.com/video/663107261?h=08270149a9)
 
-
-This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
-===============
-[![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/denmune_propagation.png)](https://player.vimeo.com/video/663107261?h=08270149a9 "Propagation in DenMune")
-
-
-
-Association
-======
-This code is associated with the research published in Elsvier Pattern Recognition Journal under DOI: https://doi.org/10.1016/j.patcog.2020.107589
 
 How to install DenMune
 ====
