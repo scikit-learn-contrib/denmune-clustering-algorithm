@@ -1,13 +1,21 @@
-DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of DenMune. Enjoy the simplicity but the power of DenMune.
+DenMune: A density-peak clustering algorithm
+=============================================
 
-[![pypi repository](https://img.shields.io/pypi/v/denmune?logo=pypi "pypi repository")](https://pypi.org/project/denmune/)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
+DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of the algorithm. Enjoy the simplicity but the power of DenMune.
+
+
+[![PyPI Version](https://img.shields.io/pypi/v/denmune.svg)]( https://pypi.org/project/denmune/)
+[![Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
 [![read the documentation](https://img.shields.io/badge/read_the-docs-orange)](https://docs.zerobytes.one/denmune/)
-[![CircleCI](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=svg)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
-[![BSD 3-Clause “New” or “Revised” License](https://img.shields.io/badge/license-BSD-green "BSD 3-Clause “New” or “Revised” License")](https://choosealicense.com/licenses/bsd-3-clause/)
-[![elsevier publisher](https://img.shields.io/badge/elsevier-published-orange "elsevier publisher")](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927)
-[![mendeley data](https://img.shields.io/badge/mendeley-data-yellowgreen "mendeley data")](https://data.mendeley.com/datasets/b73cw5n43r/3)
-[![interactive jupyter notebooks](https://img.shields.io/badge/notebook-interactive-brightgreen "interactive jupyter notebooks")](#colab)
+[![Launch example notebooks in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab)
+[![Launch example notebooks in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset?scriptVersionId=84775816)
+[![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927)
+[![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)](https://data.mendeley.com/datasets/b73cw5n43r/4)
+[![BSD 3-Clause “New” or “Revised” License" ](https://img.shields.io/badge/license-BSD-green)](https://choosealicense.com/licenses/bsd-3-clause/)
+[![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=svg)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
+
+
+
 
 
 
