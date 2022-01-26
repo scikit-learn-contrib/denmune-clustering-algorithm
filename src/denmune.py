@@ -83,7 +83,6 @@ class DenMune():
                   train_truth=None, test_truth=None, 
                   file_2d ='_temp_2d', k_nearest=1, 
                   rgn_tsne=False, prop_step=0,
-                  verpose=True
                   ):     
          
         if train_data is None:
@@ -153,7 +152,7 @@ class DenMune():
         self.analyzer["validity"] = {}
         self.analyzer["validity"]['train'] = {}
         self.analyzer["validity"]['test'] = {}
-        self.analyzer["validity"]['augmented'] = {}
+        #self.analyzer["validity"]['augmented'] = {}
         self.analyzer["n_clusters"] = {}
         self.analyzer["n_clusters"]["actual"] = 0
         self.analyzer["n_clusters"]["detected"] = 0
@@ -179,7 +178,6 @@ class DenMune():
         
         self.alg_name = 'denmune'
         self.prop_step = prop_step
-        self.verpose = verpose
         self.data = data
         self.train_data = train_data
         self.test_data = test_data
@@ -524,6 +522,7 @@ class DenMune():
     def fit_predict(self,
                     validate=True, show_plots=True,
                     show_noise=True, data_type=None,
+                    show_analyzer=True
                     ):
         validity_scores = []
         solution_file = 'solution.txt'
@@ -549,39 +548,44 @@ class DenMune():
         else:
             self.labels_pred = self.train_pred 
 
-
         if self.data_indicator >= 3: 
-            print ("Plotting dataset Groundtruth")
+
+            if show_analyzer:
+                print ("Plotting dataset Groundtruth")
             self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='ground')
 
         if validate and self.data_indicator >= 1: 
-
+      
            if self.data_indicator >= 3:
                validity_scores = self.validate_Clusters(data_type='train') 
          
-           print ('Plotting train data')  
+           if show_analyzer:
+               print ('Plotting train data')  
            self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='train')
-           if self.verpose:
-               self.show_Analyzer(root='Validating train data')   
+           if show_analyzer:
+              self.show_Analyzer(root='Validating train data')   
 
            if self.data_indicator == 15:
                validity_scores = self.validate_Clusters(data_type='test') 
-               if self.verpose:
+               if show_analyzer:
                    self.show_Analyzer(self.analyzer['validity']['test'], root='Validating test data')
           
            if self.data_indicator > 3:
-               print ('Plotting test data')  
+               if show_analyzer:
+                   print ('Plotting test data')  
                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='test')
-          
+
+           """"
            if self.data_indicator == 15:
                validity_scores = self.validate_Clusters(data_type='augmented') 
-               if self.verpose:
+               if show_analyzer:
                    self.show_Analyzer(self.analyzer['validity']['augmented'], root='Validating augmented data (train & test)')
-
+           
            if self.data_indicator > 3: 
-               print ('Plotting augmented data (train & test)')  
+               if show_analyzer:
+                   print ('Plotting augmented data (train & test)')  
                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='augmented')
-         
+           """
         return labels_dic, self.analyzer['validity']
         
 
@@ -824,7 +828,7 @@ class DenMune():
               elif data_type == 'augmented':
                 plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
               elif data_type == 'ground':
-                plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')  
+                 plt.scatter(self.data[:self.train_sz].T[0], self.data[:self.train_sz].T[1], c=colors, **plot_kwds, marker='o')
         
           self.colors = colors
           frame = plt.gca()
@@ -846,7 +850,7 @@ class DenMune():
         for i in range(data_len):
             for n in range(d):
                 mystr += str(round(dim_two[i][n],6))
-                if (n  < d-1):mystr += self.delimiter
+                if (n  < d-1):mystr += ','
                 if (n  == d-1): mystr += '\n'
 
         
