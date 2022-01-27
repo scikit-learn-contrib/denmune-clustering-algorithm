@@ -93,7 +93,7 @@ How to run and test
    | Dataset | Kaggle URL |
    ----------| ---------------------------------------------------------------------------------------------------|
    | Non-groundtruth datasets |[![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detecting-non-groundtruth-datasets) |
-   | 2D Shape datasets |[![2D Shapes dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://colab.research.google.com/drive/1EaqTPCRHSuTKB-qEbnWHpGKFj6XytMIk?usp=sharing) |
+   | 2D Shape datasets |[![2D Shapes dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detection-of-2d-shape-datasets) |
    | MNIST dataset |[![MNIST dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/get-97-using-simple-yet-one-parameter-algorithm) |
    |Iris dataset | [![iris dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset) |
    |The beayty of propagation | [![The beayty of propagation](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-clusters-propagation) |
