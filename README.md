@@ -71,7 +71,7 @@ Interact with the algorithm
 ---------------------------
 [![chameleon datasets](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/chameleon_detection.png)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing)
 
-this notebook allows you interact with the algorithm in amny asspects:
+This notebook allows you interact with the algorithm in many asspects:
 - you can choose which dataset to cluster (among 4 chameleon datasets)
 - you can decide which number of k-nearest neighbor to use 
 - show noise on/off; thus you can invesitigate noise detected by the algorithm
