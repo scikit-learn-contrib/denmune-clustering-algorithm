@@ -19,11 +19,11 @@ Based on the paper
 
 |Paper|Journal|      
 |-------------------------------------------------------------------------------------------|-----------------------------|
-|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                              |                             |
-|*DenMune: Density peak based clustering using mutual nearest neighbors*                    |                             |
-|In: Journal of Pattern Recognition, Elsevier,                                              |                             |
-|volume 109, number 107589, January 2021                                                    |                             |
-|DOI: https://doi.org/10.1016/j.patcog.2020.107589                                          | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0)              | 
+|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                              <td rowspan="5">[![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0)   </td>                           
+|*DenMune: Density peak based clustering using mutual nearest neighbors*                                           
+|In: Journal of Pattern Recognition, Elsevier,                                                                 
+|volume 109, number 107589, January 2021                                                                      
+|DOI: https://doi.org/10.1016/j.patcog.2020.107589                                                 
 
 Documentation:
 ---------------
@@ -67,6 +67,16 @@ from denmune import DenMune
 
 
 
+Interact with the algorithm
+---------------------------
+[![chameleon datasets](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/chameleon_detection.png)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing)
+
+This notebook allows you interact with the algorithm in many asspects:
+- you can choose which dataset to cluster (among 4 chameleon datasets)
+- you can decide which number of k-nearest neighbor to use 
+- show noise on/off; thus you can invesitigate noise detected by the algorithm
+- show analyzer on/off
+
 How to run and test
 --------------------
 
@@ -78,9 +88,15 @@ How to run and test
 
 2. Launch each Example in Kaggle workspace
 
-   If you are a kaggler like me, then Kaggle, the best workspace where data scientist meet, should fit you to test the algorithm with great experince. (in progress ..........)
+   If you are a kaggler like me, then Kaggle, the best workspace where data scientist meet, should fit you to test the algorithm with great experince. 
    
-   [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset?scriptVersionId=84775816)
+   | Dataset | Kaggle URL |
+   ----------| ---------------------------------------------------------------------------------------------------|
+   | Non-groundtruth datasets |[![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detecting-non-groundtruth-datasets) |
+   | 2D Shape datasets |[![2D Shapes dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detection-of-2d-shape-datasets) |
+   | MNIST dataset |[![MNIST dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/get-97-using-simple-yet-one-parameter-algorithm) |
+   |Iris dataset | [![iris dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset) |
+   |The beayty of propagation | [![The beayty of propagation](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-clusters-propagation) |
   
 3. Launch each Example in Google Research, CoLab
 
@@ -94,17 +110,11 @@ How to run and test
 
    | Dataset | CoLab URL |
    ----------| ---------------------------------------------------------------------------------------------------|
-   | Aggregation dataset | https://colab.research.google.com/drive/1K-Uqp-fmETmic4VZoZvV5t5XgRTzf4KO?usp=sharing |
-   | Chameleon DS1 | https://colab.research.google.com/drive/1LixPie1pZdWHxF1CXJIlwh1uTq-4iFYp?usp=sharing |
-   | Chameleon DS2 | https://colab.research.google.com/drive/16Ve-1JJCgTQrX7ITJjDrSXWmwT9tG1AA?usp=sharing |
-   | Chameleon DS3 | https://colab.research.google.com/drive/1mU5tV1sYWJpxqwyG-uA0yHMPZW7AzNuc?usp=sharing |
-   | Chameleon DS4 | https://colab.research.google.com/drive/1bDlsp1lVTDDXrDM8uWvo0_UY6ek73vUu?usp=sharing |
-   | Compound dataset | https://colab.research.google.com/drive/1TOv1mCLvAN24qvkh1f9H-ZERDgfoSMP6?usp=sharing |
-   | Iris dataset | https://colab.research.google.com/drive/1nKql57Xh7xVVu6NpTbg3vRdRg42R7hjm?usp=sharing |
-   | Jain dataset | https://colab.research.google.com/drive/1QJxXoZtoaMi3gvagZ2FPUtri4qbXOGl9?usp=sharing |
-   | Mouse dataset | https://colab.research.google.com/drive/11IpU1yaVaCa4H-d9yuwkjzywBfEfQGIp?usp=sharing |
-   | Pathbased dataset| https://colab.research.google.com/drive/17DofhHs5I2xyhnNPJ6RWETDf7Te71TKm?usp=sharing |
-   | Spiral dataset|https://colab.research.google.com/drive/1yW0Y14AiQYM6g7X4bJmUb3x3nson7Xup?usp=sharing |
+   | Chameleon datasets |[![Chameleon dataset]( https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing) |
+   | 2D Shape datasets |[![2D Shapes dataset]( https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1EaqTPCRHSuTKB-qEbnWHpGKFj6XytMIk?usp=sharing) |
+   | MNIST dataset |[![MNIST dataset](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1a9FGHRA6IPc5jhLOV46iEbpUeQXptSJp?usp=sharing) |
+   | Non-groundtruth datasets |[![Non-groundtruth datasets](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1d17ejQ83aUy0CZIeQ7bHTugSC9AjJ2mU?usp=sharing) |
+  
 
 
 How to cite
