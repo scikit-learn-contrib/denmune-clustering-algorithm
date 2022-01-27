@@ -19,11 +19,11 @@ Based on the paper
 
 |Paper|Journal|      
 |-------------------------------------------------------------------------------------------|-----------------------------|
-|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                              |                             |
-|*DenMune: Density peak based clustering using mutual nearest neighbors*                    |                             |
-|In: Journal of Pattern Recognition, Elsevier,                                              |                             |
-|volume 109, number 107589, January 2021                                                    |                             |
-|DOI: https://doi.org/10.1016/j.patcog.2020.107589                                          | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0)              | 
+|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                              <td rowspan="5">[![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0)   </td>                           
+|*DenMune: Density peak based clustering using mutual nearest neighbors*                                           
+|In: Journal of Pattern Recognition, Elsevier,                                                                 
+|volume 109, number 107589, January 2021                                                                      
+|DOI: https://doi.org/10.1016/j.patcog.2020.107589                                                 
 
 Documentation:
 ---------------
@@ -76,7 +76,7 @@ This notebook allows you interact with the algorithm in many asspects:
 - you can decide which number of k-nearest neighbor to use 
 - show noise on/off; thus you can invesitigate noise detected by the algorithm
 - show analyzer on/off
-- 
+
 How to run and test
 --------------------
 
