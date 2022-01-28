@@ -158,6 +158,6 @@ Task List
 - [x] Create pip Package
 - [x] create CoLab shared examples
 - [x] create documentation
-- [ ] create Kaggle shared examples
+- [x] create Kaggle shared examples
 - [ ] create conda package
 
