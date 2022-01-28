@@ -36,7 +36,7 @@ Watch it in action
 -------------------
 This 30 seconds will tell you how a density-baased algorithm, DenMune propagates:
 
-[![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/denmune_propagation.png)](https://player.vimeo.com/video/663107261?h=08270149a9)
+[![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/propagation.gif)]()
 
 How to install DenMune
 ------------------------
@@ -158,6 +158,6 @@ Task List
 - [x] Create pip Package
 - [x] create CoLab shared examples
 - [x] create documentation
-- [ ] create Kaggle shared examples
+- [x] create Kaggle shared examples
 - [ ] create conda package
 
