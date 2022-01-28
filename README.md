@@ -36,7 +36,10 @@ Watch it in action
 -------------------
 This 30 seconds will tell you how a density-baased algorithm, DenMune propagates:
 
+[![interact with the propagation](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o-tP3uvDGjxBOGYkir1lnbr74sZ06e0U?usp=sharing)
+
 [![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/propagation.gif)]()
+
 
 How to install DenMune
 ------------------------
