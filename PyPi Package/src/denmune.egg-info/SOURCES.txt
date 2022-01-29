@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/denmune/__init__.py
+src/denmune/denmune.py
+src/denmune.egg-info/PKG-INFO
+src/denmune.egg-info/SOURCES.txt
+src/denmune.egg-info/dependency_links.txt
+src/denmune.egg-info/requires.txt
+src/denmune.egg-info/top_level.txt

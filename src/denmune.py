@@ -556,7 +556,7 @@ class DenMune():
            if self.data_indicator == 15:
                validity_scores = self.validate_Clusters(data_type='test') 
                if show_analyzer:
-                   self.analyzer["validity"]['test'] = {}
+                   #self.analyzer["validity"]['test'] = {}
                    self.show_Analyzer(self.analyzer['validity']['test'], root='Validating test data')
           
            if self.data_indicator > 3:
@@ -764,8 +764,6 @@ class DenMune():
        
         fake_clusters = 0 #otlier = -1 and weak points that fail to merge (noise) = 0
         
-        """"""
-        min_label = unique_labels.min()
         i=  0
         for n in (unique_labels):
 
@@ -775,9 +773,7 @@ class DenMune():
             else:
                 fake_clusters+=1
               
-
-    
-        self.analyzer["n_clusters"]["detected"]=   num_of_clusters - fake_clusters  
+        self.analyzer["n_clusters"]["detected"]=  num_of_clusters - fake_clusters  
         
         return  labels       
                 
@@ -827,19 +823,24 @@ class DenMune():
               elif data_type == 'augmented':
                 plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
               elif data_type == 'ground':
-                 plt.scatter(self.data[:self.train_sz].T[0], self.data[:self.train_sz].T[1], c=colors, **plot_kwds, marker='o')
+                  if self.data_indicator == 15:
+                      plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
+                  else:
+                      plt.scatter(self.data[:self.train_sz].T[0], self.data[:self.train_sz].T[1], c=colors, **plot_kwds, marker='o')
         
           self.colors = colors
           frame = plt.gca()
           frame.axes.get_xaxis().set_visible(False)
           frame.axes.get_yaxis().set_visible(False)
           if show_plots:
+            if self.prop_step:
+              prop_folder = 'propagation'
+              if not os.path.exists (prop_folder):
+                os.mkdir(prop_folder)
+              plt.savefig(prop_folder + '/' + str(self.prop_step)+'.png')
             plt.show()
             #plt.clf()    # this is a must to clear figures if you plot continously
-            if self.prop_step:
-                if not os.path.exists ('propagation'):
-                    os.mkdir('propagation')
-                plt.savefig('propagation/' + str(self.prop_step)+'.png')
+         
         return 0
     
     
@@ -896,4 +897,6 @@ class DenMune():
                             #print('4', 'key:', z , 'value:', subsubdic[z], 'parent:', v)
                             creat_TreefromDict(self, tree, subsubdic, z, parent=v)
         tree.show()    
+ 
+        
         

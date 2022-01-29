@@ -1,3 +1,20 @@
+Metadata-Version: 2.1
+Name: denmune
+Version: 0.0.9.1
+Summary: This is the package for DenMune Clustering Algorithm published in paper https://doi.org/10.1016/j.patcog.2020.107589
+Home-page: https://github.com/egy1st/denmune-clustering-algorithm
+Author: Mohamed Ali Abbas
+Author-email: mohamed.alyabbas@outlook.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 DenMune: A density-peak clustering algorithm
 =============================================
 
@@ -169,4 +186,6 @@ Task List
 - [x] create documentation
 - [x] create Kaggle shared examples
 - [ ] create conda package
+
+
 
