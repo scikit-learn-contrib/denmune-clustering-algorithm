@@ -41,6 +41,16 @@ This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
 [![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/propagation.gif)]()
 
 
+
+When less means more
+--------------------
+Most calssic clustering algorithms fail in detecting complex where clusters are of different size, shape, density, and being exist in noisy data.
+Recently, a density-based algorithm named DenMune showed great ability in detecting complex shapes even in noisy data. it can detect number of clusters automatically, detect both pre-identified-noise and post-identified-noise automatically and removing them.
+
+It can achieve accuracy reach 100% in most classic pattern problems, achieve 97% in MNIST dataset. A great advantage of this algorithm is being single-parameter algorithm. All you need is to set number of k-nearest neighbor and the algorithm will care about the rest. Being Non-senstive to changes in k, make it robust and stable.
+
+Keep in mind, the algorithm reduce any N-D dataset to only 2-D dataset initially, so it is a good benefit of this algorithm is being always to plot your data and explore it which make this algorithm a good candidate for data exploration. Finally, the algorithm comes with neat package for visualizing data, validating it and analyze the whole clustering process.
+
 How to install DenMune
 ------------------------
 Simply install DenMune clustering algorithm using pip command from the official Python repository
@@ -67,6 +77,37 @@ Once DenMune is installed, you just need to import it
 from denmune import DenMune
 ```
 ###### Please note that first denmune (the package) in small letters, while the other one(the class itself) has D and M in capital case.
+
+
+Read data
+-----------
+
+There are four possible cases of data:
+- only train data without labels
+- only labeld train data
+- labeled train data in addition to test data without labels
+- labeled train data in addition to labeled test data
+
+
+```python
+#=============================================
+# First scenario: train data without labels 
+# ============================================
+
+data_path = 'datasets/denmune/chameleon/'  
+dataset = "t7.10k.csv" 
+data_file = data_path + dataset 
+
+# train data without labels
+X_train = pd.read_csv(data_file, sep=',', header=None)
+
+knn = 39 # k-nearest neighbor, the only parameter required by the algorithm
+
+dm = DenMune(train_data=X_train, k_nearest=knn)
+labels, validity = dm.fit_predict(show_analyzer=False, show_noise=True)
+
+```
+![]()
 
 
 
