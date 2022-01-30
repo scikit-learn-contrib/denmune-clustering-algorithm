@@ -107,6 +107,8 @@ dm = DenMune(train_data=X_train, k_nearest=knn)
 labels, validity = dm.fit_predict(show_analyzer=False, show_noise=True)
 
 ```
+This is an intutive dataset which has no groundtruth provided
+
 ![t710](https://raw.githubusercontent.com/egy1st/images/main/clustering/t710.png)
 
 ```python
@@ -129,10 +131,54 @@ dm = DenMune(train_data=X_train, train_truth= y_train, k_nearest=knn)
 labels, validity = dm.fit_predict(show_analyzer=False, show_noise=True)
 ```
 Datset groundtruth
-![aggregation]https://github.com/egy1st/images/blob/main/clustering/aggregation_ground.png)
+
+![aggregation groundtruth](https://github.com/egy1st/images/blob/main/clustering/aggregation_ground.png)
 
 Datset as detected by DenMune at k=6
-![aggregation]https://github.com/egy1st/images/blob/main/clustering/aggregation_6.png)
+
+![aggregation by DenMune](https://github.com/egy1st/images/blob/main/clustering/aggregation_6.png)
+
+
+```python
+#=================================================================
+# Third scenario: train data with labels in addition to test data
+# ================================================================
+
+data_path = 'datasets/denmune/pendigits/'  
+file_2d = data_path + 'pendigits-2d.csv'
+
+# train data with labels 
+X_train = pd.read_csv(data_path + 'train.csv', sep=',', header=None)
+y_train = X_train.iloc[:, -1]
+X_train = X_train.drop(X_train.columns[-1], axis=1)
+
+# test data without labels
+X_test = pd.read_csv(data_path + 'test.csv', sep=',', header=None) 
+X_test = X_test.drop(X_test.columns[-1], axis=1)
+
+knn = 50 # k-nearest neighbor, the only parameter required by the algorithm
+
+dm = DenMune(train_data=X_train, train_truth= y_train,
+             test_data= X_test, 
+             k_nearest=knn)
+labels, validity = dm.fit_predict(show_analyzer=True, show_noise=True)
+```
+dataset groundtruth
+
+![pendigits groundtruth](https://raw.githubusercontent.com/egy1st/images/main/clustering/pendigits_ground.png)
+
+
+dataset ad detected by DenMune at k=50
+
+![pendigits groundtruth](https://github.com/egy1st/images/blob/main/clustering/pendigits_50.png)
+
+test data as predicted by DenMune on training the dataset at k=50
+
+![pendigits groundtruth](https://raw.githubusercontent.com/egy1st/images/main/clustering/pendigits_test_50.png)
+
+
+
+
 Interact with the algorithm
 ---------------------------
 [![chameleon datasets](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/chameleon_detection.png)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing)
