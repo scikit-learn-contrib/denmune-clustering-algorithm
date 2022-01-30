@@ -180,11 +180,53 @@ test data as predicted by DenMune on training the dataset at k=50
 The Analyzer
 -------------
 
+The algorithm provide an intutive tool called analyzer, once called it will provide you with in-depth analysis on how your clustering results perform.
 
 ![DenMune Analyzer](https://raw.githubusercontent.com/egy1st/images/main/clustering/analyzer.png)
 
 
+The Stability
+--------------
+
+The algorithm is only single-parameter, even more it not sensitive to changes in that parameter, k. You may guess that from the following chart yourself. This is of greate benfit for you as a data exploration analyst. You can simply explore the dataset using an arbitrary k. Being Non-senstive to changes in k, make it robust and stable.
+
 ![DenMune Stability](https://raw.githubusercontent.com/egy1st/images/main/clustering/stability.png)
+
+
+Reveal the propagation
+-----------------------
+
+one of the top performing feature in this algorithm is enabling you to watch how your clusters propagate to construct the final output clusters.
+just use the parameter 'prop_step' as in the following example:
+
+```python
+dataset = "t7.10k" #
+data_path = 'datasets/denmune/chameleon/' 
+
+# train file
+data_file = data_path + dataset +'.csv'
+X_train = pd.read_csv(data_file, sep=',', header=None)
+
+
+from itertools import chain
+
+# Denmune's Paramaters
+knn = 39 # number of k-nearest neighbor, the only parameter required by the algorithm
+
+# create list of differnt snapshots of the propagation
+snapshots = chain(range(2,5), range(5,50,10), range(50, 100, 25), range(100,500,100), range(500,2000, 250), range(1000,5500, 500))
+
+from IPython.display import clear_output
+for snapshot in snapshots:
+    print ("itration", snapshot )
+    clear_output(wait=True)
+    dm = DenMune(train_data=X_train, k_nearest=knn, rgn_tsne=False, prop_step=snapshot)
+    labels, validity = dm.fit_predict(show_analyzer=False, show_noise=False)  
+```
+
+    
+
+
 
 
 Interact with the algorithm
