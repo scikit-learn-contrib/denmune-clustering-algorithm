@@ -177,6 +177,14 @@ test data as predicted by DenMune on training the dataset at k=50
 ![pendigits groundtruth](https://raw.githubusercontent.com/egy1st/images/main/clustering/pendigits_test_50.png)
 
 
+The Analyzer
+-------------
+
+
+![DenMune Analyzer](https://raw.githubusercontent.com/egy1st/images/main/clustering/analyzer.png)
+
+
+![DenMune Stability](https://raw.githubusercontent.com/egy1st/images/main/clustering/stability.png)
 
 
 Interact with the algorithm
