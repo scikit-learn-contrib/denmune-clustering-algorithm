@@ -107,10 +107,32 @@ dm = DenMune(train_data=X_train, k_nearest=knn)
 labels, validity = dm.fit_predict(show_analyzer=False, show_noise=True)
 
 ```
-![]()
+![t710](https://raw.githubusercontent.com/egy1st/images/main/clustering/t710.png)
 
+```python
+#=============================================
+# Second scenario: train data with labels 
+# ============================================
 
+data_path = 'datasets/denmune/shapes/'  
+dataset = "aggregation.csv"
+data_file = data_path + dataset 
 
+# train data with labels
+X_train = pd.read_csv(data_file, sep=',', header=None)
+y_train = X_train.iloc[:, -1]
+X_train = X_train.drop(X_train.columns[-1], axis=1)  
+
+knn = 6 # k-nearest neighbor, the only parameter required by the algorithm
+
+dm = DenMune(train_data=X_train, train_truth= y_train, k_nearest=knn)
+labels, validity = dm.fit_predict(show_analyzer=False, show_noise=True)
+```
+Datset groundtruth
+![aggregation]https://github.com/egy1st/images/blob/main/clustering/aggregation_ground.png)
+
+Datset as detected by DenMune at k=6
+![aggregation]https://github.com/egy1st/images/blob/main/clustering/aggregation_6.png)
 Interact with the algorithm
 ---------------------------
 [![chameleon datasets](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/chameleon_detection.png)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing)
