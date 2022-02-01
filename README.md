@@ -184,6 +184,11 @@ The algorithm provide an intutive tool called analyzer, once called it will prov
 
 ![DenMune Analyzer](https://raw.githubusercontent.com/egy1st/images/main/clustering/analyzer.png)
 
+Noise Detection
+----------------
+
+The Scalability
+----------------
 
 The Stability
 --------------
@@ -224,11 +229,7 @@ for snapshot in snapshots:
     labels, validity = dm.fit_predict(show_analyzer=False, show_noise=False)  
 ```
 
-    
-
-
-
-
+ 
 Interact with the algorithm
 ---------------------------
 [![chameleon datasets](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/chameleon_detection.png)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing)
