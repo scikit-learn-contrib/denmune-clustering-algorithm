@@ -254,13 +254,19 @@ How to run and test
    
    | Dataset | Kaggle URL |
    ----------| ---------------------------------------------------------------------------------------------------|
+   |When less means more |[![When less means more](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/when-less-means-more) |
    | Non-groundtruth datasets |[![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detecting-non-groundtruth-datasets) |
    | 2D Shape datasets |[![2D Shapes dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detection-of-2d-shape-datasets) |
    | MNIST dataset |[![MNIST dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/get-97-using-simple-yet-one-parameter-algorithm) |
    |Iris dataset | [![iris dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset) |
+   |Training MNIST to get 97% | [![Training MNIST to get 97%](https://kaggle.com/static/images/open-in-kaggle.svg)](  https://www.kaggle.com/egyfirst/training-mnist-dataset-to-get-97) |
+   | Noise detection | [![Noise detection](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/noise-detection) |
    |The beauty of propagation | [![The beauty of propagation](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-clusters-propagation) |
    |Snapshots of propagation | [![The beauty of propagation](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/beauty-of-propagation-part3) |
-   |Snapshots of propagation | [![The beauty of propagation](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/beauty-of-propagation-part3) |
+   |Scalability | [![Scalability](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/scalability-vs-speed) |
+   |Stability | [![Stability](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/stability-vs-number-of-nearest-neighbor) |
+   |k-nearest-evolution | [![k-nearest-evolution](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/k-nearest-evolution) |
+   
 3. Launch each Example in Google Research, CoLab
 
    Need to test examples one by one, then here another option. Use colab offered by google research to test each example individually.
