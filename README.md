@@ -273,6 +273,7 @@ How to run and test
 
    | Dataset | CoLab URL |
    ----------| ---------------------------------------------------------------------------------------------------|
+    |How to use it|[![How to use it](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1J_uKdhZ3z1KeY0-wJ7Ruw2PZSY1orKQm)|
    | Chameleon datasets |[![Chameleon dataset]( https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing) |
    | 2D Shape datasets |[![2D Shapes dataset]( https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1EaqTPCRHSuTKB-qEbnWHpGKFj6XytMIk?usp=sharing) |
    | MNIST dataset |[![MNIST dataset](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1a9FGHRA6IPc5jhLOV46iEbpUeQXptSJp?usp=sharing) |
