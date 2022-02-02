@@ -219,6 +219,13 @@ labels, validity = dm.fit_predict(show_noise=False)
    ----------| ---------------------------------------------------------------------------------------------------|
 | ![noisy data](https://raw.githubusercontent.com/egy1st/images/main/clustering/noisy_data.png) | ![clean data](https://raw.githubusercontent.com/egy1st/images/main/clustering/clean_data.png) |
 
+
+K-nearest Evolution
+-------------------
+
+![knn evolution](https://raw.githubusercontent.com/egy1st/images/main/clustering/knn_vs_noise.png)
+
+
 The Scalability
 ----------------
 
