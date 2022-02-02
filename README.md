@@ -191,6 +191,17 @@ The algorithm provide an intutive tool called analyzer, once called it will prov
 Noise Detection
 ----------------
 
+DenMune detects noise and outlier automatically, no need to any further work from your side.
+
+- It plots pre-identified noise in black
+- It plots post-identified noise in light grey
+
+You can set show_noise parameter to False.
+
+| noisy dataset | clean dataset |
+   ----------| ---------------------------------------------------------------------------------------------------|
+| [![noisy data](https://raw.githubusercontent.com/egy1st/images/main/clustering/noisy_data.png)] | [![clean data](https://raw.githubusercontent.com/egy1st/images/main/clustering/clean_data.png)]
+
 The Scalability
 ----------------
 
