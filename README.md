@@ -222,6 +222,7 @@ labels, validity = dm.fit_predict(show_noise=False)
 
 K-nearest Evolution
 -------------------
+The following chart shows the evolution of pre and post identified noise in correspondence to increase of number of knn. Also, detected number of clusters is analyzed in the same chart in relation with both types of identified  noise.
 
 ![knn evolution](https://raw.githubusercontent.com/egy1st/images/main/clustering/knn_vs_noise.png)
 
