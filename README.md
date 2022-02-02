@@ -27,9 +27,9 @@ Based on the paper
 
 Documentation:
 ---------------
-   Documentation, including tutorials, are available on https://docs.zerobytes.one/denmune
+   Documentation, including tutorials, are available on ReadTheDocas
    
-   [![read the documentation](https://img.shields.io/badge/read_the-docs-orange)](https://docs.zerobytes.one/denmune/)
+   [![read the documentation](https://img.shields.io/badge/read_the-docs-orange)](https://denmune.readthedocs.io/en/latest/?badge=latest)
    
  
 Watch it in action
