@@ -27,7 +27,7 @@ Based on the paper
 
 Documentation:
 ---------------
-   Documentation, including tutorials, are available on ReadTheDocas
+   Documentation, including tutorials, are available on https://denmune.readthedocs.io
    
    [![read the documentation](https://img.shields.io/badge/read_the-docs-orange)](https://denmune.readthedocs.io/en/latest/?badge=latest)
    
