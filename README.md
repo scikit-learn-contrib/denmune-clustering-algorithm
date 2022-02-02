@@ -189,13 +189,14 @@ def __init__ (self,
                   rgn_tsne=False, prop_step=0,
                   ):    
 ```
+
 - train_data:
-   data used for training the algorithm
-   default: None. It should be provided by the use, otherwise an error will riase.
+>   data used for training the algorithm
+>   default: None. It should be provided by the use, otherwise an error will riase.
    
 - train_truth:
-   labels of training data
-   default: None
+--   labels of training data
+--   default: None
    
 - test_data:
    data used for testing the algorithm
