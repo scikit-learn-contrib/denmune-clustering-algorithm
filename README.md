@@ -234,6 +234,21 @@ def __init__ (self,
                     ):
 ```
 
+- validate:
+  - validate data on/off according to five measures integrated with DenMUne (Accuracy. F1-score, NMI index, AMI index, ARI index)
+  - default: True
+
+- show_plots:
+  - show/hide plotting of data
+  - default: True
+
+- show_noise:
+  - show/hide noise and outlier
+  - default: True
+
+- show_analyzer:
+  - show/hide the analyzer
+  - default: True
 
 The Analyzer
 -------------
