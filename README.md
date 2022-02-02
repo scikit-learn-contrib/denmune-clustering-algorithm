@@ -331,6 +331,8 @@ The Scalability
 | data  size: 98000 | time: 298.7046 seconds |
 | data  size: 99000 | time: 257.563 seconds |
 
+| ![noisy data](https://raw.githubusercontent.com/egy1st/images/main/clustering/scalability.png)
+
 The Stability
 --------------
 
