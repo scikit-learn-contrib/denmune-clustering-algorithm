@@ -179,7 +179,7 @@ test data as predicted by DenMune on training the dataset at k=50
 
 Algorithm's Parameters
 -----------------------
-First: Parameters used within the init class
+First: Parameters used within the initialization of the DenMune class
 
 ```python
 def __init__ (self,
@@ -191,8 +191,8 @@ def __init__ (self,
 ```
 
 - train_data:
- - data used for training the algorithm
- - default: None. It should be provided by the use, otherwise an error will riase.
+  - data used for training the algorithm
+  - default: None. It should be provided by the use, otherwise an error will riase.
    
 - train_truth:
   - labels of training data
