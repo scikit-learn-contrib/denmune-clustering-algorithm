@@ -198,9 +198,9 @@ DenMune detects noise and outlier automatically, no need to any further work fro
 
 You can set show_noise parameter to False.
 
-| noisy dataset | clean dataset |
+| noisy data | clean data |
    ----------| ---------------------------------------------------------------------------------------------------|
-| [![noisy data](https://raw.githubusercontent.com/egy1st/images/main/clustering/noisy_data.png)] | [![clean data](https://raw.githubusercontent.com/egy1st/images/main/clustering/clean_data.png)]
+| [![noisy data](https://raw.githubusercontent.com/egy1st/images/main/clustering/noisy_data.png) | [![clean data](https://raw.githubusercontent.com/egy1st/images/main/clustering/clean_data.png) |
 
 The Scalability
 ----------------
