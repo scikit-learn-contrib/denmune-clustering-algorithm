@@ -191,37 +191,37 @@ def __init__ (self,
 ```
 
 - train_data:
->   data used for training the algorithm
->   default: None. It should be provided by the use, otherwise an error will riase.
+ - data used for training the algorithm
+ - default: None. It should be provided by the use, otherwise an error will riase.
    
 - train_truth:
---   labels of training data
---   default: None
+  - labels of training data
+  - default: None
    
 - test_data:
-   data used for testing the algorithm
-- 
+  - data used for testing the algorithm
+ 
 - test_truth:
-   labels of testing data
-   default: None
+  - labels of testing data
+  - default: None
 
 - k_nearest:
-   number of nearest neighbor
-   default: 10. It should be provided by the user.
+  - number of nearest neighbor
+  - default: 10. It should be provided by the user.
    
 - rgn_tsn: 
-   when set to True: It will regenerate the reduced 2-D version of the N-D dataset each time the algorithm run. 
-   when set to False: It will generate the reduced 2-D version of the N-D dataset first time only, then will reuse the saved exist file
-   default: True
+  - when set to True: It will regenerate the reduced 2-D version of the N-D dataset each time the algorithm run. 
+  - when set to False: It will generate the reduced 2-D version of the N-D dataset first time only, then will reuse the saved exist file
+  - default: True
    
 - file_2d: name (include location) of file used save/load the reduced 2-d version
-   if empty: the algorithm will create temporary file named '_temp_2d'
-   default: _temp_2d
+  - if empty: the algorithm will create temporary file named '_temp_2d'
+  - default: _temp_2d
    
 - prop_step:
-  sise of increment used in showing the clustering propagation.
-  leave this parameter set to 0, the default value, unless you are willing intentionally to enter the propagation mode.
-  default: 0
+  - size of increment used in showing the clustering propagation.
+  - leave this parameter set to 0, the default value, unless you are willing intentionally to enter the propagation mode.
+  - default: 0
 
    
   
