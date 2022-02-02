@@ -198,6 +198,23 @@ DenMune detects noise and outlier automatically, no need to any further work fro
 
 You can set show_noise parameter to False.
 
+
+```python
+
+# let us show noise
+
+m = DenMune(train_data=X_train, k_nearest=knn)
+labels, validity = dm.fit_predict(show_noise=True)
+```
+
+```python
+
+# let us show clean data by removing noise
+
+m = DenMune(train_data=X_train, k_nearest=knn)
+labels, validity = dm.fit_predict(show_noise=False)
+```
+
 | noisy data | clean data |
    ----------| ---------------------------------------------------------------------------------------------------|
 | ![noisy data](https://raw.githubusercontent.com/egy1st/images/main/clustering/noisy_data.png) | ![clean data](https://raw.githubusercontent.com/egy1st/images/main/clustering/clean_data.png) |
