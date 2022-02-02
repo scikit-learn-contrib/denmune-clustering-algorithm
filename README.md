@@ -179,7 +179,7 @@ test data as predicted by DenMune on training the dataset at k=50
 
 Algorithm's Parameters
 -----------------------
-First: Parameters used within the initialization of the DenMune class
+1. Parameters used within the initialization of the DenMune class
 
 ```python
 def __init__ (self,
@@ -224,8 +224,16 @@ def __init__ (self,
   - default: 0
 
    
-  
-   
+2. Parameters used within the fit_predict function:
+
+```python
+ def fit_predict(self,
+                    validate=True, show_plots=True,
+                    show_noise=True, data_type=None,
+                    show_analyzer=True
+                    ):
+```
+
 
 The Analyzer
 -------------
