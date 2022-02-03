@@ -13,6 +13,7 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 [![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)](https://data.mendeley.com/datasets/b73cw5n43r/4)
 [![BSD 3-Clause “New” or “Revised” License" ](https://img.shields.io/badge/license-BSD-green)](https://choosealicense.com/licenses/bsd-3-clause/)
 [![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=svg)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fegy1st%2Fdenmune-clustering-algorithm.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fegy1st%2Fdenmune-clustering-algorithm?ref=badge_shield)
 
 Based on the paper
 -------------------
@@ -498,3 +499,6 @@ Task List
 - [ ] Unit tests (coverage: xx%)
 - [ ] create conda package
 
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fegy1st%2Fdenmune-clustering-algorithm.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fegy1st%2Fdenmune-clustering-algorithm?ref=badge_large)
