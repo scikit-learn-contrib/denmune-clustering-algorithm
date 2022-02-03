@@ -472,8 +472,8 @@ Task List
 - [x] create CoLab shared examples
 - [x] create documentation
 - [x] create Kaggle shared examples
-- [ ] PEP8 compliant
-- [ ] Continuous integration
+- [x] PEP8 compliant
+- [x] Continuous integration
 - [ ] scikit-learn compatible
 - [ ] Unit tests (coverage: xx%)
 - [ ] create conda package
