@@ -361,6 +361,7 @@ for snapshot in snapshots:
     labels, validity = dm.fit_predict(show_analyzer=False, show_noise=False)  
 ```
 
+[![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/propagation.gif)]()
  
 Interact with the algorithm
 ---------------------------
