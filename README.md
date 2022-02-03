@@ -132,11 +132,11 @@ labels, validity = dm.fit_predict(show_analyzer=False, show_noise=True)
 ```
 Datset groundtruth
 
-![aggregation groundtruth](https://github.com/egy1st/images/blob/main/clustering/aggregation_ground.png)
+![aggregation groundtruth](https://raw.githubusercontent.com/egy1st/images/main/clustering/aggregation_ground.png)
 
 Datset as detected by DenMune at k=6
 
-![aggregation train](https://github.com/egy1st/images/blob/main/clustering/aggregation_6.png)
+![aggregation train](https://raw.githubusercontent.com/egy1st/images/main/clustering/aggregation_6.png)
 
 
 ```python
