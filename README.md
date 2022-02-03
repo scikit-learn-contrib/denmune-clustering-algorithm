@@ -290,6 +290,24 @@ labels, validity = dm.fit_predict(show_noise=False)
 | ![noisy data](https://raw.githubusercontent.com/egy1st/images/main/clustering/noisy_data.png) | ![clean data](https://raw.githubusercontent.com/egy1st/images/main/clustering/clean_data.png) |
 
 
+Validatation
+--------------
+You can get your validation results using 3 methods
+
+- by showing the Analyzer
+- extract values from the validity returned list from fit_predict function
+- extract values from the Analyzer dictionary
+-
+There are  five validity measures built-in the algorithm, which are:
+
+- ACC, Accuracy
+- F1 score
+- NMI index (Normalized Mutual Information)
+- AMI index (Adjusted Mutual Information)
+- ARI index (Adjusted Rand Index)
+
+![Validation snapshot](https://raw.githubusercontent.com/egy1st/images/main/clustering/validation.png) 
+
 K-nearest Evolution
 -------------------
 The following chart shows the evolution of pre and post identified noise in correspondence to increase of number of knn. Also, detected number of clusters is analyzed in the same chart in relation with both types of identified  noise.
