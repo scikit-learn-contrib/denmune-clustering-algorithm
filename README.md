@@ -375,7 +375,7 @@ This notebook allows you interact with the algorithm in many asspects:
 How to run and test
 --------------------
 
-1. Launch Examples in Repo2Dpcker Binder
+1. Launch Examples in Repo2Docker Binder
 
    Simply use our repo2docker offered by mybinder.org, which encapsulate the algorithm and all required data in one virtual machine instance. All jupter notebooks examples found in this repository will be also available to you in action to practice in this respo2docer. Thanks mybinder.org, you made it possible!
 
