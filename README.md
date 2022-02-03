@@ -170,7 +170,7 @@ dataset groundtruth
 
 dataset as detected by DenMune at k=50
 
-![pendigits train](https://github.com/egy1st/images/blob/main/clustering/pendigits_50.png)
+![pendigits train](https://raw.githubusercontent.com/egy1st/images/main/clustering/pendigits_50.png)
 
 test data as predicted by DenMune on training the dataset at k=50
 
