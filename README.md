@@ -44,7 +44,7 @@ This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
 
 When less means more
 --------------------
-Most calssic clustering algorithms fail in detecting complex where clusters are of different size, shape, density, and being exist in noisy data.
+Most calssic clustering algorithms fail in detecting complex clusters where clusters are of different size, shape, density, and being exist in noisy data.
 Recently, a density-based algorithm named DenMune showed great ability in detecting complex shapes even in noisy data. it can detect number of clusters automatically, detect both pre-identified-noise and post-identified-noise automatically and removing them.
 
 It can achieve accuracy reach 100% in most classic pattern problems, achieve 97% in MNIST dataset. A great advantage of this algorithm is being single-parameter algorithm. All you need is to set number of k-nearest neighbor and the algorithm will care about the rest. Being Non-senstive to changes in k, make it robust and stable.
