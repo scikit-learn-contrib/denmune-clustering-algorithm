@@ -136,7 +136,7 @@ Datset groundtruth
 
 Datset as detected by DenMune at k=6
 
-![aggregation by DenMune](https://github.com/egy1st/images/blob/main/clustering/aggregation_6.png)
+![aggregation train](https://github.com/egy1st/images/blob/main/clustering/aggregation_6.png)
 
 
 ```python
@@ -294,7 +294,7 @@ K-nearest Evolution
 -------------------
 The following chart shows the evolution of pre and post identified noise in correspondence to increase of number of knn. Also, detected number of clusters is analyzed in the same chart in relation with both types of identified  noise.
 
-![knn evolution](https://raw.githubusercontent.com/egy1st/images/main/clustering/knn_vs_noise.png)
+![knn evolution chart](https://raw.githubusercontent.com/egy1st/images/main/clustering/knn_vs_noise.png)
 
 
 The Scalability
@@ -327,7 +327,7 @@ The Stability
 
 The algorithm is only single-parameter, even more it not sensitive to changes in that parameter, k. You may guess that from the following chart yourself. This is of greate benfit for you as a data exploration analyst. You can simply explore the dataset using an arbitrary k. Being Non-senstive to changes in k, make it robust and stable.
 
-![DenMune Stability](https://raw.githubusercontent.com/egy1st/images/main/clustering/stability.png)
+![DenMune Stability chart](https://raw.githubusercontent.com/egy1st/images/main/clustering/stability.png)
 
 
 Reveal the propagation
@@ -393,7 +393,7 @@ How to run and test
    | MNIST dataset kaggle|[![MNIST dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/get-97-using-simple-yet-one-parameter-algorithm) |
    |Iris dataset kaggle| [![iris dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset) |
    |Training MNIST to get 97% | [![Training MNIST to get 97%](https://kaggle.com/static/images/open-in-kaggle.svg)](  https://www.kaggle.com/egyfirst/training-mnist-dataset-to-get-97) |
-   | Noise detection | [![Noise detection](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/noise-detection) |
+   | Noise detection - kaggle | [![Noise detection](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/noise-detection) |
    |The beauty of propagation - kaggle | [![The beauty of propagation](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-clusters-propagation) |
    |The beauty of propagation part2 | [![The beauty of propagation part 2](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-propagation-part2) |
    |Snapshots of propagation -kaggle | [![The beauty of propagation](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/beauty-of-propagation-part3) |
