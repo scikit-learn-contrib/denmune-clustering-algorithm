@@ -474,7 +474,7 @@ Task List
 - [x] create Kaggle shared examples
 - [x] PEP8 compliant
 - [x] Continuous integration
-- [ ] scikit-learn compatible
+- [x] scikit-learn compatible
 - [ ] Unit tests (coverage: xx%)
 - [ ] create conda package
 
