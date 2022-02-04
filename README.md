@@ -6,7 +6,7 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 
 [![PyPI Version](https://img.shields.io/pypi/v/denmune.svg)]( https://pypi.org/project/denmune/)
 [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
-[![read the documentation](https://img.shields.io/badge/read_the-docs-orange)](https://docs.zerobytes.one/denmune/)
+[![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest)
 [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab)
 [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset?scriptVersionId=84775816)
 [![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927)
@@ -27,9 +27,9 @@ Based on the paper
 
 Documentation:
 ---------------
-   Documentation, including tutorials, are available on https://docs.zerobytes.one/denmune
+   Documentation, including tutorials, are available on https://denmune.readthedocs.io
    
-   [![read the documentation](https://img.shields.io/badge/read_the-docs-orange)](https://docs.zerobytes.one/denmune/)
+   [![read the documentation](https://img.shields.io/badge/read_the-docs-orange)](https://denmune.readthedocs.io/en/latest/?badge=latest)
    
  
 Watch it in action
@@ -44,7 +44,7 @@ This 30 seconds will tell you how a density-baased algorithm, DenMune propagates
 
 When less means more
 --------------------
-Most calssic clustering algorithms fail in detecting complex where clusters are of different size, shape, density, and being exist in noisy data.
+Most calssic clustering algorithms fail in detecting complex clusters where clusters are of different size, shape, density, and being exist in noisy data.
 Recently, a density-based algorithm named DenMune showed great ability in detecting complex shapes even in noisy data. it can detect number of clusters automatically, detect both pre-identified-noise and post-identified-noise automatically and removing them.
 
 It can achieve accuracy reach 100% in most classic pattern problems, achieve 97% in MNIST dataset. A great advantage of this algorithm is being single-parameter algorithm. All you need is to set number of k-nearest neighbor and the algorithm will care about the rest. Being Non-senstive to changes in k, make it robust and stable.
@@ -132,11 +132,11 @@ labels, validity = dm.fit_predict(show_analyzer=False, show_noise=True)
 ```
 Datset groundtruth
 
-![aggregation groundtruth](https://github.com/egy1st/images/blob/main/clustering/aggregation_ground.png)
+![aggregation groundtruth](https://raw.githubusercontent.com/egy1st/images/main/clustering/aggregation_ground.png)
 
 Datset as detected by DenMune at k=6
 
-![aggregation by DenMune](https://github.com/egy1st/images/blob/main/clustering/aggregation_6.png)
+![aggregation train](https://raw.githubusercontent.com/egy1st/images/main/clustering/aggregation_6.png)
 
 
 ```python
@@ -168,14 +168,88 @@ dataset groundtruth
 ![pendigits groundtruth](https://raw.githubusercontent.com/egy1st/images/main/clustering/pendigits_ground.png)
 
 
-dataset ad detected by DenMune at k=50
+dataset as detected by DenMune at k=50
 
-![pendigits groundtruth](https://github.com/egy1st/images/blob/main/clustering/pendigits_50.png)
+![pendigits train](https://raw.githubusercontent.com/egy1st/images/main/clustering/pendigits_50.png)
 
 test data as predicted by DenMune on training the dataset at k=50
 
-![pendigits groundtruth](https://raw.githubusercontent.com/egy1st/images/main/clustering/pendigits_test_50.png)
+![pendigits test](https://raw.githubusercontent.com/egy1st/images/main/clustering/pendigits_test_50.png)
 
+
+Algorithm's Parameters
+-----------------------
+1. Parameters used within the initialization of the DenMune class
+
+```python
+def __init__ (self,
+                  train_data=None, test_data=None,
+                  train_truth=None, test_truth=None, 
+                  file_2d ='_temp_2d', k_nearest=10, 
+                  rgn_tsne=False, prop_step=0,
+                  ):    
+```
+
+- train_data:
+  - data used for training the algorithm
+  - default: None. It should be provided by the use, otherwise an error will riase.
+   
+- train_truth:
+  - labels of training data
+  - default: None
+   
+- test_data:
+  - data used for testing the algorithm
+ 
+- test_truth:
+  - labels of testing data
+  - default: None
+
+- k_nearest:
+  - number of nearest neighbor
+  - default: 10. It should be provided by the user.
+   
+- rgn_tsn: 
+  - when set to True: It will regenerate the reduced 2-D version of the N-D dataset each time the algorithm run. 
+  - when set to False: It will generate the reduced 2-D version of the N-D dataset first time only, then will reuse the saved exist file
+  - default: True
+   
+- file_2d: name (include location) of file used save/load the reduced 2-d version
+  - if empty: the algorithm will create temporary file named '_temp_2d'
+  - default: _temp_2d
+   
+- prop_step:
+  - size of increment used in showing the clustering propagation.
+  - leave this parameter set to 0, the default value, unless you are willing intentionally to enter the propagation mode.
+  - default: 0
+
+   
+2. Parameters used within the fit_predict function:
+
+```python
+ def fit_predict(self,
+                    validate=True,
+                    show_plots=True,
+                    show_noise=True, 
+                    show_analyzer=True
+                    ):
+```
+
+- validate:
+  - validate data on/off according to five measures integrated with DenMUne (Accuracy. F1-score, NMI index, AMI index, ARI index)
+  - default: True
+
+- show_plots:
+  - show/hide plotting of data
+  - default: True
+
+- show_noise:
+  - show/hide noise and outlier
+  - default: True
+
+- show_analyzer:
+  - show/hide the analyzer
+  - default: True
 
 The Analyzer
 -------------
@@ -187,15 +261,91 @@ The algorithm provide an intutive tool called analyzer, once called it will prov
 Noise Detection
 ----------------
 
+DenMune detects noise and outlier automatically, no need to any further work from your side.
+
+- It plots pre-identified noise in black
+- It plots post-identified noise in light grey
+
+You can set show_noise parameter to False.
+
+
+```python
+
+# let us show noise
+
+m = DenMune(train_data=X_train, k_nearest=knn)
+labels, validity = dm.fit_predict(show_noise=True)
+```
+
+```python
+
+# let us show clean data by removing noise
+
+m = DenMune(train_data=X_train, k_nearest=knn)
+labels, validity = dm.fit_predict(show_noise=False)
+```
+
+| noisy data | clean data |
+   ----------| ---------------------------------------------------------------------------------------------------|
+| ![noisy data](https://raw.githubusercontent.com/egy1st/images/main/clustering/noisy_data.png) | ![clean data](https://raw.githubusercontent.com/egy1st/images/main/clustering/clean_data.png) |
+
+
+Validatation
+--------------
+You can get your validation results using 3 methods
+
+- by showing the Analyzer
+- extract values from the validity returned list from fit_predict function
+- extract values from the Analyzer dictionary
+-
+There are  five validity measures built-in the algorithm, which are:
+
+- ACC, Accuracy
+- F1 score
+- NMI index (Normalized Mutual Information)
+- AMI index (Adjusted Mutual Information)
+- ARI index (Adjusted Rand Index)
+
+![Validation snapshot](https://raw.githubusercontent.com/egy1st/images/main/clustering/validation.png) 
+
+K-nearest Evolution
+-------------------
+The following chart shows the evolution of pre and post identified noise in correspondence to increase of number of knn. Also, detected number of clusters is analyzed in the same chart in relation with both types of identified  noise.
+
+![knn evolution chart](https://raw.githubusercontent.com/egy1st/images/main/clustering/knn_vs_noise.png)
+
+
 The Scalability
 ----------------
+|    data size     |  time               |
+|------------------| ------------------- |
+| data  size: 5000 | time: 2.3139 seconds |
+| data  size: 10000 | time: 5.8752 seconds |
+| data  size: 15000 | time: 12.4535 seconds |
+| data  size: 20000 | time: 18.8466 seconds |
+| data  size: 25000 | time: 28.992 seconds |
+| data  size: 30000 | time: 39.3166 seconds |
+| data  size: 35000 | time: 39.4842 seconds |
+| data  size: 40000 | time: 63.7649 seconds |
+| data  size: 45000 | time: 73.6828 seconds |
+| data  size: 50000 | time: 86.9194 seconds |
+| data  size: 55000 | time: 90.1077 seconds |
+| data  size: 60000 | time: 125.0228 seconds |
+| data  size: 65000 | time: 149.1858 seconds |
+| data  size: 70000 | time: 177.4184 seconds |
+| data  size: 75000 | time: 204.0712 seconds |
+| data  size: 80000 | time: 220.502 seconds |
+| data  size: 85000 | time: 251.7625 seconds |
+| data  size: 100000 | time: 257.563 seconds |
+
+| ![noisy data chart](https://raw.githubusercontent.com/egy1st/images/main/clustering/scalability.png)
 
 The Stability
 --------------
 
 The algorithm is only single-parameter, even more it not sensitive to changes in that parameter, k. You may guess that from the following chart yourself. This is of greate benfit for you as a data exploration analyst. You can simply explore the dataset using an arbitrary k. Being Non-senstive to changes in k, make it robust and stable.
 
-![DenMune Stability](https://raw.githubusercontent.com/egy1st/images/main/clustering/stability.png)
+![DenMune Stability chart](https://raw.githubusercontent.com/egy1st/images/main/clustering/stability.png)
 
 
 Reveal the propagation
@@ -229,6 +379,7 @@ for snapshot in snapshots:
     labels, validity = dm.fit_predict(show_analyzer=False, show_noise=False)  
 ```
 
+[![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/propagation.gif)]()
  
 Interact with the algorithm
 ---------------------------
@@ -243,7 +394,7 @@ This notebook allows you interact with the algorithm in many asspects:
 How to run and test
 --------------------
 
-1. Launch Examples in Repo2Dpcker Binder
+1. Launch Examples in Repo2Docker Binder
 
    Simply use our repo2docker offered by mybinder.org, which encapsulate the algorithm and all required data in one virtual machine instance. All jupter notebooks examples found in this repository will be also available to you in action to practice in this respo2docer. Thanks mybinder.org, you made it possible!
 
@@ -255,19 +406,20 @@ How to run and test
    
    | Dataset | Kaggle URL |
    ----------| ---------------------------------------------------------------------------------------------------|
-   |When less means more |[![When less means more](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/when-less-means-more) |
-   | Non-groundtruth datasets |[![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detecting-non-groundtruth-datasets) |
-   | 2D Shape datasets |[![2D Shapes dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detection-of-2d-shape-datasets) |
-   | MNIST dataset |[![MNIST dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/get-97-using-simple-yet-one-parameter-algorithm) |
-   |Iris dataset | [![iris dataset](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset) |
-   |Training MNIST to get 97% | [![Training MNIST to get 97%](https://kaggle.com/static/images/open-in-kaggle.svg)](  https://www.kaggle.com/egyfirst/training-mnist-dataset-to-get-97) |
-   | Noise detection | [![Noise detection](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/noise-detection) |
-   |The beauty of propagation | [![The beauty of propagation](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-clusters-propagation) |
-   |The beauty of propagation part2 | [![The beauty of propagation part 2](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-propagation-part2) |
-   |Snapshots of propagation | [![The beauty of propagation](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/beauty-of-propagation-part3) |
-   |Scalability | [![Scalability](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/scalability-vs-speed) |
-   |Stability | [![Stability](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/stability-vs-number-of-nearest-neighbor) |
-   |k-nearest-evolution | [![k-nearest-evolution](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/k-nearest-evolution) |
+   |When less means more - kaggle |[![When less means more - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/when-less-means-more) |
+   |Non-groundtruth datasets - kaggle|[![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detecting-non-groundtruth-datasets) |
+   |2D Shape datasets - kaggle|[![2D Shape datasets - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detection-of-2d-shape-datasets) |
+   |MNIST dataset kaggle|[![MNIST dataset - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/get-97-using-simple-yet-one-parameter-algorithm) |
+   |Iris dataset kaggle| [![iris dataset - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset) |
+   |Training MNIST to get 97%| [![Training MNIST to get 97%](https://kaggle.com/static/images/open-in-kaggle.svg)](  https://www.kaggle.com/egyfirst/training-mnist-dataset-to-get-97) |
+   |Noise detection - kaggle| [![Noise detection - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/noise-detection) |
+   |Validation - kaggle| [![Validation - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/validate-in-5-built-in-validity-insexes) |
+   |The beauty of propagation - kaggle| [![The beauty of propagation - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-clusters-propagation) |
+   |The beauty of propagation part2 - kaggle | [![The beauty of propagation part 2 - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-propagation-part2) |
+   |Snapshots of propagation -kaggle| [![The beauty of propagation - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/beauty-of-propagation-part3) |
+   |Scalability kaggle| [![Scalability - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/scalability-vs-speed) |
+   |Stability - kaggle| [![Stability - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/stability-vs-number-of-nearest-neighbor) |
+   |k-nearest-evolution - kaggle| [![k-nearest-evolution - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/k-nearest-evolution) |
    
 3. Launch each Example in Google Research, CoLab
 
@@ -281,19 +433,20 @@ How to run and test
 
    | Dataset | CoLab URL |
    ----------| ---------------------------------------------------------------------------------------------------|
-    |How to use it|[![How to use it](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1J_uKdhZ3z1KeY0-wJ7Ruw2PZSY1orKQm)|
-   | Chameleon datasets |[![Chameleon dataset]( https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing) |
-   | 2D Shape datasets |[![2D Shapes dataset]( https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1EaqTPCRHSuTKB-qEbnWHpGKFj6XytMIk?usp=sharing) |
-   | MNIST dataset |[![MNIST dataset](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1a9FGHRA6IPc5jhLOV46iEbpUeQXptSJp?usp=sharing) |
-   | iris dataset |[![iris dataset](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nKql57Xh7xVVu6NpTbg3vRdRg42R7hjm?usp=sharing) |
-    | Get 97% by training MNIST dataset|[![Get 97% by training MNIST dataset](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1NeOtXEQY94oD98Ufbh3IhTHnnYwIA659) |
-   | Non-groundtruth datasets |[![Non-groundtruth datasets](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1d17ejQ83aUy0CZIeQ7bHTugSC9AjJ2mU?usp=sharing) |
-    | Noise detection |[![Noise detection ](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1Bp3c-cJfjLWxupmrBJ_6Q4-nqIfZcII4) |
-   |How it propagates|[![interact with the propagation](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o-tP3uvDGjxBOGYkir1lnbr74sZ06e0U?usp=sharing)|
-   |Snapshots of propagation|[![snapshots of the propagation](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vPXNKa8Rf3TnqDHSD3YSWl3g1iNSqjl2?usp=sharing)|
-   |Scalability|[![Scalability](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1d55wkBndLLapO7Yx1ePHhE8mL61j9-TH?usp=sharing)|
-   |Stability vs number of nearest neighbors|[![Stability vs number of nearest neighbors](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17VgVRMFBWvkSIH1yA3tMl6UQ7Eu68K2l?usp=sharing)|
-    |k-nearest-evolution|[![k-nearest-evolution](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1DZ-CQPV3WwJSiaV3-rjwPwmXw4RUh8Qj)|
+    |How to use it - colab|[![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1J_uKdhZ3z1KeY0-wJ7Ruw2PZSY1orKQm)|
+   |Chameleon datasets - colab|[![Chameleon datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing) |
+   |2D Shape datasets - colab|[![2D Shape datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1EaqTPCRHSuTKB-qEbnWHpGKFj6XytMIk?usp=sharing) |
+   |MNIST dataset - colab|[![MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1a9FGHRA6IPc5jhLOV46iEbpUeQXptSJp?usp=sharing) |
+   |iris dataset - colab|[![iris dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nKql57Xh7xVVu6NpTbg3vRdRg42R7hjm?usp=sharing) |
+    |Get 97% by training MNIST dataset - colab|[![Get 97% by training MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1NeOtXEQY94oD98Ufbh3IhTHnnYwIA659) |
+   |Non-groundtruth datasets - colab|[![Non-groundtruth datasets - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1d17ejQ83aUy0CZIeQ7bHTugSC9AjJ2mU?usp=sharing) |
+    |Noise detection - colab|[![Noise detection - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1Bp3c-cJfjLWxupmrBJ_6Q4-nqIfZcII4) |
+     |Validation - colab|[![Validation - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/13_EVaQOv_QiNmQiMWJAcFFHPJHGCrQLe) |
+   |How it propagates - colab|[![How it propagates - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o-tP3uvDGjxBOGYkir1lnbr74sZ06e0U?usp=sharing)|
+   |Snapshots of propagation - colab|[![snapshots of the propagation - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vPXNKa8Rf3TnqDHSD3YSWl3g1iNSqjl2?usp=sharing)|
+   |Scalability - colab|[![Scalability - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1d55wkBndLLapO7Yx1ePHhE8mL61j9-TH?usp=sharing)|
+   |Stability vs number of nearest neighbors - colab|[![Stability vs number of nearest neighbors - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17VgVRMFBWvkSIH1yA3tMl6UQ7Eu68K2l?usp=sharing)|
+    |k-nearest-evolution - colab|[![k-nearest-evolution - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1DZ-CQPV3WwJSiaV3-rjwPwmXw4RUh8Qj)|
   
 
 
@@ -339,5 +492,9 @@ Task List
 - [x] create CoLab shared examples
 - [x] create documentation
 - [x] create Kaggle shared examples
+- [x] PEP8 compliant
+- [x] Continuous integration
+- [x] scikit-learn compatible
+- [ ] Unit tests (coverage: xx%)
 - [ ] create conda package
 
