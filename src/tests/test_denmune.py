@@ -1,5 +1,4 @@
 import numpy as np
-from sklearn_extra.cluster import KMedoids
 from sklearn.datasets import make_blobs
 from denmune import DenMune
 
