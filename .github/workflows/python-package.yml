@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.6", "3.7", "3.8", "3.9"]
+        python-version: ["3.6"]
 
     steps:
     - uses: actions/checkout@v2
@@ -25,6 +25,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+        CODECOV_TOKEN: 'a4d6a0d3-8b50-4164-8270-c3da50caa3bc'
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
