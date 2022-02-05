@@ -27,7 +27,7 @@ jobs:
       uses: codecov/codecov-action@v2
       with:
         token: 'a4d6a0d3-8b50-4164-8270-c3da50caa3bc'
-        files: coverage/reports/coverage.xml
+        files: ./coverage.xml
         env_vars: OS,PYTHON
         fail_ci_if_error: false
         flags: unittests
