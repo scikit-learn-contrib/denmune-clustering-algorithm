@@ -25,7 +25,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-        token: $a4d6a0d3-8b50-4164-8270-c3da50caa3bc # not required for public repos
+        token: a4d6a0d3-8b50-4164-8270-c3da50caa3bc # not required for public repos
         files: ./coverage1.xml,./coverage2.xml # optional
         flags: unittests # optional
         name: codecov-umbrella # optional
