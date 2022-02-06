@@ -14,7 +14,7 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 [![BSD 3-Clause “New” or “Revised” License" ](https://img.shields.io/badge/license-BSD-green)](https://choosealicense.com/licenses/bsd-3-clause/)
 [![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=shield)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
 [![codecov](https://codecov.io/gh/egy1st/denmune-clustering-algorithm/branch/main/graph/badge.svg?token=E2ZY0DSUM2)](https://codecov.io/gh/egy1st/denmune-clustering-algorithm)
-[![Python \[3.6 3.7 3.8 3.9\]](https://github.com/egy1st/denmune-clustering-algorithm/actions/workflows/python-package.yml/badge.svg)](https://github.com/egy1st/denmune-clustering-algorithm/actions/workflows/python-package.yml)
+[![tested on Python [3.6 3.7 3.8 3.9]](https://github.com/egy1st/denmune-clustering-algorithm/actions/workflows/python-package.yml/badge.svg)](https://github.com/egy1st/denmune-clustering-algorithm/actions/workflows/python-package.yml)
 
 Based on the paper
 -------------------
