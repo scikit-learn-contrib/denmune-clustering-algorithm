@@ -38,11 +38,11 @@ jobs:
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
-          command: pytest
+          command: echo 'hello world'
 
       - run:
           name: Test
-          command: npm run test
+          command: pytest
           when: always
       - codecov/upload:
           file: ./coverage/lcov.info    
