@@ -32,7 +32,7 @@ jobs:
     steps:
       - codecov/upload:
          file: coverage.xml
-         token: a4d6a0d38b5041648270c3da50caa3bc
+         token: fce1be9536c54c8083c1fe9fa8539dae
       - checkout
       
       - python/install-packages:
