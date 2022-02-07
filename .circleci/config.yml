@@ -31,11 +31,11 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       - codecov/upload:
-         file: coverage.xml
-         token: fce1be95-36c5-4c80-83c1-fe9fa8539dae
+         token: 'fce1be95-36c5-4c80-83c1-fe9fa8539dae'
+         file: ./coverage.xml
       - checkout
       
-      
+
       - python/install-packages:
           pkg-manager: pip
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
