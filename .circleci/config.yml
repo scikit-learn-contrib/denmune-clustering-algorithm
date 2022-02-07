@@ -9,7 +9,7 @@ orbs:
   # Orb commands and jobs help you with common scripting around a language/tool
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
-  codecov: codecov/codecov@2.0.0
+  codecov: codecov/codecov@3.0.0
   python: circleci/python@1.2
   
 
@@ -37,20 +37,18 @@ jobs:
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
           
       - run:
-          name: Run tests
-          # This assumes pytest is installed via the install-package step above
-          command: echo 'hello world'
-
-      - run:
-          name: Test
+          name: Coverage pyTest
           command: |
               coverage run -m pytest
               coverage report
               coverage html
               coverage xml
 
+      - store_test_results:
+         path: test-results
+
       - codecov/upload
-   
+
       - store_artifacts:
           path: htmlcov
         
