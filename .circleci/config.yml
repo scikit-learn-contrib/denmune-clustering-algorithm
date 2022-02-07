@@ -31,7 +31,6 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       - codecov/upload:
-         token: 'fce1be95-36c5-4c80-83c1-fe9fa8539dae'
          file: ./coverage.xml
       - checkout
       
