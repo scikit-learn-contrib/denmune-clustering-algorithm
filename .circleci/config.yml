@@ -32,7 +32,7 @@ jobs:
     steps:
       - checkout
       - codecov/upload:
-         file: coverage.xml
+         file: /home/circleci/project/coverage.xml
 
       - python/install-packages:
           pkg-manager: pip
