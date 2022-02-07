@@ -9,6 +9,3 @@ pytest>=6.2.5
 treelib>=1.6.1
 denmune>=0.0.94
 coverage>=6.3.1
-coveralls>=3.3.1
-npm
-
