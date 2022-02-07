@@ -41,7 +41,7 @@ def test_init_parameters(train_data, train_truth, test_data, test_truth):
     dm = DenMune(train_data=train_data, train_truth=train_truth, test_data=test_data, test_truth=test_truth, k_nearest=10)
     labels, validity = dm.fit_predict()
     # This test use data that are not perfectly separable so the
-    # accuracy is not 1. Accuracy around 0.80
-    assert (np.mean(dm.labels_pred == y_cc) > 0.80) or (1 - np.mean(dm.labels_pred == y_cc) > 0.80)    
+    # accuracy is not 1. Accuracy around 0.70
+    assert (np.mean(dm.labels_pred == y_cc) > 0.70) or (1 - np.mean(dm.labels_pred == y_cc) > 0.70)    
 
 
