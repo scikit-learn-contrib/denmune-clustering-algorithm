@@ -1,22 +1,2 @@
 codecov:
   token: "fce1be95-36c5-4c80-83c1-fe9fa8539dae"
-  bot: "codecov-io"
-  ci:
-    - "circleci.com"
-  status:
-    project:
-      default: false  # disable the default status that measures entire project
-      tests:  # declare a new status context "tests"
-        target: 100%  # we always want 100% coverage here
-        paths: "src/tests/"  # only include coverage in "tests/" folder
-      app:  # declare a new status context "app"
-        paths: "!tests/"  # remove all files in "tests/" 
-  max_report_age: 24
-  disable_default_path_fixes: no
-  require_ci_to_pass: yes
-  notify:
-    after_n_builds: 2
-    wait_for_ci: yes
-    
-fixes:
-   - "/home/circleci/::"
