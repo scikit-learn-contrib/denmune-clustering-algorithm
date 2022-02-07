@@ -14,7 +14,7 @@ X_cc, y_cc = make_blobs(
 
 
 
-def test_DenMune_results():
+def DenMune_results():
     dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=10)
     labels, validity = dm.fit_predict(show_analyzer=False)
     # This test use data that are not perfectly separable so the
