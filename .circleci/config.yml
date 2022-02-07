@@ -48,6 +48,7 @@ jobs:
               coverage run -m pytest
               coverage report
               coverage html
+              coverage xml
 
      
       - store_test_results:
