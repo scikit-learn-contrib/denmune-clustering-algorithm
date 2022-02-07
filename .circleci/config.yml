@@ -9,7 +9,7 @@ orbs:
   # Orb commands and jobs help you with common scripting around a language/tool
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
-  codecov: codecov/codecov@3.0.0
+  codecov: codecov/codecov@1.0.2
   python: circleci/python@1.2
 
 
