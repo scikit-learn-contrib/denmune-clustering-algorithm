@@ -3,9 +3,14 @@ codecov:
   bot: "codecov-io"
   ci:
     - "circleci.com"
-  paths: 
-    - "src"  
-  strict_yaml_branch: "yaml-config"
+  status:
+    project:
+      default: false  # disable the default status that measures entire project
+      tests:  # declare a new status context "tests"
+        target: 100%  # we always want 100% coverage here
+        paths: "src/tests/"  # only include coverage in "tests/" folder
+      app:  # declare a new status context "app"
+        paths: "!tests/"  # remove all files in "tests/" 
   max_report_age: 24
   disable_default_path_fixes: no
   require_ci_to_pass: yes
