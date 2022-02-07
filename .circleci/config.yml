@@ -44,6 +44,8 @@ jobs:
       - run:
           name: Test
           command: |
+              mkdir test_results;
+              echo "my results files in a dir" > test_results;
               coverage run -m pytest
               coverage report
               coverage html
