@@ -53,10 +53,9 @@ jobs:
       - run:
             name: CoverAlls pyTest
             command: |
-                coverage run  -m --coverage-source mypkg pytest
+                coverage run  -m pytest
                 coveralls
 
-                
       - coveralls/upload
 
 
