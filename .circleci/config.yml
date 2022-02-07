@@ -47,13 +47,16 @@ jobs:
               mkdir test_results
               coverage run -m pytest
               coverage report
-              coverage html
+              coverage xml
+              coverage json
 
      
-
-      - codecov/upload
       - store_test_results:
          path: test_results
+         
+      - codecov/upload
+    
+         
 
       - run:
          name: Creating Dummy Artifacts
