@@ -27,7 +27,7 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
       with:
-        token: 'a4d6a0d3-8b50-4164-8270-c3da50caa3bc'
+        token: 'fce1be95-36c5-4c80-83c1-fe9fa8539dae'
         files: ./coverage.xml
         env_vars: OS,PYTHON
         fail_ci_if_error: true
