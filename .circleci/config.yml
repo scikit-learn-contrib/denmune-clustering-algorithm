@@ -39,7 +39,7 @@ jobs:
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
           
       - run:
-          name: Coverage pyTest
+          name: Codecov pyTest
           command: |
               coverage run -m pytest
               coverage report
@@ -47,8 +47,11 @@ jobs:
               coverage xml
               cp coverage.xml htmlcov/coverage.xml
 
-      - store_test_results:
-          path: htmlcov
+      - run:
+            name: Coveralls pyTest
+            command: |
+                coverage run --source=mypkg -m pytest
+                coveralls
 
       - codecov/upload
 
