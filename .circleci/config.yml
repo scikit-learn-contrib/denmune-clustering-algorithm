@@ -31,8 +31,6 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       - checkout
-      - codecov/upload:
-         file: coverage.xml
       - python/install-packages:
           pkg-manager: pip
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
@@ -41,6 +39,13 @@ jobs:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           command: pytest
+
+      - run:
+          name: Test
+          command: npm run test
+          when: always
+      - codecov/upload:
+          file: ./coverage/lcov.info    
 
       
 # Invoke jobs via workflows
