@@ -30,7 +30,7 @@ jobs:
         token: 'a4d6a0d3-8b50-4164-8270-c3da50caa3bc'
         files: ./coverage.xml
         env_vars: OS,PYTHON
-        fail_ci_if_error: false
+        fail_ci_if_error: true
         flags: unittests
         name: codecov-umbrella
         verbose: true
