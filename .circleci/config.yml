@@ -9,7 +9,7 @@ orbs:
   # Orb commands and jobs help you with common scripting around a language/tool
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
-  codecov: codecov/codecov@3.2.2
+  codecov: codecov/codecov@3.0.0
   python: circleci/python@1.2
   
 
@@ -45,7 +45,8 @@ jobs:
           command: pytest
           when: always
       - codecov/upload:
-          file: ./coverage/lcov.info    
+          file: ./coverage.xml
+
 
       
 # Invoke jobs via workflows
