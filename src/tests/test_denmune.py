@@ -37,6 +37,6 @@ def test_init_parameters(train_data, train_truth, test_data, test_truth, validat
                     labels, validity = dm.fit_predict(validate=validate, show_plots=show_plots, show_noise=show_noise, show_analyzer=show_analyzer)
                     # This test use data that are not perfectly separable so the
                     # accuracy is not 1. Accuracy around 0.70
-                    assert (np.mean(dm.labels_pred == y_cc) > 0.80) or (1 - np.mean(dm.labels_pred == y_cc) > 0.80)
+                    assert (np.mean(np.any(dm.labels_pred == y_cc)) > 0.80) or (1 - np.mean(np.any(dm.labels_pred == y_cc)) > 0.80)
 
 
