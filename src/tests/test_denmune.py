@@ -24,12 +24,10 @@ def test_DenMune_results():
 @pytest.mark.parametrize("train_truth", [None, y_cc[:800] ])  
 @pytest.mark.parametrize("test_data", [None, X_cc[800:] ])  
 @pytest.mark.parametrize("test_truth", [None, y_cc[800:] ])
-
 @pytest.mark.parametrize("validate", [True, False])
 @pytest.mark.parametrize("show_plots", [True, False])
 @pytest.mark.parametrize("show_noise", [True, False])
 @pytest.mark.parametrize("show_analyzer", [True, False])
-
 def test_init_parameters(train_data, train_truth, test_data, test_truth):
     if not (train_data is None):
         if not (test_data is not None and train_data is not None and train_truth is None ):
