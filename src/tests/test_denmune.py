@@ -13,7 +13,6 @@ X_cc, y_cc = make_blobs(
 )
 
 
-
 def test_DenMune_results():
     dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=10)
     labels, validity = dm.fit_predict(show_analyzer=False)
@@ -33,10 +32,11 @@ def test_fit_predict_parameters(validate, show_plots, show_noise, show_analyzer)
     assert (np.mean(dm.labels_pred == y_cc) > 0.90) or (1 - np.mean(dm.labels_pred == y_cc) > 0.90)    
 
     
-@pytest.mark.parametrize("train_data", [None, X_cc[:800] ])  
+@pytest.mark.parametrize("train_data", [X_cc[:800] ])  
 @pytest.mark.parametrize("train_truth", [None, y_cc[:800] ])  
 @pytest.mark.parametrize("test_data", [None, X_cc[800:] ])  
 @pytest.mark.parametrize("test_truth", [None, y_cc[800:] ])  
+@pytest.mark.skipif(train_truth == None and  test_data is not None, reason="requires python3.7 or higher")
 def test_init_parameters(train_data, train_truth, test_data, test_truth):
     dm = DenMune(train_data=train_data, train_truth=train_truth, test_data=test_data, test_truth=test_truth, k_nearest=10)
     labels, validity = dm.fit_predict()
