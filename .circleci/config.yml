@@ -45,7 +45,7 @@ jobs:
           command: pytest
           when: always
       - codecov/upload:
-          file: /coverage.xml
+          file: coverage.xml
 
 
       
