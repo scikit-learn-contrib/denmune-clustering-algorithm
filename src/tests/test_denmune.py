@@ -33,7 +33,7 @@ def test_fit_predict_parameters(validate, show_plots, show_noise, show_analyzer)
     assert (np.mean(dm.labels_pred == y_cc) > 0.90) or (1 - np.mean(dm.labels_pred == y_cc) > 0.90)    
 
     
-@pytest.mark.parametrize("train_data", [None, X_cc[:800] ])  
+@pytest.mark.parametrize("train_data", [X_cc[:800] ])  
 @pytest.mark.parametrize("train_truth", [None, y_cc[:800] ])  
 @pytest.mark.parametrize("test_data", [None, X_cc[800:] ])  
 @pytest.mark.parametrize("test_truth", [None, y_cc[800:] ])  
