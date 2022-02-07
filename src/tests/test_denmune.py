@@ -25,7 +25,7 @@ def DenMune_results():
 @pytest.mark.parametrize("show_plots", [True, False])  
 @pytest.mark.parametrize("show_noise", [True, False])  
 @pytest.mark.parametrize("show_analyzer", [True, False])  
-def test_fit_predict_parameters(validate, show_plots, show_noise, show_analyzer):
+def fit_predict_parameters(validate, show_plots, show_noise, show_analyzer):
     dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=10)
     labels, validity = dm.fit_predict(validate=validate, show_plots=show_plots, show_noise=show_noise, show_analyzer=show_analyzer)
     # This test use data that are not perfectly separable so the
