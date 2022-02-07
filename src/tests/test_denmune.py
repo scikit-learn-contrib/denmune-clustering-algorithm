@@ -12,12 +12,20 @@ X_cc, y_cc = make_blobs(
     cluster_std=0.5,
 )
 
-@pytest.mark.parametrize("validate", [True, False])
+
 
 def test_DenMune_results():
+    dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=10)
+    labels, validity = dm.fit_predict(show_analyzer=False)
+    # This test use data that are not perfectly separable so the
+    # accuracy is not 1. Accuracy around 0.90
+    assert (np.mean(dm.labels_pred == y_cc) > 0.90) or (1 - np.mean(dm.labels_pred == y_cc) > 0.90)
+    
+@pytest.mark.parametrize("validate", [True, False])    
+def test_DenMune_parameters(validate):
     dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=10)
     labels, validity = dm.fit_predict(validate=validate, show_analyzer=False)
     # This test use data that are not perfectly separable so the
     # accuracy is not 1. Accuracy around 0.90
-    assert (np.mean(dm.labels_pred == y_cc) > 0.90) or (1 - np.mean(dm.labels_pred == y_cc) > 0.90)
+    assert (np.mean(dm.labels_pred == y_cc) > 0.90) or (1 - np.mean(dm.labels_pred == y_cc) > 0.90)    
 
