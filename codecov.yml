@@ -1,2 +1,15 @@
+codecov:
+  token: "fce1be95-36c5-4c80-83c1-fe9fa8539dae"
+  bot: "codecov-io"
+  ci:
+    - "circleci.com"
+  strict_yaml_branch: "yaml-config"
+  max_report_age: 24
+  disable_default_path_fixes: no
+  require_ci_to_pass: yes
+  notify:
+    after_n_builds: 2
+    wait_for_ci: yes
+    
 fixes:
    - "/home/circleci/::"
