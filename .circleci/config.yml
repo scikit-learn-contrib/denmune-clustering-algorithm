@@ -47,7 +47,7 @@ jobs:
               mkdir test_results
               coverage run -m pytest
               coverage report
-              coverage xml
+              coverage html
 
      
       - store_test_results:
