@@ -30,7 +30,8 @@ jobs:
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
-      - codecov/upload
+      - codecov/upload:
+        file: coverage.json
       - checkout
       
       - python/install-packages:
