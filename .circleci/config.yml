@@ -32,7 +32,8 @@ jobs:
     steps:
       - checkout
       - codecov/upload:
-         file: /home/circleci/project/coverage.xml
+          token: a4d6a0d3-8b50-4164-8270-c3da50caa3bc 
+          file: coverage.xml 
 
       - python/install-packages:
           pkg-manager: pip
