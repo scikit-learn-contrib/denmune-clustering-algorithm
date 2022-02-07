@@ -30,11 +30,9 @@ jobs:
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
-      - codecov/upload:
-         file: ./coverage.xml
+      - codecov/upload
       - checkout
       
-
       - python/install-packages:
           pkg-manager: pip
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
