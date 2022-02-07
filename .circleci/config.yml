@@ -44,26 +44,13 @@ jobs:
       - run:
           name: Test
           command: |
-              mkdir test_results
               coverage run -m pytest
               coverage report
               coverage html
               coverage xml
 
-     
-      - store_test_results:
-         path: test_results
-
       - codecov/upload
-    
-         
-
-      - run:
-         name: Creating Dummy Artifacts
-         command: |
-            echo "my artifact file" > /tmp/art-1;
-            mkdir /tmp/artifacts;
-            echo "my artifact files in a dir" > /tmp/artifacts/art-2;
+   
       - store_artifacts:
           path: htmlcov
         
