@@ -43,10 +43,7 @@ jobs:
               coverage report
               coverage html
               coverage xml
-
-      - store_test_results:
-          path: .
-          destination: coverage.xml
+              cp coverage.xml htmlcov/coverage.xml
 
       - codecov/upload
 
