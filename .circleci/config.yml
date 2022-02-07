@@ -13,8 +13,6 @@ orbs:
   python: circleci/python@1.2
   
 
-
-
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -33,7 +31,9 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       - checkout
-      - codecov/upload
+      - codecov/upload:
+        files: ./coverage.xml
+
       - python/install-packages:
           pkg-manager: pip
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
