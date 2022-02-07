@@ -47,7 +47,8 @@ jobs:
               coverage run -m pytest
               coverage report
               coverage html
-          when: always
+      - store_test_results:
+         path: test-results
 
       - codecov/upload
 
