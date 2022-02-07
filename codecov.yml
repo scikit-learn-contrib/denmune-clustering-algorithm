@@ -23,7 +23,7 @@ parsers:
     branch_detection:
       conditional: yes
       loop: yes
-      method: yes
+      method: no
       macro: no
 
 comment:
