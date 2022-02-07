@@ -58,7 +58,6 @@ jobs:
                 
       - coveralls/upload
 
-
       - store_artifacts:
           path: htmlcov
         
