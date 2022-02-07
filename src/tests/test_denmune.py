@@ -36,7 +36,7 @@ def test_fit_predict_parameters(validate, show_plots, show_noise, show_analyzer)
 @pytest.mark.parametrize("train_data", [X_cc[:800] ])  
 @pytest.mark.parametrize("train_truth", [None, y_cc[:800] ])  
 @pytest.mark.parametrize("test_data", [None, X_cc[800:] ])  
-@pytest.mark.parametrize("test_truth", [None, y_cc[800:] ])  
+@pytest.mark.parametrize("test_truth", [None])  
 def test_init_parameters(train_data, train_truth, test_data, test_truth):
     dm = DenMune(train_data=train_data, train_truth=train_truth, test_data=test_data, test_truth=test_truth, k_nearest=10)
     labels, validity = dm.fit_predict()
