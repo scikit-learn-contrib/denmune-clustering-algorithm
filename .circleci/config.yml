@@ -45,6 +45,9 @@ jobs:
               coverage xml
               cp coverage.xml htmlcov/coverage.xml
 
+      - store_test_results:
+          path: htmlcov
+
       - codecov/upload
 
       - store_artifacts:
