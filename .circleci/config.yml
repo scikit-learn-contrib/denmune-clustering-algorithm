@@ -43,9 +43,10 @@ jobs:
 
       - run:
           name: Test
-          command: coverage run -m pytest
-                   coverage report
-                   coverage html
+          command: |
+              coverage run -m pytest
+              coverage report
+              coverage html
           when: always
 
       - codecov/upload
