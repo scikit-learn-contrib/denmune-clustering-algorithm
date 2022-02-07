@@ -32,7 +32,7 @@ jobs:
     steps:
       - checkout
       - codecov/upload:
-        files: ./coverage.xml
+         file: ./coverage.xml
 
       - python/install-packages:
           pkg-manager: pip
