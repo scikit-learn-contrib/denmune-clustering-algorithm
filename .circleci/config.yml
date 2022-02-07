@@ -10,7 +10,7 @@ orbs:
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   codecov: codecov/codecov@3.0.0
-  coveralls: coveralls/coveralls@1.0.4
+  coveralls: coveralls/coveralls@1.0.6
   python: circleci/python@1.2
   
 
@@ -53,12 +53,10 @@ jobs:
       - run:
             name: CoverAlls pyTest
             command: |
-                coverage run --source=mypkg -m pytest
+                coverage run  -m pytest
                 coveralls
                 
-      - coveralls/upload:
-          path_to_lcov: coverage/lcov/project.lcov          
-
+      - coveralls/upload
 
 
       - store_artifacts:
