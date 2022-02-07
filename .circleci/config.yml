@@ -45,7 +45,7 @@ jobs:
               coverage xml
 
       - store_test_results:
-         path: coverage
+         path: .
 
       - codecov/upload
 
