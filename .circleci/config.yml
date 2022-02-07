@@ -30,7 +30,9 @@ jobs:
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
-      - codecov/upload
+      - codecov/upload:
+         file: coverage.xml
+         token: a4d6a0d38b5041648270c3da50caa3bc
       - checkout
       
       - python/install-packages:
