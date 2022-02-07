@@ -55,6 +55,9 @@ jobs:
             command: |
                 coverage run --source=mypkg -m pytest
                 coveralls
+                
+      - coveralls/upload:
+          path_to_lcov: ./coverage/lcov/project.lcov          
 
 
 
