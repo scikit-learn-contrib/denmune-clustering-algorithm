@@ -3,6 +3,8 @@ codecov:
   bot: "codecov-io"
   ci:
     - "circleci.com"
+  paths: 
+    - "src"  
   strict_yaml_branch: "yaml-config"
   max_report_age: 24
   disable_default_path_fixes: no
