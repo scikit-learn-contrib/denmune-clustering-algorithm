@@ -66,7 +66,7 @@ def test_t_SNE(rgn_tsne, file_2d):
     labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)
     assert (dm.data.shape[1] == 2) # this means it was reduced properly to 2-d using t-SNE
 
-def test_knn(knn):
+def test_knn():
     for k in range (5, 55, 5):
         dm = DenMune(train_data=X_iris, train_truth=y_iris, k_nearest=k, rgn_tsne=False)
         labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)
