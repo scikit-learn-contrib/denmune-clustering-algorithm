@@ -53,10 +53,12 @@ def test_DenMune_propagation():
     assert (snapshot == 1000)
 
 # we test t_SNE reduction by applying it on Iris dataset which has 4 dimentions.
+@pytest.mark.parametrize("file_2d", [None, 'iris_2d.csv'])
+@pytest.mark.parametrize("rgn_tsne", [True, False])
 def test_t_SNE():
     X = load_iris()["data"]
     y = load_iris()["target"]
-    dm = DenMune(train_data=X, train_truth=y, k_nearest=knn)
+    dm = DenMune(train_data=X, train_truth=y, k_nearest=knn, rgn_tsne=rgn_tsne, file_2d=file_2d)
     labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)
     assert (dm.data.shape[1] == 2) # this means it was reduced properly to 2-d using t-SNE
     
