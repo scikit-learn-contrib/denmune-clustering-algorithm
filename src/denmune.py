@@ -412,6 +412,12 @@ class DenMune():
             clsroot = self.ClassPoints[clsid].root.name
             self.DataPoints[i].class_id = clsroot
 
+        if self.prop_step:
+            # let us update class 0 to be -2
+            for dp in self.DataPoints:
+                if dp.class_id == 0:
+                    dp.class_id = -2    
+
         end = time.time()
 
         return 0
@@ -533,68 +539,81 @@ class DenMune():
         else:
             self.labels_pred = self.train_pred
 
-        if self.data_indicator >= 3:
-
-            if show_analyzer:
-                print("Plotting dataset Groundtruth")
-            self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='ground')
-
-        if validate and self.data_indicator >= 1:
-
-            if self.data_indicator >= 3:
-                self.analyzer["validity"] = {}
-                self.analyzer["validity"]['train'] = {}
-                validity_scores = self.validate_Clusters(data_type='train')
-
-            if show_analyzer:
-                print('Plotting train data')
+        if self.prop_step > 0:
+            print("Propagation at iteration:", self.prop_step)
             self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='train')
+
             if show_analyzer:
-                self.show_Analyzer(root='Validating train data')
+                self.show_Analyzer()
 
-            if self.data_indicator == 15:
-                validity_scores = self.validate_Clusters(data_type='test')
+            return None, None
+
+        else:
+            if self.data_indicator >= 3:
+
                 if show_analyzer:
-                    # self.analyzer["validity"]['test'] = {}
-                    self.show_Analyzer(self.analyzer['validity']['test'], root='Validating test data')
+                    print("Plotting dataset Groundtruth")
+                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='ground')
 
-            if self.data_indicator > 3:
+            if validate and self.data_indicator >= 1:
+
+                if self.data_indicator >= 3:
+                    self.analyzer["validity"] = {}
+                    self.analyzer["validity"]['train'] = {}
+                    validity_scores = self.validate_Clusters(data_type='train')
+
                 if show_analyzer:
-                    print('Plotting test data')
-                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='test')
-
-            """"
-            if self.data_indicator == 15:
-                validity_scores = self.validate_Clusters(data_type='augmented')
+                    print('Plotting train data')
+                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='train')
                 if show_analyzer:
-                    self.analyzer["validity"]['augmented'] = {}
-                    self.show_Analyzer(self.analyzer['validity']['augmented'], root='Validating augmented data (train & test)')
-            if self.data_indicator > 3:
-                if show_analyzer:
-                    print ('Plotting augmented data (train & test)')
-                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='augmented')
-            """
+                    self.show_Analyzer(root='Validating train data')
 
-        labels_dic['train'] = self.train_pred
-        labels_dic['test'] = self.test_pred
+                if self.data_indicator == 15:
+                    validity_scores = self.validate_Clusters(data_type='test')
+                    if show_analyzer:
+                        # self.analyzer["validity"]['test'] = {}
+                        self.show_Analyzer(self.analyzer['validity']['test'], root='Validating test data')
 
-        if self.data_indicator == 1:
-            return labels_dic, None
-        elif validate == False:
-            return labels_dic, None
-        elif self.data_indicator >= 3 and validate == True:
-            return labels_dic, self.analyzer['validity']
+                if self.data_indicator > 3:
+                    if show_analyzer:
+                        print('Plotting test data')
+                    self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='test')
+
+                """"
+                if self.data_indicator == 15:
+                    validity_scores = self.validate_Clusters(data_type='augmented')
+                    if show_analyzer:
+                        self.analyzer["validity"]['augmented'] = {}
+                        self.show_Analyzer(self.analyzer['validity']['augmented'], root='Validating augmented data (train & test)')
+                if self.data_indicator > 3:
+                    if show_analyzer:
+                        print ('Plotting augmented data (train & test)')
+                    self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='augmented')
+                """
+
+            labels_dic['train'] = self.train_pred
+            labels_dic['test'] = self.test_pred
+
+            if self.data_indicator == 1:
+                return labels_dic, None
+            elif validate == False:
+                return labels_dic, None
+            elif self.data_indicator >= 3 and validate == True:
+                return labels_dic, self.analyzer['validity']
 
     def match_Labels(self):
 
         labels_true = self.labels_truth
 
+        """"
         if isinstance(self.labels_pred, np.ndarray):
             # labels_pred = np.array(self.labels_pred, dtype=np.int64)
             labels_pred = self.labels_pred.tolist()
         else:
             labels_pred = self.labels_pred
+        """
 
+        labels_pred = self.labels_pred
         pred_set = set(labels_pred)
         index = []
         x = 1
@@ -642,8 +661,16 @@ class DenMune():
         elif data_type == 'augmented':
             # keep it as it
             0 == 0
+        
+        if isinstance(self.labels_pred, np.ndarray):
+            # labels_pred = np.array(self.labels_pred, dtype=np.int64)
+            self.labels_pred = self.labels_pred.tolist()
 
-        labels_pred = self.match_Labels()
+        labels_pred = self.labels_pred
+        if self.prop_step == 0: # do not match labels if yoy are in propagation mode
+            labels_pred = self.match_Labels()
+
+
         if data_type == 'train':
             labels_pred = labels_pred[:self.train_sz]
         elif data_type == 'test':
@@ -774,14 +801,14 @@ class DenMune():
                                         np.unique(labels).max() + 2)  # deep, dark, bright, muted, pastel, colorblind
 
             if self.prop_step:
-                colors = [palette[x] if x >= 0 else ((0.0, 0.0, 0.0) if x == -1 else (0.0, 0.0, 0.0)) for x in labels]
-                v = 0
-                for c in colors:
-                    if (c[0] + c[1] + c[2]) > 0.0:  # outlier :: keep it in black
-                        colors2.append((c[0], c[1], c[2], 1.0))
-                        data2.append((self.data[v][0], self.data[v][1]))
-                    v += 1
-                data2 = np.array(data2)
+              colors = [palette[x] if x >= 0 else ((0.0, 0.0, 0.0) if x == -1 else (0.0, 0.0, 0.0)) for x in labels]
+              v = 0
+              for c in colors:
+                  if (c[0] + c[1] + c[2]) > 0.0:  # outlier :: keep it away. Note that even outliers are -1, -2, it become in black after the previous step: color (0.0, 0.0, 0.0
+                      colors2.append((c[0], c[1], c[2], 1.0))
+                      data2.append((self.data[v][0], self.data[v][1]))
+                  v += 1
+              data2 = np.array(data2)
 
             else:
                 if show_noise == False:
@@ -794,17 +821,25 @@ class DenMune():
             # plt.figure(figsize=(12, 8))
 
             if self.prop_step:
+                # lenght of data2 will be always equlas to length of the specific data type (test, train)
+                #print ('datatype', data_type)
                 if data_type == 'train':
-                    plt.scatter(data2[:self.train_sz].T[0], data2[:self.train_sz].T[1], c=colors2, **plot_kwds,
-                                marker='o')
-                elif data_type == 'test':
-                    plt.scatter(data2[self.train_sz:].T[0], data2[self.train_sz:].T[1], c=colors2, **plot_kwds,
-                                marker='o')
-                elif data_type == 'augmented':
                     plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
+                    #plt.scatter(data2[:self.train_sz].T[0], data2[:self.train_sz].T[1], c=colors2, **plot_kwds, marker='o')
+
+                """"
+                elif data_type == 'test':
+                  print ('train_sz', self.train_sz, 'test_sz', self.test_sz)
+                  #plt.scatter(data2[self.test_sz:self.train_sz:].T[0], data2[self.train_sz:].T[1], c=colors2, **plot_kwds,  marker='o' )
+                  plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
+                elif data_type == 'augmented':
+                  print ('3')
+                  plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
                 elif data_type == 'ground':
-                    plt.scatter(data2[:self.train_sz].T[0], data2[:self.train_sz].T[1], c=colors2, **plot_kwds,
-                                marker='o')
+                    #plt.scatter(data2[:self.train_sz].T[0], data2[:self.train_sz].T[1], c=colors2, **plot_kwds, marker='o')
+                    plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
+                """
+
             else:
                 if data_type == 'train':
                     plt.scatter(self.data[:self.train_sz].T[0], self.data[:self.train_sz].T[1], c=colors, **plot_kwds,
@@ -888,3 +923,4 @@ class DenMune():
                             # print('4', 'key:', z , 'value:', subsubdic[z], 'parent:', v)
                             creat_TreefromDict(self, tree, subsubdic, z, parent=v)
         tree.show()
+        
