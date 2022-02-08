@@ -154,6 +154,12 @@ class DenMune():
         # self.delimiter = delimiter
         self.debuger = {}
 
+        if k_nearest == 0:
+            raise Exception("k-nearest neighbor should be at least 1") 
+
+        if file_2d is None:
+            file_2d =  '_temp_2d' 
+
         if data.shape[1] != 2 and file_2d == '_temp_2d':
             # raise Exception("Sorry, this is N-D dataset, file-2d parameter should not be empty")
             start = time.time()
