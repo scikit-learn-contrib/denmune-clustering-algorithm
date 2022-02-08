@@ -57,6 +57,6 @@ def test_t_SNE():
     X = load_iris()["data"]
     y = load_iris()["target"]
     dm = DenMune(train_data=X, train_truth=y, k_nearest=knn)
-        labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False) 
+    labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)
     assert (dm.data.shape[1] == 2) # this means it was reduced properly to 2-d using t-SNE
     
