@@ -197,7 +197,7 @@ class DenMune():
         self.kd_NGT()
         self.load_DataPoints()  # load_DataPoints must come after kd_NGT()
         self.compute_Links()
-        # self.semi_init_DataPoints #it is useful with csharp and cnune only
+        # self.semi_init_DataPoints #it is useful with csharp and CNune only
         self.find_Noise()
         self.sort_DataPoints()
         self.prepare_Clusters()
@@ -260,14 +260,17 @@ class DenMune():
             self.DataPoints.append(dp)
         return 0
 
+"""
+this function is useful with csharp and CNune only
+
     def semi_init_DataPoints(self):
 
         for dp in self.DataPoints:
             dp.visited = False
             dp.class_id = 0
             dp.homogeneity = 0
-
         return 0
+"""        
 
     def find_Noise(self):
 
