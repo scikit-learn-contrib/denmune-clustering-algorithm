@@ -260,17 +260,17 @@ class DenMune():
             self.DataPoints.append(dp)
         return 0
 
-"""
-this function is useful with csharp and CNune only
+    """
+    this function is useful with csharp and CNune only
 
-    def semi_init_DataPoints(self):
+        def semi_init_DataPoints(self):
 
-        for dp in self.DataPoints:
-            dp.visited = False
-            dp.class_id = 0
-            dp.homogeneity = 0
-        return 0
-"""        
+            for dp in self.DataPoints:
+                dp.visited = False
+                dp.class_id = 0
+                dp.homogeneity = 0
+            return 0
+    """       
 
     def find_Noise(self):
 
