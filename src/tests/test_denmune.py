@@ -31,7 +31,7 @@ def test_DenMune_results():
 def test_parameters(train_data, train_truth, test_data, test_truth, validate, show_plots, show_noise, show_analyzer):
     if not (train_data is None):
         if not (train_data is not None and train_truth is None and test_truth is not None and  test_data is None):
-            if not (train_data is not None and test_data is None and train_truth is None):
+            if not (train_data is not None and test_data is not None and train_truth is None):
                 dm = DenMune(train_data=train_data, train_truth=train_truth, test_data=test_data, test_truth=test_truth, k_nearest=10)
                 labels, validity = dm.fit_predict(validate=validate, show_plots=show_plots, show_noise=show_noise, show_analyzer=show_analyzer)
                 # This test use data that are not perfectly separable so the
