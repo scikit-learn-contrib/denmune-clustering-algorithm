@@ -81,7 +81,7 @@ class DenMune():
     def __init__(self,
                  train_data=None, test_data=None,
                  train_truth=None, test_truth=None,
-                 file_2d=None, k_nearest=0,
+                 file_2d=None, k_nearest=None,
                  rgn_tsne=False, prop_step=0,
                  ):
 
@@ -105,7 +105,10 @@ class DenMune():
             raise Exception("you should provide labels for your traing data to be allowed to work with test data. Set train_truth argmunt properly.")
         if train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None:
               raise Exception("Although labels of testing data is provided, the test data itself isnot. Set test_data argument properly.")
-
+                
+        if k_nearest < 1:
+             raise Exception("k-nearest neighbor should be at least 1")
+            
         self.analyzer = {}
         self.analyzer['n_points'] = {}
         if isinstance(train_data, pd.DataFrame):
