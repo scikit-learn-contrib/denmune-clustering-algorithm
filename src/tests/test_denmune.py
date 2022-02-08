@@ -12,9 +12,10 @@ X_cc, y_cc = make_blobs(
     cluster_std=0.5,
 )
 
+knn = 10
 
 def test_DenMune_results():
-    dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=10)
+    dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=knn)
     labels, validity = dm.fit_predict(show_analyzer=False)
     # This test use data that are not perfectly separable so the
     # accuracy is not 1. Accuracy around 0.90
@@ -40,3 +41,9 @@ def test_parameters(train_data, train_truth, test_data, test_truth, validate, sh
                     assert ( np.mean(dm.labels_pred == y_cc) > 0.80 or (1 - np.mean( dm.labels_pred == y_cc)  > 0.80) ) 
 
 
+def test_DenMune_propagation():
+    snapshots = chain([0], range(2,5), range(5,50,5), range(50, 100, 10), range(100,500,50), range(500,1100, 100))
+    for snapshot in snapshots:
+        dm = DenMune(train_data=X_cc, k_nearest=knn, prop_step=snapshot)
+        labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)   
+    assert (snapshot == 1000)
