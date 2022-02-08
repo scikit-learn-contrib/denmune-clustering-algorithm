@@ -86,7 +86,7 @@ class DenMune():
                  ):
 
         if train_data is None:
-            raise Exception("No data is provided. At least train data should be provided")
+            raise Exception("No data is provided. At least train data should be provided. Set train_data argmunt properly.")
         else:
             self.data_indicator = 1
 
@@ -98,6 +98,13 @@ class DenMune():
 
         if test_truth is not None:
             self.data_indicator += 8
+
+        if  train_data is not None and train_truth is None and test_truth is not None:
+            raise Exception("you should provide labels for your traing data to be allowed to work with test data. Set train_truth argmunt properly.")
+        if train_data is not None and train_truth is None and  test_data is not None :
+            raise Exception("you should provide labels for your traing data to be allowed to work with test data. Set train_truth argmunt properly.")
+        if train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None:
+              raise Exception("Although labels of testing data is provided, the test data itself isnot. Set test_data argument properly.")
 
         self.analyzer = {}
         self.analyzer['n_points'] = {}
@@ -564,7 +571,9 @@ class DenMune():
 
         if self.data_indicator == 1:
             return labels_dic, None
-        else:
+        elif validate == False:
+            return labels_dic, None
+        elif self.data_indicator >= 3 and validate == True:
             return labels_dic, self.analyzer['validity']
 
     def match_Labels(self):
