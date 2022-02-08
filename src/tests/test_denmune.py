@@ -2,6 +2,7 @@ import numpy as np
 from itertools import chain
 import pytest
 from sklearn.datasets import make_blobs
+from sklearn.datasets import load_iris
 from src.denmune import DenMune
 
 # test DenMune's results
@@ -30,6 +31,7 @@ def test_DenMune_results():
 @pytest.mark.parametrize("show_plots", [True, False])
 @pytest.mark.parametrize("show_noise", [True, False])
 @pytest.mark.parametrize("show_analyzer", [True, False])
+# all possible combination will be tested over all parameters. Actually, 257 tests will be coverd
 def test_parameters(train_data, train_truth, test_data, test_truth, validate, show_plots, show_noise, show_analyzer):
     if not (train_data is None):
         if not (train_data is not None and train_truth is None and test_truth is not None):
@@ -46,5 +48,15 @@ def test_DenMune_propagation():
     snapshots = chain([0], range(2,5), range(5,50,5), range(50, 100, 10), range(100,500,50), range(500,1100, 100))
     for snapshot in snapshots:
         dm = DenMune(train_data=X_cc, k_nearest=knn, prop_step=snapshot)
-        labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)   
+        labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False) 
+    # if snapshot iteration = 1000, this means we could propagate to the end properly    
     assert (snapshot == 1000)
+
+# we test t_SNE reduction by applying it on Iris dataset which has 4 dimentions.
+def test_t_SNE():
+    X = load_iris()["data"]
+    y = load_iris()["target"]
+    dm = DenMune(train_data=X, train_truth=y, k_nearest=knn)
+        labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False) 
+    assert (dm.data.shape[1] == 2) # this means it was reduced properly to 2-d using t-SNE
+    
