@@ -31,8 +31,9 @@ def test_DenMune_results():
 @pytest.mark.parametrize("show_plots", [True, False])
 @pytest.mark.parametrize("show_noise", [True, False])
 @pytest.mark.parametrize("show_analyzer", [True, False])
+@pytest.mark.parametrize("prop_step", [0, 200])
 # all possible combination will be tested over all parameters. Actually, 257 tests will be covered
-def test_parameters(train_data, train_truth, test_data, test_truth, validate, show_plots, show_noise, show_analyzer):
+def test_parameters(train_data, train_truth, test_data, test_truth, validate, prop_step, show_plots, show_noise, show_analyzer):
     if not (train_data is None):
         if not (train_data is not None and train_truth is None and test_truth is not None):
             if not (train_data is not None and test_data is not None and train_truth is None):
