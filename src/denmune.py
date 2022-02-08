@@ -81,7 +81,7 @@ class DenMune():
     def __init__(self,
                  train_data=None, test_data=None,
                  train_truth=None, test_truth=None,
-                 file_2d='_temp_2d', k_nearest=10,
+                 file_2d=None, k_nearest=0,
                  rgn_tsne=False, prop_step=0,
                  ):
 
@@ -154,14 +154,15 @@ class DenMune():
         # self.delimiter = delimiter
         self.debuger = {}
 
-        if data.shape[1] != 2 and file_2d == '_temp_2d':
+        if data.shape[1] != 2 and file_2d is None:
+            file_2d = '_temp_2d'
             # raise Exception("Sorry, this is N-D dataset, file-2d parameter should not be empty")
             start = time.time()
             self.generate_tsne(data, 2, file_2d='_temp_2d')
             end = time.time()
             self.analyzer["exec_time"]["t_SNE"] = end - start
             data = genfromtxt(file_2d, delimiter=',')
-        elif data.shape[1] != 2 and file_2d != '_temp_2d':
+        elif data.shape[1] != 2 and file_2d is not None:
             if not os.path.isfile(file_2d) or rgn_tsne == True:
                 start = time.time()
                 self.generate_tsne(data, 2, file_2d)
