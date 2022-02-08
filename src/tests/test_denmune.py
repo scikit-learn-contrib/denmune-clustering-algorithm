@@ -31,7 +31,7 @@ def test_DenMune_results():
 @pytest.mark.parametrize("show_plots", [True, False])
 @pytest.mark.parametrize("show_noise", [True, False])
 @pytest.mark.parametrize("show_analyzer", [True, False])
-# all possible combination will be tested over all parameters. Actually, 257 tests will be coverd
+# all possible combination will be tested over all parameters. Actually, 257 tests will be covered
 def test_parameters(train_data, train_truth, test_data, test_truth, validate, show_plots, show_noise, show_analyzer):
     if not (train_data is None):
         if not (train_data is not None and train_truth is None and test_truth is not None):
@@ -55,7 +55,7 @@ def test_DenMune_propagation():
 # we test t_SNE reduction by applying it on Iris dataset which has 4 dimentions.
 @pytest.mark.parametrize("file_2d", [None, 'iris_2d.csv'])
 @pytest.mark.parametrize("rgn_tsne", [True, False])
-def test_t_SNE():
+def test_t_SNE(rgn_tsne, file_2d):
     X = load_iris()["data"]
     y = load_iris()["target"]
     dm = DenMune(train_data=X, train_truth=y, k_nearest=knn, rgn_tsne=rgn_tsne, file_2d=file_2d)
