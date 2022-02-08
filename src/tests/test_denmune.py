@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 from sklearn.datasets import make_blobs
-from .denmune import DenMune
+from src.denmune import DenMune
 
 # test DenMune's results
 X_cc, y_cc = make_blobs(
