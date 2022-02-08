@@ -68,7 +68,7 @@ def test_t_SNE(rgn_tsne, file_2d):
 
 def test_knn(knn):
     for k in range (5, 55, 5):
-        dm = DenMune(train_data=X_iris, train_truth=y_iris, k_nearest=knn)
+        dm = DenMune(train_data=X_iris, train_truth=y_iris, k_nearest=knn, rgn_tsne=False)
         labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)
     #assert (k == 50) # this means we tested the algorithm works fine with several knn inputs    
     
