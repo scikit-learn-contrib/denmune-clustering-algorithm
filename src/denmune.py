@@ -81,7 +81,7 @@ class DenMune():
     def __init__(self,
                  train_data=None, test_data=None,
                  train_truth=None, test_truth=None,
-                 file_2d='_temp_2d', k_nearest=10,
+                 file_2d=None, k_nearest=0,
                  rgn_tsne=False, prop_step=0,
                  ):
 
