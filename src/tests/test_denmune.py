@@ -31,7 +31,7 @@ def test_DenMune_results():
 @pytest.mark.parametrize("show_plots", [True, False])
 @pytest.mark.parametrize("show_noise", [True, False])
 @pytest.mark.parametrize("show_analyzer", [True, False])
-@pytest.mark.parametrize("prop_step", [0, 750]) # if prop_step less than 600, the accuracy drop off too much (750* 0.8 =)
+@pytest.mark.parametrize("prop_step", [0]) # if prop_step less than 600, the accuracy drop off too much (750* 0.8 =)
 
 # all possible combination will be tested over all parameters. Actually, 257 tests will be covered
 def test_parameters(train_data, train_truth, test_data, test_truth, validate, prop_step, show_plots, show_noise, show_analyzer):
