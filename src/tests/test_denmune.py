@@ -69,7 +69,7 @@ def test_t_SNE(rgn_tsne, file_2d):
 @pytest.mark.parametrize("knn", range (-5, 55, 5))
 def test_knn(knn):
     if knn >= 1: # knn should be at least 1
-        dm = DenMune(train_data=X, train_truth=y, k_nearest=knn, rgn_tsne=rgn_tsne, file_2d=file_2d)
+        dm = DenMune(train_data=X_iris, train_truth=y_iris, k_nearest=knn, rgn_tsne=rgn_tsne, file_2d=file_2d)
         labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)
     assert (knn == 50) # this means we tested the algorithm works fine with several knn inputs    
     
