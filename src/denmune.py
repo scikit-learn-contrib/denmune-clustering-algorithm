@@ -81,11 +81,7 @@ class DenMune():
     def __init__(self,
                  train_data=None, test_data=None,
                  train_truth=None, test_truth=None,
-<<<<<<< HEAD
                  file_2d=None, k_nearest=0,
-=======
-                 file_2d=None, k_nearest=None,
->>>>>>> 8b881e30a93ec0501c298cccedc8729c02199f5f
                  rgn_tsne=False, prop_step=0,
                  ):
 
@@ -109,10 +105,7 @@ class DenMune():
             raise Exception("you should provide labels for your traing data to be allowed to work with test data. Set train_truth argmunt properly.")
         if train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None:
               raise Exception("Although labels of testing data is provided, the test data itself isnot. Set test_data argument properly.")
-                
-        if k_nearest < 1:
-             raise Exception("k-nearest neighbor should be at least 1")
-            
+
         self.analyzer = {}
         self.analyzer['n_points'] = {}
         if isinstance(train_data, pd.DataFrame):
@@ -161,15 +154,14 @@ class DenMune():
         # self.delimiter = delimiter
         self.debuger = {}
 
-        if data.shape[1] != 2 and file_2d is None:
-            file_2d = '_temp_2d'
+        if data.shape[1] != 2 and file_2d == '_temp_2d':
             # raise Exception("Sorry, this is N-D dataset, file-2d parameter should not be empty")
             start = time.time()
             self.generate_tsne(data, 2, file_2d='_temp_2d')
             end = time.time()
             self.analyzer["exec_time"]["t_SNE"] = end - start
             data = genfromtxt(file_2d, delimiter=',')
-        elif data.shape[1] != 2 and file_2d is not None:
+        elif data.shape[1] != 2 and file_2d != '_temp_2d':
             if not os.path.isfile(file_2d) or rgn_tsne == True:
                 start = time.time()
                 self.generate_tsne(data, 2, file_2d)
