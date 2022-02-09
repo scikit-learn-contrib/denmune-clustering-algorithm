@@ -11,25 +11,26 @@ Scientific Work
 |-------|---------|------|
 | [![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927) | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0) | [![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)](https://data.mendeley.com/datasets/b73cw5n43r/4) |
 
-Coding & maintenance
+Coding & Maintenance
 -----------------------
 | Git Repository | Installation | CI Piplines | Code Coverage |
 |------------|--------------|-----------------|---------------|
 |[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/egy1st/denmune-clustering-algorithm)](https://github.com/egy1st/denmune-clustering-algorithm)  | [![PyPI Version](https://img.shields.io/pypi/v/denmune.svg)]( https://pypi.org/project/denmune/) | [![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=shield)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main) | [![codecov](https://codecov.io/gh/egy1st/denmune-clustering-algorithm/branch/main/graph/badge.svg?token=E2ZY0DSUM2)](https://codecov.io/gh/egy1st/denmune-clustering-algorithm) |
 
-Algorithm Docs & Tutorials
+Docs & Tutorials
 ----------------------------
 
 | Read the Docs | Repo2Docker | Colab | kaggle |
 |---------------|-------------|-------|--------|
 |[![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest)| [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
 
-Algorithm Stats
+Downloads Stats
 --------------------
 
 |downloads/day| download/week| download/month|
 |-------------|--------------|---------------|
 |![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dw/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dm/denmune)| [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | 
+
 
 Based on the paper
 -------------------
