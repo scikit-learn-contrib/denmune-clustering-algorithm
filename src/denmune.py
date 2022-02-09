@@ -341,8 +341,9 @@ class DenMune():
         for i in range(self.dp_count):
             result = self.dp_dis[i]
             for k, o in enumerate(result):
-                if k >= self.k_nearest:
-                    break
+                # no need to this condition, it wont happen
+                #if k >= self.k_nearest:
+                #    break
 
                 # if k != 0:
                 _dis = round(o[1], 6)
