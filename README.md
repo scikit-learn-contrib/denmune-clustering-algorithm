@@ -20,9 +20,9 @@ Coding & Maintenance
 Docs & Tutorials
 ----------------------------
 
-| Read the Docs | Repo2Docker | Colab | kaggle |
-|---------------|-------------|-------|--------| 
-|[![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest)| [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) | 
+| Read the Docs | Repo2Docker | Colab | kaggle | ReviewNB |
+|---------------|-------------|-------|--------|--------- |
+|[![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest)| [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) | |[![Review NB](https://img.shields.io/badge/review-on%20reviewNB-blueviolet)](https://app.reviewnb.com/egy1st/denmune-clustering-algorithm/)|
 
 Downloads Stats
 --------------------
@@ -31,8 +31,8 @@ Downloads Stats
 |-------------|--------------|---------------|
 |![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dw/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dm/denmune)| [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | 
 
-Suggestions & Reporting
-------------------------
+Suggestions & Reporting Issues
+-------------------------------
 
 | Github | Gitter | Slack | Discord |
 |--------|--------|-------|---------|
