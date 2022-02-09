@@ -36,9 +36,7 @@ Suggestions & Reporting
 
 | Slack | Gitter | Discord |
 |-------|---------|--------|
-|  [![Slack](https://img.shields.io/badge/chat-on%20slack-orange)](https://app.slack.com/client/T032DJEC8AW/C0326UK1VFY) 
-| [![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) |
-|  [![Discord] (https://img.shields.io/badge/chat-on%20discord-blue)] (https://discord.gg/Mes74bHZ8b) |
+| [![Slack](https://img.shields.io/badge/chat-on%20slack-orange)](https://app.slack.com/client/T032DJEC8AW/C0326UK1VFY) | [![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) | [![Discord] (https://img.shields.io/badge/chat-on%20discord-blue)] (https://discord.gg/Mes74bHZ8b) |
 
 Based on the paper
 -------------------
