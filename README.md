@@ -410,8 +410,8 @@ How to run and test
    ----------------------------------------------------------------------
 
 
-   | Dataset | CoLab URL |
-   ----------| ---------------------------------------------------------------------------------------------------|
+   | Dataset  | CoLab URL                                                                                          |
+   |----------| ---------------------------------------------------------------------------------------------------|
     |How to use it - colab|[![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1J_uKdhZ3z1KeY0-wJ7Ruw2PZSY1orKQm)|
    |Chameleon datasets - colab|[![Chameleon datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing) |
    |2D Shape datasets - colab|[![2D Shape datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1EaqTPCRHSuTKB-qEbnWHpGKFj6XytMIk?usp=sharing) |
@@ -434,7 +434,7 @@ How to run and test
 
    
    | Dataset | Kaggle URL |
-   ----------| ---------------------------------------------------------------------------------------------------|
+   |----------| ---------------------------------------------------------------------------------------------------|
    |When less means more - kaggle |[![When less means more - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/when-less-means-more) |
    |Non-groundtruth datasets - kaggle|[![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detecting-non-groundtruth-datasets) |
    |2D Shape datasets - kaggle|[![2D Shape datasets - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detection-of-2d-shape-datasets) |
