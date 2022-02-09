@@ -4,23 +4,46 @@ DenMune: A density-peak clustering algorithm
 DenMune a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of the algorithm. Enjoy the simplicity but the power of DenMune.
 
 
-[![PyPI Version](https://img.shields.io/pypi/v/denmune.svg)]( https://pypi.org/project/denmune/)
-[![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
-[![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest)
-[![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab)
-[![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset?scriptVersionId=84775816)
-[![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927)
-[![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)](https://data.mendeley.com/datasets/b73cw5n43r/4)
-[![BSD 3-Clause “New” or “Revised” License" ](https://img.shields.io/badge/license-BSD-green)](https://choosealicense.com/licenses/bsd-3-clause/)
-[![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=shield)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
-[![codecov](https://codecov.io/gh/egy1st/denmune-clustering-algorithm/branch/main/graph/badge.svg?token=E2ZY0DSUM2)](https://codecov.io/gh/egy1st/denmune-clustering-algorithm)
+Scientific Work
+---------------------
+
+| Paper | Journal | Data |
+|-------|---------|------|
+| [![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927) | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0) | [![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)](https://data.mendeley.com/datasets/b73cw5n43r/4) |
+
+Coding & Maintenance
+-----------------------
+| Git Repository | Installation | CI Piplines | Code Coverage |
+|------------|--------------|-----------------|---------------|
+|[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/egy1st/denmune-clustering-algorithm)](https://github.com/egy1st/denmune-clustering-algorithm)  | [![PyPI Version](https://img.shields.io/pypi/v/denmune.svg)]( https://pypi.org/project/denmune/) | [![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=shield)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main) | [![codecov](https://codecov.io/gh/egy1st/denmune-clustering-algorithm/branch/main/graph/badge.svg?token=E2ZY0DSUM2)](https://codecov.io/gh/egy1st/denmune-clustering-algorithm) |
+
+Docs & Tutorials
+----------------------------
+
+| Read the Docs | Repo2Docker | Colab | kaggle |
+|---------------|-------------|-------|--------| 
+|[![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest)| [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) | 
+
+Downloads Stats
+--------------------
+
+|downloads/day| download/week| download/month|
+|-------------|--------------|---------------|
+|![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dw/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dm/denmune)| [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | 
+
+Suggestions & Reporting
+------------------------
+
+| Github | Gitter | Slack | Discord |
+|--------|--------|-------|---------|
+|[![GitHub Discussions](https://img.shields.io/github/discussions/egy1st/denmune-clustering-algorithm)](https://github.com/egy1st/denmune-clustering-algorithm/discussions)|[![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)|[![Slack](https://img.shields.io/badge/chat-on%20slack-orange)](https://app.slack.com/client/T032DJEC8AW/C0326UK1VFY)|[![Discord](https://img.shields.io/badge/chat-on%20discord-blue)](https://discord.gg/Mes74bHZ8b)|
 
 Based on the paper
 -------------------
 
-|Paper|Journal|      
-|-------------------------------------------------------------------------------------------|-----------------------------|
-|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                              <td rowspan="5">[![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0)   </td>                           
+|Paper|
+|-------------------------------------------------------------------------------------------
+|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                                                       
 |*DenMune: Density peak based clustering using mutual nearest neighbors*                                           
 |In: Journal of Pattern Recognition, Elsevier,                                                                 
 |volume 109, number 107589, January 2021                                                                      
@@ -401,12 +424,40 @@ How to run and test
 
    [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
 
-2. Launch each Example in Kaggle workspace
+<a name="colab"></a>
+2. Launch each Example in Google Research, CoLab
+  
+   Need to test examples one by one, then here another option. Use colab offered by google research to test each example individually.
+    
+   Here is a list of Google CoLab URL to use the algorithm interactively
+   ----------------------------------------------------------------------
+
+
+   | Dataset  | CoLab URL   |
+   |----------| ---------------------------------------------------------------------------------------------------|
+   |How to use it - colab|[![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1J_uKdhZ3z1KeY0-wJ7Ruw2PZSY1orKQm) |
+   |Chameleon datasets - colab|[![Chameleon datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing) |
+   |2D Shape datasets - colab|[![2D Shape datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1EaqTPCRHSuTKB-qEbnWHpGKFj6XytMIk?usp=sharing) |
+   |MNIST dataset - colab|[![MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1a9FGHRA6IPc5jhLOV46iEbpUeQXptSJp?usp=sharing) |
+   |iris dataset - colab|[![iris dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nKql57Xh7xVVu6NpTbg3vRdRg42R7hjm?usp=sharing) |
+   |Get 97% by training MNIST dataset - colab|[![Get 97% by training MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1NeOtXEQY94oD98Ufbh3IhTHnnYwIA659) |
+   |Non-groundtruth datasets - colab|[![Non-groundtruth datasets - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1d17ejQ83aUy0CZIeQ7bHTugSC9AjJ2mU?usp=sharing) |
+   |Noise detection - colab|[![Noise detection - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1Bp3c-cJfjLWxupmrBJ_6Q4-nqIfZcII4) |
+   |Validation - colab|[![Validation - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/13_EVaQOv_QiNmQiMWJAcFFHPJHGCrQLe) |
+   |How it propagates - colab|[![How it propagates - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o-tP3uvDGjxBOGYkir1lnbr74sZ06e0U?usp=sharing)|
+   |Snapshots of propagation - colab|[![snapshots of the propagation - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vPXNKa8Rf3TnqDHSD3YSWl3g1iNSqjl2?usp=sharing) |
+   |Scalability - colab|[![Scalability - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1d55wkBndLLapO7Yx1ePHhE8mL61j9-TH?usp=sharing) 
+   |Stability vs number of nearest neighbors - colab|[![Stability vs number of nearest neighbors - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17VgVRMFBWvkSIH1yA3tMl6UQ7Eu68K2l?usp=sharing) |
+   |k-nearest-evolution - colab|[![k-nearest-evolution - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1DZ-CQPV3WwJSiaV3-rjwPwmXw4RUh8Qj) |
+  
+<a name="kaggle"></a>  
+3. Launch each Example in Kaggle workspace
 
    If you are a kaggler like me, then Kaggle, the best workspace where data scientist meet, should fit you to test the algorithm with great experince. 
+
    
    | Dataset | Kaggle URL |
-   ----------| ---------------------------------------------------------------------------------------------------|
+   |----------| ---------------------------------------------------------------------------------------------------|
    |When less means more - kaggle |[![When less means more - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/when-less-means-more) |
    |Non-groundtruth datasets - kaggle|[![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detecting-non-groundtruth-datasets) |
    |2D Shape datasets - kaggle|[![2D Shape datasets - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detection-of-2d-shape-datasets) |
@@ -422,33 +473,6 @@ How to run and test
    |Stability - kaggle| [![Stability - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/stability-vs-number-of-nearest-neighbor) |
    |k-nearest-evolution - kaggle| [![k-nearest-evolution - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/k-nearest-evolution) |
    
-3. Launch each Example in Google Research, CoLab
-
-   Need to test examples one by one, then here another option. Use colab offered by google research to test each example individually.
-  
-
-   <a name="colab"></a>
-   Here is a list of Google CoLab URL to use the algorithm interactively
-   ----------------------------------------------------------------------
-
-
-   | Dataset | CoLab URL |
-   ----------| ---------------------------------------------------------------------------------------------------|
-    |How to use it - colab|[![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1J_uKdhZ3z1KeY0-wJ7Ruw2PZSY1orKQm)|
-   |Chameleon datasets - colab|[![Chameleon datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing) |
-   |2D Shape datasets - colab|[![2D Shape datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1EaqTPCRHSuTKB-qEbnWHpGKFj6XytMIk?usp=sharing) |
-   |MNIST dataset - colab|[![MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1a9FGHRA6IPc5jhLOV46iEbpUeQXptSJp?usp=sharing) |
-   |iris dataset - colab|[![iris dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nKql57Xh7xVVu6NpTbg3vRdRg42R7hjm?usp=sharing) |
-    |Get 97% by training MNIST dataset - colab|[![Get 97% by training MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1NeOtXEQY94oD98Ufbh3IhTHnnYwIA659) |
-   |Non-groundtruth datasets - colab|[![Non-groundtruth datasets - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1d17ejQ83aUy0CZIeQ7bHTugSC9AjJ2mU?usp=sharing) |
-    |Noise detection - colab|[![Noise detection - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1Bp3c-cJfjLWxupmrBJ_6Q4-nqIfZcII4) |
-     |Validation - colab|[![Validation - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/13_EVaQOv_QiNmQiMWJAcFFHPJHGCrQLe) |
-   |How it propagates - colab|[![How it propagates - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o-tP3uvDGjxBOGYkir1lnbr74sZ06e0U?usp=sharing)|
-   |Snapshots of propagation - colab|[![snapshots of the propagation - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vPXNKa8Rf3TnqDHSD3YSWl3g1iNSqjl2?usp=sharing)|
-   |Scalability - colab|[![Scalability - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1d55wkBndLLapO7Yx1ePHhE8mL61j9-TH?usp=sharing)|
-   |Stability vs number of nearest neighbors - colab|[![Stability vs number of nearest neighbors - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17VgVRMFBWvkSIH1yA3tMl6UQ7Eu68K2l?usp=sharing)|
-    |k-nearest-evolution - colab|[![k-nearest-evolution - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1DZ-CQPV3WwJSiaV3-rjwPwmXw4RUh8Qj)|
-  
 
 
 How to cite
@@ -496,6 +520,7 @@ Task List
 - [x] PEP8 compliant
 - [x] Continuous integration
 - [x] scikit-learn compatible
-- [X] Unit tests (coverage: 100%)
+- [X] creating unit tests (coverage: 100%)
+- [ ] generating API documentation
 - [ ] create conda package
 
