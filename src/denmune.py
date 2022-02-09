@@ -84,8 +84,8 @@ class DenMune():
 
     def __init__(
                  self,
-                 train_data=None """trainig data: rquired""",
-                 test_data=None  """testing data: rquired only if testing labels is set""",
+                 train_data=None,
+                 test_data=None,
                  train_truth=None, test_truth=None,
                  file_2d=None, k_nearest=0,
                  rgn_tsne=False, prop_step=0,
