@@ -1,7 +1,6 @@
 import numpy as np
 from itertools import chain
 import pandas as pd
-import requests
 import pytest
 from sklearn.datasets import make_blobs
 from sklearn.datasets import load_iris
