@@ -20,9 +20,9 @@ Coding & Maintenance
 Docs & Tutorials
 ----------------------------
 
-| Read the Docs | Repo2Docker | Colab | kaggle |
-|---------------|-------------|-------|--------|
-|[![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest)| [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
+| Read the Docs | Repo2Docker | Colab | kaggle | Gitter |
+|---------------|-------------|-------|--------| ------ |
+|[![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest)| [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) | [![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) |
 
 Downloads Stats
 --------------------
@@ -31,7 +31,11 @@ Downloads Stats
 |-------------|--------------|---------------|
 |![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dw/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dm/denmune)| [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | 
 
+Reporting Issues
+---------------------
 
+| Slack | Post an issue | 
+|-------|---------|------|
 Based on the paper
 -------------------
 
