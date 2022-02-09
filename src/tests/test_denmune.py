@@ -1,5 +1,6 @@
 import numpy as np
 from itertools import chain
+import pandas as pd
 import pytest
 from sklearn.datasets import make_blobs
 from sklearn.datasets import load_iris
@@ -76,3 +77,14 @@ def test_knn():
         labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)
     #assert (k == 50) # this means we tested the algorithm works fine with several knn inputs    
     
+
+# check if data will be treated correctly when comes as dataframe
+def test_dataframe():
+    wget "https://raw.githubusercontent.com/egy1st/datasets/82fec46ea0d2a0bef4724827d9cfedf60364c08a/denmune/uci/iris.csv"
+    data_file = 'iris.csv'
+    X_train = pd.read_csv(data_file, sep=',', header=None)
+    y_train = X_train.iloc[:, -1]
+    X_train = X_train.drop(X_train.columns[-1], axis=1)  
+    knn = 11 # k-nearest neighbor, the only parameter required by the algorithm
+    dm = DenMune(train_data=X_train, train_truth=y_train, k_nearest=knn, rgn_tsne=True)
+    labels, validity = dm.fit_predict(show_noise=True, show_analyzer=True)
