@@ -658,10 +658,9 @@ class DenMune():
             labels_true = labels_true[:self.train_sz]
         elif data_type == 'test':
             labels_true = labels_true[self.train_sz:]
-        elif data_type == 'augmented':
+        #elif data_type == 'augmented':
             # keep it as it
-            0 == 0
-        
+           
         if isinstance(self.labels_pred, np.ndarray):
             # labels_pred = np.array(self.labels_pred, dtype=np.int64)
             self.labels_pred = self.labels_pred.tolist()
@@ -675,9 +674,8 @@ class DenMune():
             labels_pred = labels_pred[:self.train_sz]
         elif data_type == 'test':
             labels_pred = labels_pred[self.train_sz:]
-        elif data_type == 'augmented':
+        #elif data_type == 'augmented':
             # keep it as it
-            0 == 0
 
         self.analyzer["n_clusters"]["actual"] = len(np.unique(labels_true))
 
@@ -745,8 +743,8 @@ class DenMune():
             self.analyzer["n_points"]["plot_size"] = self.test_sz
         elif data_type == 'train':
             self.analyzer["n_points"]["plot_size"] = self.train_sz
-        elif data_type == 'augmented':
-            self.analyzer["n_points"]["plot_size"] = self.dp_count
+        #elif data_type == 'augmented':
+        #    self.analyzer["n_points"]["plot_size"] = self.dp_count
 
         if data_type == 'ground':
             labels = self.labels_truth
@@ -757,9 +755,8 @@ class DenMune():
                 labels = labels[:self.train_sz]
             elif data_type == 'test':
                 labels = labels[self.train_sz:]
-            elif data_type == 'augmented':
+            #elif data_type == 'augmented':
                 # nothing to do
-                0 == 0
 
         noise_1 = list(labels).count(-1)
         self.analyzer["n_points"]["noise"]["type-1"] = noise_1
@@ -847,8 +844,8 @@ class DenMune():
                 elif data_type == 'test':
                     plt.scatter(self.data[self.train_sz:].T[0], self.data[self.train_sz:].T[1], c=colors, **plot_kwds,
                                 marker='o')
-                elif data_type == 'augmented':
-                    plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
+                #elif data_type == 'augmented':
+                #    plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
                 elif data_type == 'ground':
                     if self.data_indicator == 15:
                         plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
@@ -923,4 +920,3 @@ class DenMune():
                             # print('4', 'key:', z , 'value:', subsubdic[z], 'parent:', v)
                             creat_TreefromDict(self, tree, subsubdic, z, parent=v)
         tree.show()
-        
