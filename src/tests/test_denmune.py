@@ -6,24 +6,7 @@ from sklearn.datasets import make_blobs
 from sklearn.datasets import load_iris
 from src.denmune import DenMune
 
-
-def test_passes():
-    with pytest.raises(Exception) as e_info:
-        x = 1 / 0
-
-def test_passes_without_info():
-    with pytest.raises(Exception):
-        x = 1 / 0
-
-def test_fails():
-    with pytest.raises(Exception) as e_info:
-        x = 1 / 1
-
-def test_fails_without_info():
-    with pytest.raises(Exception):
-        x = 1 / 1
-
-        
+       
 # test DenMune's results
 X_cc, y_cc = make_blobs(
     n_samples=1000,
@@ -65,7 +48,8 @@ def test_parameters(train_data, train_truth, test_data, test_truth, validate, pr
                     # accuracy is not 1. Accuracy around 0.70
                     assert ( np.mean(dm.labels_pred == y_cc) > 0.80 or (1 - np.mean( dm.labels_pred == y_cc)  > 0.80) ) 
 
-def test_specials():
+def test_exceptions():
+
     with pytest.raises(Exception) as execinfo:
         raise Exception('train data is None')
         dm = DenMune(train_data=None, k_nearest=10)
@@ -74,7 +58,18 @@ def test_specials():
     with pytest.raises(Exception) as execinfo:
         raise Exception('train_data is not None and train_truth is None and test_truth is not None')
         dm = DenMune(train_data=train_data, test_truth=test_truth, k_nearest=10)
-        labels, validity = dm.fit_predict()   
+        labels, validity = dm.fit_predict()  
+
+    with pytest.raises(Exception) as execinfo:
+        raise Exception('train_data is not None and test_data is not None and train_truth is None')
+        dm = DenMune(train_data=train_data, test_data=test_data, k_nearest=10)
+        labels, validity = dm.fit_predict()  
+
+    with pytest.raises(Exception) as execinfo:
+        raise Exception('train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None')
+        dm = DenMune(train_data=train_data, train_truth=train_truth, test_truth=test_truth, test_data=None, k_nearest=10)
+        labels, validity = dm.fit_predict() 
+
 
     
 
