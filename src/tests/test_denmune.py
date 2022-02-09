@@ -80,7 +80,7 @@ def test_knn():
 
 # check if data will be treated correctly when comes as dataframe
 def test_dataframe():
-    wget https://raw.githubusercontent.com/egy1st/datasets/82fec46ea0d2a0bef4724827d9cfedf60364c08a/denmune/uci/iris.csv
+    !wget https://raw.githubusercontent.com/egy1st/datasets/82fec46ea0d2a0bef4724827d9cfedf60364c08a/denmune/uci/iris.csv
     data_file = 'iris.csv'
     X_train = pd.read_csv(data_file, sep=',', header=None)
     y_train = X_train.iloc[:, -1]
