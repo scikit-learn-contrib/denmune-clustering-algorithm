@@ -410,9 +410,9 @@ How to run and test
    ----------------------------------------------------------------------
 
 
-   | Dataset  | CoLab URL                                                                                          |
+   | Dataset  | CoLab URL   |
    |----------| ---------------------------------------------------------------------------------------------------|
-    |How to use it - colab|[![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1J_uKdhZ3z1KeY0-wJ7Ruw2PZSY1orKQm)|
+    |How to use it - colab|[![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1J_uKdhZ3z1KeY0-wJ7Ruw2PZSY1orKQm) |
    |Chameleon datasets - colab|[![Chameleon datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing) |
    |2D Shape datasets - colab|[![2D Shape datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1EaqTPCRHSuTKB-qEbnWHpGKFj6XytMIk?usp=sharing) |
    |MNIST dataset - colab|[![MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1a9FGHRA6IPc5jhLOV46iEbpUeQXptSJp?usp=sharing) |
@@ -422,10 +422,10 @@ How to run and test
     |Noise detection - colab|[![Noise detection - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1Bp3c-cJfjLWxupmrBJ_6Q4-nqIfZcII4) |
      |Validation - colab|[![Validation - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/13_EVaQOv_QiNmQiMWJAcFFHPJHGCrQLe) |
    |How it propagates - colab|[![How it propagates - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o-tP3uvDGjxBOGYkir1lnbr74sZ06e0U?usp=sharing)|
-   |Snapshots of propagation - colab|[![snapshots of the propagation - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vPXNKa8Rf3TnqDHSD3YSWl3g1iNSqjl2?usp=sharing)|
-   |Scalability - colab|[![Scalability - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1d55wkBndLLapO7Yx1ePHhE8mL61j9-TH?usp=sharing)|
-   |Stability vs number of nearest neighbors - colab|[![Stability vs number of nearest neighbors - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17VgVRMFBWvkSIH1yA3tMl6UQ7Eu68K2l?usp=sharing)|
-    |k-nearest-evolution - colab|[![k-nearest-evolution - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1DZ-CQPV3WwJSiaV3-rjwPwmXw4RUh8Qj)|
+   |Snapshots of propagation - colab|[![snapshots of the propagation - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vPXNKa8Rf3TnqDHSD3YSWl3g1iNSqjl2?usp=sharing) |
+   |Scalability - colab|[![Scalability - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1d55wkBndLLapO7Yx1ePHhE8mL61j9-TH?usp=sharing) 
+   |Stability vs number of nearest neighbors - colab|[![Stability vs number of nearest neighbors - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17VgVRMFBWvkSIH1yA3tMl6UQ7Eu68K2l?usp=sharing) |
+    |k-nearest-evolution - colab|[![k-nearest-evolution - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1DZ-CQPV3WwJSiaV3-rjwPwmXw4RUh8Qj) |
   
 <a name="kaggle"></a>  
 3. Launch each Example in Kaggle workspace
