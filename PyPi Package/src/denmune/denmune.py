@@ -81,7 +81,7 @@ class DenMune():
     def __init__(self,
                  train_data=None, test_data=None,
                  train_truth=None, test_truth=None,
-                 file_2d='_temp_2d', k_nearest=10,
+                 file_2d=None, k_nearest=0,
                  rgn_tsne=False, prop_step=0,
                  ):
 
@@ -154,6 +154,12 @@ class DenMune():
         # self.delimiter = delimiter
         self.debuger = {}
 
+        if k_nearest == 0:
+            raise Exception("k-nearest neighbor should be at least 1") 
+
+        if file_2d is None:
+            file_2d =  '_temp_2d' 
+
         if data.shape[1] != 2 and file_2d == '_temp_2d':
             # raise Exception("Sorry, this is N-D dataset, file-2d parameter should not be empty")
             start = time.time()
@@ -191,7 +197,7 @@ class DenMune():
         self.kd_NGT()
         self.load_DataPoints()  # load_DataPoints must come after kd_NGT()
         self.compute_Links()
-        # self.semi_init_DataPoints #it is useful with csharp and cnune only
+        # self.semi_init_DataPoints #it is useful with csharp and CNune only
         self.find_Noise()
         self.sort_DataPoints()
         self.prepare_Clusters()
@@ -224,15 +230,17 @@ class DenMune():
 
     def getValue(self, dic, what, who, other=False):
 
-        if what == 'max' and who == 'key' and other == False:
+        if what == 'max' and who == 'value' and other == True:
+            val = max(dic.items(), key=operator.itemgetter(1))[0]  # max value==>key
+        # these cases will never be used here but keep them for future use.    
+        """"    
+        elif what == 'max' and who == 'key' and other == False:
             val = max(dic.items(), key=operator.itemgetter(0))[0]  # max key
         elif what == 'max' and who == 'key' and other == True:
-            val = max(dic.items(), key=operator.itemgetter(0))[1]  # max key==>Value
-        elif what == 'max' and who == 'value' and other == True:
-            val = max(dic.items(), key=operator.itemgetter(1))[0]  # max value==>key
+            val = max(dic.items(), key=operator.itemgetter(0))[1]  # max key==>Value    
         elif what == 'max' and who == 'value' and other == False:
             val = max(dic.items(), key=operator.itemgetter(1))[1]  # max value
-
+        """
         return val
 
     def init_DataPoints(self):
@@ -254,14 +262,17 @@ class DenMune():
             self.DataPoints.append(dp)
         return 0
 
-    def semi_init_DataPoints(self):
+    """
+    this function is useful with csharp and CNune only
 
-        for dp in self.DataPoints:
-            dp.visited = False
-            dp.class_id = 0
-            dp.homogeneity = 0
+        def semi_init_DataPoints(self):
 
-        return 0
+            for dp in self.DataPoints:
+                dp.visited = False
+                dp.class_id = 0
+                dp.homogeneity = 0
+            return 0
+    """       
 
     def find_Noise(self):
 
@@ -332,8 +343,9 @@ class DenMune():
         for i in range(self.dp_count):
             result = self.dp_dis[i]
             for k, o in enumerate(result):
-                if k >= self.k_nearest:
-                    break
+                # no need to this condition, it wont happen
+                #if k >= self.k_nearest:
+                #    break
 
                 # if k != 0:
                 _dis = round(o[1], 6)
@@ -402,6 +414,12 @@ class DenMune():
             clsid = self.DataPoints[i].class_id
             clsroot = self.ClassPoints[clsid].root.name
             self.DataPoints[i].class_id = clsroot
+
+        if self.prop_step:
+            # let us update class 0 to be -2
+            for dp in self.DataPoints:
+                if dp.class_id == 0:
+                    dp.class_id = -2    
 
         end = time.time()
 
@@ -524,68 +542,81 @@ class DenMune():
         else:
             self.labels_pred = self.train_pred
 
-        if self.data_indicator >= 3:
-
-            if show_analyzer:
-                print("Plotting dataset Groundtruth")
-            self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='ground')
-
-        if validate and self.data_indicator >= 1:
-
-            if self.data_indicator >= 3:
-                self.analyzer["validity"] = {}
-                self.analyzer["validity"]['train'] = {}
-                validity_scores = self.validate_Clusters(data_type='train')
-
-            if show_analyzer:
-                print('Plotting train data')
+        if self.prop_step > 0:
+            print("Propagation at iteration:", self.prop_step)
             self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='train')
+
             if show_analyzer:
-                self.show_Analyzer(root='Validating train data')
+                self.show_Analyzer()
 
-            if self.data_indicator == 15:
-                validity_scores = self.validate_Clusters(data_type='test')
+            return None, None
+
+        else:
+            if self.data_indicator >= 3:
+
                 if show_analyzer:
-                    # self.analyzer["validity"]['test'] = {}
-                    self.show_Analyzer(self.analyzer['validity']['test'], root='Validating test data')
+                    print("Plotting dataset Groundtruth")
+                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='ground')
 
-            if self.data_indicator > 3:
+            if validate and self.data_indicator >= 1:
+
+                if self.data_indicator >= 3:
+                    self.analyzer["validity"] = {}
+                    self.analyzer["validity"]['train'] = {}
+                    validity_scores = self.validate_Clusters(data_type='train')
+
                 if show_analyzer:
-                    print('Plotting test data')
-                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='test')
-
-            """"
-            if self.data_indicator == 15:
-                validity_scores = self.validate_Clusters(data_type='augmented')
+                    print('Plotting train data')
+                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='train')
                 if show_analyzer:
-                    self.analyzer["validity"]['augmented'] = {}
-                    self.show_Analyzer(self.analyzer['validity']['augmented'], root='Validating augmented data (train & test)')
-            if self.data_indicator > 3:
-                if show_analyzer:
-                    print ('Plotting augmented data (train & test)')
-                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='augmented')
-            """
+                    self.show_Analyzer(root='Validating train data')
 
-        labels_dic['train'] = self.train_pred
-        labels_dic['test'] = self.test_pred
+                if self.data_indicator == 15:
+                    validity_scores = self.validate_Clusters(data_type='test')
+                    if show_analyzer:
+                        # self.analyzer["validity"]['test'] = {}
+                        self.show_Analyzer(self.analyzer['validity']['test'], root='Validating test data')
 
-        if self.data_indicator == 1:
-            return labels_dic, None
-        elif validate == False:
-            return labels_dic, None
-        elif self.data_indicator >= 3 and validate == True:
-            return labels_dic, self.analyzer['validity']
+                if self.data_indicator > 3:
+                    if show_analyzer:
+                        print('Plotting test data')
+                    self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='test')
+
+                """"
+                if self.data_indicator == 15:
+                    validity_scores = self.validate_Clusters(data_type='augmented')
+                    if show_analyzer:
+                        self.analyzer["validity"]['augmented'] = {}
+                        self.show_Analyzer(self.analyzer['validity']['augmented'], root='Validating augmented data (train & test)')
+                if self.data_indicator > 3:
+                    if show_analyzer:
+                        print ('Plotting augmented data (train & test)')
+                    self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='augmented')
+                """
+
+            labels_dic['train'] = self.train_pred
+            labels_dic['test'] = self.test_pred
+
+            if self.data_indicator == 1:
+                return labels_dic, None
+            elif validate == False:
+                return labels_dic, None
+            elif self.data_indicator >= 3 and validate == True:
+                return labels_dic, self.analyzer['validity']
 
     def match_Labels(self):
 
         labels_true = self.labels_truth
 
+        """"
         if isinstance(self.labels_pred, np.ndarray):
             # labels_pred = np.array(self.labels_pred, dtype=np.int64)
             labels_pred = self.labels_pred.tolist()
         else:
             labels_pred = self.labels_pred
+        """
 
+        labels_pred = self.labels_pred
         pred_set = set(labels_pred)
         index = []
         x = 1
@@ -630,18 +661,24 @@ class DenMune():
             labels_true = labels_true[:self.train_sz]
         elif data_type == 'test':
             labels_true = labels_true[self.train_sz:]
-        elif data_type == 'augmented':
+        #elif data_type == 'augmented':
             # keep it as it
-            0 == 0
+           
+        if isinstance(self.labels_pred, np.ndarray):
+            # labels_pred = np.array(self.labels_pred, dtype=np.int64)
+            self.labels_pred = self.labels_pred.tolist()
 
-        labels_pred = self.match_Labels()
+        labels_pred = self.labels_pred
+        if self.prop_step == 0: # do not match labels if yoy are in propagation mode
+            labels_pred = self.match_Labels()
+
+
         if data_type == 'train':
             labels_pred = labels_pred[:self.train_sz]
         elif data_type == 'test':
             labels_pred = labels_pred[self.train_sz:]
-        elif data_type == 'augmented':
+        #elif data_type == 'augmented':
             # keep it as it
-            0 == 0
 
         self.analyzer["n_clusters"]["actual"] = len(np.unique(labels_true))
 
@@ -709,8 +746,8 @@ class DenMune():
             self.analyzer["n_points"]["plot_size"] = self.test_sz
         elif data_type == 'train':
             self.analyzer["n_points"]["plot_size"] = self.train_sz
-        elif data_type == 'augmented':
-            self.analyzer["n_points"]["plot_size"] = self.dp_count
+        #elif data_type == 'augmented':
+        #    self.analyzer["n_points"]["plot_size"] = self.dp_count
 
         if data_type == 'ground':
             labels = self.labels_truth
@@ -721,9 +758,8 @@ class DenMune():
                 labels = labels[:self.train_sz]
             elif data_type == 'test':
                 labels = labels[self.train_sz:]
-            elif data_type == 'augmented':
+            #elif data_type == 'augmented':
                 # nothing to do
-                0 == 0
 
         noise_1 = list(labels).count(-1)
         self.analyzer["n_points"]["noise"]["type-1"] = noise_1
@@ -765,14 +801,14 @@ class DenMune():
                                         np.unique(labels).max() + 2)  # deep, dark, bright, muted, pastel, colorblind
 
             if self.prop_step:
-                colors = [palette[x] if x >= 0 else ((0.0, 0.0, 0.0) if x == -1 else (0.0, 0.0, 0.0)) for x in labels]
-                v = 0
-                for c in colors:
-                    if (c[0] + c[1] + c[2]) > 0.0:  # outlier :: keep it in black
-                        colors2.append((c[0], c[1], c[2], 1.0))
-                        data2.append((self.data[v][0], self.data[v][1]))
-                    v += 1
-                data2 = np.array(data2)
+              colors = [palette[x] if x >= 0 else ((0.0, 0.0, 0.0) if x == -1 else (0.0, 0.0, 0.0)) for x in labels]
+              v = 0
+              for c in colors:
+                  if (c[0] + c[1] + c[2]) > 0.0:  # outlier :: keep it away. Note that even outliers are -1, -2, it become in black after the previous step: color (0.0, 0.0, 0.0
+                      colors2.append((c[0], c[1], c[2], 1.0))
+                      data2.append((self.data[v][0], self.data[v][1]))
+                  v += 1
+              data2 = np.array(data2)
 
             else:
                 if show_noise == False:
@@ -785,17 +821,25 @@ class DenMune():
             # plt.figure(figsize=(12, 8))
 
             if self.prop_step:
+                # lenght of data2 will be always equlas to length of the specific data type (test, train)
+                #print ('datatype', data_type)
                 if data_type == 'train':
-                    plt.scatter(data2[:self.train_sz].T[0], data2[:self.train_sz].T[1], c=colors2, **plot_kwds,
-                                marker='o')
-                elif data_type == 'test':
-                    plt.scatter(data2[self.train_sz:].T[0], data2[self.train_sz:].T[1], c=colors2, **plot_kwds,
-                                marker='o')
-                elif data_type == 'augmented':
                     plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
+                    #plt.scatter(data2[:self.train_sz].T[0], data2[:self.train_sz].T[1], c=colors2, **plot_kwds, marker='o')
+
+                """"
+                elif data_type == 'test':
+                  print ('train_sz', self.train_sz, 'test_sz', self.test_sz)
+                  #plt.scatter(data2[self.test_sz:self.train_sz:].T[0], data2[self.train_sz:].T[1], c=colors2, **plot_kwds,  marker='o' )
+                  plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
+                elif data_type == 'augmented':
+                  print ('3')
+                  plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
                 elif data_type == 'ground':
-                    plt.scatter(data2[:self.train_sz].T[0], data2[:self.train_sz].T[1], c=colors2, **plot_kwds,
-                                marker='o')
+                    #plt.scatter(data2[:self.train_sz].T[0], data2[:self.train_sz].T[1], c=colors2, **plot_kwds, marker='o')
+                    plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
+                """
+
             else:
                 if data_type == 'train':
                     plt.scatter(self.data[:self.train_sz].T[0], self.data[:self.train_sz].T[1], c=colors, **plot_kwds,
@@ -803,8 +847,8 @@ class DenMune():
                 elif data_type == 'test':
                     plt.scatter(self.data[self.train_sz:].T[0], self.data[self.train_sz:].T[1], c=colors, **plot_kwds,
                                 marker='o')
-                elif data_type == 'augmented':
-                    plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
+                #elif data_type == 'augmented':
+                #    plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
                 elif data_type == 'ground':
                     if self.data_indicator == 15:
                         plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')

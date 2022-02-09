@@ -14,7 +14,6 @@ DenMune a clustering algorithm that can find clusters of arbitrary size, shapes 
 [![BSD 3-Clause “New” or “Revised” License" ](https://img.shields.io/badge/license-BSD-green)](https://choosealicense.com/licenses/bsd-3-clause/)
 [![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=shield)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main)
 [![codecov](https://codecov.io/gh/egy1st/denmune-clustering-algorithm/branch/main/graph/badge.svg?token=E2ZY0DSUM2)](https://codecov.io/gh/egy1st/denmune-clustering-algorithm)
-[![workflow for codecov](https://github.com/egy1st/denmune-clustering-algorithm/actions/workflows/python-package.yml/badge.svg)](https://github.com/egy1st/denmune-clustering-algorithm/actions/workflows/python-package.yml)
 
 Based on the paper
 -------------------
@@ -187,7 +186,7 @@ Algorithm's Parameters
 def __init__ (self,
                   train_data=None, test_data=None,
                   train_truth=None, test_truth=None, 
-                  file_2d ='_temp_2d', k_nearest=10, 
+                  file_2d =None, k_nearest=None, 
                   rgn_tsne=False, prop_step=0,
                   ):    
 ```
@@ -209,7 +208,7 @@ def __init__ (self,
 
 - k_nearest:
   - number of nearest neighbor
-  - default: 10. It should be provided by the user.
+  - default: 0. the default is invalid. k-nearest neighbor should be at leat 1.
    
 - rgn_tsn: 
   - when set to True: It will regenerate the reduced 2-D version of the N-D dataset each time the algorithm run. 
@@ -218,7 +217,7 @@ def __init__ (self,
    
 - file_2d: name (include location) of file used save/load the reduced 2-d version
   - if empty: the algorithm will create temporary file named '_temp_2d'
-  - default: _temp_2d
+  - default: None
    
 - prop_step:
   - size of increment used in showing the clustering propagation.
@@ -497,6 +496,6 @@ Task List
 - [x] PEP8 compliant
 - [x] Continuous integration
 - [x] scikit-learn compatible
-- [X] Unit tests (coverage: 97%)
+- [X] Unit tests (coverage: 100%)
 - [ ] create conda package
 
