@@ -36,8 +36,9 @@ Suggestions & Reporting
 
 | Slack | Gitter | Discord |
 |-------|---------|--------|
-|  [![Gitter](https://img.shields.io/badge/chat-on%20slack-blue)](https://app.slack.com/client/T032DJEC8AW/C0326UK1VFY) |
-      | [![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) |   |
+|  [![Slack](https://img.shields.io/badge/chat-on%20slack-blue)](https://app.slack.com/client/T032DJEC8AW/C0326UK1VFY) 
+| [![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) |
+|  |
 
 Based on the paper
 -------------------
