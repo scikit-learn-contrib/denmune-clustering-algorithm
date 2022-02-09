@@ -1,6 +1,7 @@
 import numpy as np
 from itertools import chain
 import pandas as pd
+import requests
 import pytest
 from sklearn.datasets import make_blobs
 from sklearn.datasets import load_iris
@@ -80,8 +81,7 @@ def test_knn():
 
 # check if data will be treated correctly when comes as dataframe
 def test_dataframe():
-    !wget https://raw.githubusercontent.com/egy1st/datasets/82fec46ea0d2a0bef4724827d9cfedf60364c08a/denmune/uci/iris.csv
-    data_file = 'iris.csv'
+    data_file = 'https://raw.githubusercontent.com/egy1st/datasets/82fec46ea0d2a0bef4724827d9cfedf60364c08a/denmune/uci/iris.csv'
     X_train = pd.read_csv(data_file, sep=',', header=None)
     y_train = X_train.iloc[:, -1]
     X_train = X_train.drop(X_train.columns[-1], axis=1)  
