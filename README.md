@@ -31,12 +31,13 @@ Downloads Stats
 |-------------|--------------|---------------|
 |![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dw/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dm/denmune)| [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | 
 
-Reporting &
----------------------
+Suggestions & Reporting
+------------------------
 
 | Slack | Gitter | Discord |
 |-------|---------|--------|
-|       | [![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) |   |
+|  [![Gitter](https://img.shields.io/badge/chat-on%20slack-blue)](https://app.slack.com/client/T032DJEC8AW/C0326UK1VFY) |
+      | [![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) |   |
 
 Based on the paper
 -------------------
