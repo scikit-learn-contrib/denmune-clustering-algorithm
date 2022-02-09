@@ -99,20 +99,20 @@ def test_exceptions():
 
     with pytest.raises(Exception) as execinfo:
         dm = DenMune(train_data=None, k_nearest=10)
-        labels, validity = dm.fit_predict()
-        raise Exception('train data is None')
+        #labels, validity = dm.fit_predict()
+        #raise Exception('train data is None')
 
     with pytest.raises(Exception) as execinfo:
         dm = DenMune(train_data=train_data, test_truth=test_labels, k_nearest=10)
-        labels, validity = dm.fit_predict()  
-        raise Exception('train_data is not None and train_truth is None and test_truth is not None')
+        #labels, validity = dm.fit_predict()  
+        #raise Exception('train_data is not None and train_truth is None and test_truth is not None')
 
     with pytest.raises(Exception) as execinfo:
-        raise Exception('train_data is not None and test_data is not None and train_truth is None')
         dm = DenMune(train_data=train_data, test_data=test_data, k_nearest=10)
-        labels, validity = dm.fit_predict()  
+        #labels, validity = dm.fit_predict()
+        #raise Exception('train_data is not None and test_data is not None and train_truth is None')  
 
     with pytest.raises(Exception) as execinfo:
-        raise Exception('train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None')
-        dm = DenMune(train_data=train_data, train_truth=train_truth, test_truth=test_truth, test_data=None, k_nearest=10)
-        labels, validity = dm.fit_predict()     
+        dm = DenMune(train_data=train_data, train_truth=train_labels, test_truth=test_labels, test_data=None, k_nearest=10)
+        #labels, validity = dm.fit_predict()     
+        #raise Exception('train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None')
