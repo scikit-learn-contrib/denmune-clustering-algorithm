@@ -80,10 +80,17 @@ def test_knn():
 
 # check if data will be treated correctly when comes as dataframe
 def test_dataframe():
-    data_file = 'https://raw.githubusercontent.com/egy1st/datasets/82fec46ea0d2a0bef4724827d9cfedf60364c08a/denmune/uci/iris.csv'
-    X_train = pd.read_csv(data_file, sep=',', header=None)
-    y_train = X_train.iloc[:, -1]
-    X_train = X_train.drop(X_train.columns[-1], axis=1)  
+    data_file = 'https://raw.githubusercontent.com/egy1st/datasets/dd90854f92cb5ef73b4146606c1c158c32e69b94/denmune/shapes/aggr_rand.csv'
+    data = pd.read_csv(data_file, sep=',', header=None)
+    labels = data.iloc[:, -1]
+    data = data.drop(data.columns[-1], axis=1)
+
+    train_data = data [:555]
+    test_data = data [555:]
+    train_labels = labels [:555]
+    test_labels = labels [555:]
+    
     knn = 11 # k-nearest neighbor, the only parameter required by the algorithm
-    dm = DenMune(train_data=X_train, train_truth=y_train, k_nearest=knn, rgn_tsne=True)
-    labels, validity = dm.fit_predict(show_noise=True, show_analyzer=True)
+    dm = DenMune(train_data=train_data, train_truth=train_labels, test_data=test_data, test_truth=test_labels, k_nearest=knn, rgn_tsne=True)
+    labels, validity = dm.fit_predict(validate=True, show_noise=True, show_analyzer=True)
+    assert ( np.mean(dm.labels_pred == labels) > 0.97 or (1 - np.mean( dm.labels_pred == labels)  > 0.97) ) 
