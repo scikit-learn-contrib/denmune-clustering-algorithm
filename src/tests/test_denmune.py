@@ -48,30 +48,6 @@ def test_parameters(train_data, train_truth, test_data, test_truth, validate, pr
                     # accuracy is not 1. Accuracy around 0.70
                     assert ( np.mean(dm.labels_pred == y_cc) > 0.80 or (1 - np.mean( dm.labels_pred == y_cc)  > 0.80) ) 
 
-def test_exceptions():
-
-    with pytest.raises(Exception) as execinfo:
-        raise Exception('train data is None')
-        dm = DenMune(train_data=None, k_nearest=10)
-        labels, validity = dm.fit_predict()
-
-    with pytest.raises(Exception) as execinfo:
-        raise Exception('train_data is not None and train_truth is None and test_truth is not None')
-        dm = DenMune(train_data=train_data, test_truth=test_truth, k_nearest=10)
-        labels, validity = dm.fit_predict()  
-
-    with pytest.raises(Exception) as execinfo:
-        raise Exception('train_data is not None and test_data is not None and train_truth is None')
-        dm = DenMune(train_data=train_data, test_data=test_data, k_nearest=10)
-        labels, validity = dm.fit_predict()  
-
-    with pytest.raises(Exception) as execinfo:
-        raise Exception('train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None')
-        dm = DenMune(train_data=train_data, train_truth=train_truth, test_truth=test_truth, test_data=None, k_nearest=10)
-        labels, validity = dm.fit_predict() 
-
-
-    
 
 def test_DenMune_propagation():
     snapshots = chain([0], range(2,5), range(5,50,5), range(50, 100, 10), range(100,500,50), range(500,1100, 100))
@@ -102,19 +78,41 @@ def test_knn():
     #assert (k == 50) # this means we tested the algorithm works fine with several knn inputs    
     
 
+data_file = 'https://raw.githubusercontent.com/egy1st/datasets/dd90854f92cb5ef73b4146606c1c158c32e69b94/denmune/shapes/aggr_rand.csv'
+data = pd.read_csv(data_file, sep=',', header=None)
+labels = data.iloc[:, -1]
+data = data.drop(data.columns[-1], axis=1)
+train_data = data [:555]
+test_data = data [555:]
+train_labels = labels [:555]
+test_labels = labels [555:]
+
 # check if data will be treated correctly when comes as dataframe
 def test_dataframe():
-    data_file = 'https://raw.githubusercontent.com/egy1st/datasets/dd90854f92cb5ef73b4146606c1c158c32e69b94/denmune/shapes/aggr_rand.csv'
-    data = pd.read_csv(data_file, sep=',', header=None)
-    labels = data.iloc[:, -1]
-    data = data.drop(data.columns[-1], axis=1)
-
-    train_data = data [:555]
-    test_data = data [555:]
-    train_labels = labels [:555]
-    test_labels = labels [555:]
-    
     knn = 11 # k-nearest neighbor, the only parameter required by the algorithm
     dm = DenMune(train_data=train_data, train_truth=train_labels, test_data=test_data, test_truth=test_labels, k_nearest=knn, rgn_tsne=True)
     labels, validity = dm.fit_predict(validate=True, show_noise=True, show_analyzer=True)
     assert ( np.mean(dm.labels_pred == labels) > 0.97 or (1 - np.mean( dm.labels_pred == labels)  > 0.97) ) 
+
+
+def test_exceptions():
+
+    with pytest.raises(Exception) as execinfo:
+        dm = DenMune(train_data=None, k_nearest=10)
+        labels, validity = dm.fit_predict()
+        raise Exception('train data is None')
+
+    with pytest.raises(Exception) as execinfo:
+        dm = DenMune(train_data=train_data, test_truth=test_labels, k_nearest=10)
+        labels, validity = dm.fit_predict()  
+        raise Exception('train_data is not None and train_truth is None and test_truth is not None')
+
+    with pytest.raises(Exception) as execinfo:
+        raise Exception('train_data is not None and test_data is not None and train_truth is None')
+        dm = DenMune(train_data=train_data, test_data=test_data, k_nearest=10)
+        labels, validity = dm.fit_predict()  
+
+    with pytest.raises(Exception) as execinfo:
+        raise Exception('train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None')
+        dm = DenMune(train_data=train_data, train_truth=train_truth, test_truth=test_truth, test_data=None, k_nearest=10)
+        labels, validity = dm.fit_predict()     
