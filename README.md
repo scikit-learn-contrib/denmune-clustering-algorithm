@@ -496,6 +496,6 @@ Task List
 - [x] PEP8 compliant
 - [x] Continuous integration
 - [x] scikit-learn compatible
-- [X] Unit tests (coverage: 94%)
+- [X] Unit tests (coverage: 95%)
 - [ ] create conda package
 
