@@ -34,9 +34,9 @@ Algorithm Stats
 Based on the paper
 -------------------
 
-|Paper|Journal|      
-|-------------------------------------------------------------------------------------------|-----------------------------|
-|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                              <td rowspan="5">[![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0)   </td>                           
+|Paper|
+|-------------------------------------------------------------------------------------------
+|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                                                       
 |*DenMune: Density peak based clustering using mutual nearest neighbors*                                           
 |In: Journal of Pattern Recognition, Elsevier,                                                                 
 |volume 109, number 107589, January 2021                                                                      
