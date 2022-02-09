@@ -6,6 +6,24 @@ from sklearn.datasets import make_blobs
 from sklearn.datasets import load_iris
 from src.denmune import DenMune
 
+
+def test_passes():
+    with pytest.raises(Exception) as e_info:
+        x = 1 / 0
+
+def test_passes_without_info():
+    with pytest.raises(Exception):
+        x = 1 / 0
+
+def test_fails():
+    with pytest.raises(Exception) as e_info:
+        x = 1 / 1
+
+def test_fails_without_info():
+    with pytest.raises(Exception):
+        x = 1 / 1
+
+        
 # test DenMune's results
 X_cc, y_cc = make_blobs(
     n_samples=1000,
