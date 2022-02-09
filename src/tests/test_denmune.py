@@ -116,3 +116,8 @@ def test_exceptions():
         dm = DenMune(train_data=train_data, train_truth=train_labels, test_truth=test_labels, test_data=None, k_nearest=10)
         #labels, validity = dm.fit_predict()     
         #raise Exception('train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None')
+    with pytest.raises(Exception) as execinfo:
+
+        dm = DenMune(train_data=train_data, train_truth=train_labels) # default value for k_nearest is 0 which is invalid
+        #labels, validity = dm.fit_predict()     
+        #raise Exception('k-nearest neighbor should be at least 1')    

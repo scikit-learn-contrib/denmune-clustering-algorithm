@@ -230,15 +230,17 @@ class DenMune():
 
     def getValue(self, dic, what, who, other=False):
 
-        if what == 'max' and who == 'key' and other == False:
+        if what == 'max' and who == 'value' and other == True:
+            val = max(dic.items(), key=operator.itemgetter(1))[0]  # max value==>key
+        # these cases will never be used here but keep them for future use.    
+        """"    
+        elif what == 'max' and who == 'key' and other == False:
             val = max(dic.items(), key=operator.itemgetter(0))[0]  # max key
         elif what == 'max' and who == 'key' and other == True:
-            val = max(dic.items(), key=operator.itemgetter(0))[1]  # max key==>Value
-        elif what == 'max' and who == 'value' and other == True:
-            val = max(dic.items(), key=operator.itemgetter(1))[0]  # max value==>key
+            val = max(dic.items(), key=operator.itemgetter(0))[1]  # max key==>Value    
         elif what == 'max' and who == 'value' and other == False:
             val = max(dic.items(), key=operator.itemgetter(1))[1]  # max value
-
+        """
         return val
 
     def init_DataPoints(self):
