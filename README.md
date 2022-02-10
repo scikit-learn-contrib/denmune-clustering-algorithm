@@ -13,16 +13,16 @@ Scientific Work
 
 Coding & Maintenance
 -----------------------
-| Git Repository | Installation | CI Piplines | Code Coverage |
-|------------|--------------|-----------------|---------------|
-|[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/egy1st/denmune-clustering-algorithm)](https://github.com/egy1st/denmune-clustering-algorithm)  | [![PyPI Version](https://img.shields.io/pypi/v/denmune.svg)]( https://pypi.org/project/denmune/) | [![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=shield)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main) | [![codecov](https://codecov.io/gh/egy1st/denmune-clustering-algorithm/branch/main/graph/badge.svg?token=E2ZY0DSUM2)](https://codecov.io/gh/egy1st/denmune-clustering-algorithm) |
+| Git Repository | Code Style | Installation | CI Workflow | Code Coverage |
+|----------------|------------|--------------|-------------|---------------|
+|[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/egy1st/denmune-clustering-algorithm)](https://github.com/egy1st/denmune-clustering-algorithm)  | ![Code Style: Black](https://img.shields.io/badge/code%20style-black-black) | [![PyPI Version](https://img.shields.io/pypi/v/denmune.svg)]( https://pypi.org/project/denmune/) | [![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=shield)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main) | [![codecov](https://codecov.io/gh/egy1st/denmune-clustering-algorithm/branch/main/graph/badge.svg?token=E2ZY0DSUM2)](https://codecov.io/gh/egy1st/denmune-clustering-algorithm) |
 
 Docs & Tutorials
 ----------------------------
 
-| Read the Docs | Repo2Docker | Colab | kaggle |
-|---------------|-------------|-------|--------| 
-|[![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest)| [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) | 
+| Read the Docs | Repo2Docker | Colab | kaggle | ReviewNB |
+|---------------|-------------|-------|--------|--------- |
+|[![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest)| [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |[![Review NB](https://img.shields.io/badge/review-on%20reviewNB-blueviolet)](https://app.reviewnb.com/egy1st/denmune-clustering-algorithm/)|
 
 Downloads Stats
 --------------------
@@ -31,8 +31,8 @@ Downloads Stats
 |-------------|--------------|---------------|
 |![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dw/denmune)|![PyPI - Downloads](https://img.shields.io/pypi/dm/denmune)| [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | 
 
-Suggestions & Reporting
-------------------------
+Suggestions & Reporting Issues
+-------------------------------
 
 | Github | Gitter | Slack | Discord |
 |--------|--------|-------|---------|
