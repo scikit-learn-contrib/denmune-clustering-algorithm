@@ -47,7 +47,7 @@ jobs:
           command: |
                cd colab
                git clone https://github.com/egy1st/datasets
-               treon 
+               treon --threads=1
 
       - run:
           name: CodeCov pyTest
