@@ -40,7 +40,7 @@ jobs:
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
 
       - slack/notify:
-          template: basic_fail_1
+          template: basic_success_1
           channel: C0326UK1VFY 
       - run:
           name: Treon Test      
