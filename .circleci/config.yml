@@ -40,8 +40,9 @@ jobs:
       - run:
           name: Treon Test      
           command: |
+               cd colab
                git clone https://github.com/egy1st/datasets
-               treon colab
+               treon 
 
       - run:
           name: CodeCov pyTest
