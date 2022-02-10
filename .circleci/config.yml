@@ -57,8 +57,7 @@ jobs:
               coverage xml
               cp coverage.xml htmlcov/coverage.xml
 
-      - codecov/upload
-      
+      - codecov/upload     
      
       - store_artifacts:
           path: htmlcov
@@ -71,5 +70,5 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test:
-        context:
-          - Slack 
+        context: Slack 
+      
