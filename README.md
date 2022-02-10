@@ -13,7 +13,7 @@ Scientific Work
 
 Coding & Maintenance
 -----------------------
-| Git Repository | Code Style | Installation | CI Workflow | Code Coverage |
+| Git Repo | Code Style | Installation | CI Workflow | Code Coverage |
 |----------------|------------|--------------|-------------|---------------|
 |[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/egy1st/denmune-clustering-algorithm)](https://github.com/egy1st/denmune-clustering-algorithm)  | ![Code Style: Black](https://img.shields.io/badge/code%20style-black-black) | [![PyPI Version](https://img.shields.io/pypi/v/denmune.svg)]( https://pypi.org/project/denmune/) | [![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=shield)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main) | [![codecov](https://codecov.io/gh/egy1st/denmune-clustering-algorithm/branch/main/graph/badge.svg?token=E2ZY0DSUM2)](https://codecov.io/gh/egy1st/denmune-clustering-algorithm) |
 
@@ -34,9 +34,9 @@ Downloads Stats
 Suggestions & Reporting Issues
 -------------------------------
 
-| Github | Gitter | Slack | Discord |
-|--------|--------|-------|---------|
-|[![GitHub Discussions](https://img.shields.io/github/discussions/egy1st/denmune-clustering-algorithm)](https://github.com/egy1st/denmune-clustering-algorithm/discussions)|[![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)|[![Slack](https://img.shields.io/badge/chat-on%20slack-orange)](https://app.slack.com/client/T032DJEC8AW/C0326UK1VFY)|[![Discord](https://img.shields.io/badge/chat-on%20discord-blue)](https://discord.gg/Mes74bHZ8b)|
+| Github | Gitter | Slack | 
+|--------|--------|-------|
+|[![GitHub Discussions](https://img.shields.io/github/discussions/egy1st/denmune-clustering-algorithm)](https://github.com/egy1st/denmune-clustering-algorithm/discussions)|[![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)|[![Slack](https://img.shields.io/badge/chat-on%20slack-orange)](https://app.slack.com/client/T032DJEC8AW/C0326UK1VFY)|
 
 Based on the paper
 -------------------
