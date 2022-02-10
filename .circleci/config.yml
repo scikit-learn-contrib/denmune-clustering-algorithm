@@ -39,15 +39,12 @@ jobs:
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
 
-      - slack/notify:
-          template: basic_success_1
-          channel: C0326UK1VFY 
       - run:
           name: Treon Test      
           command: |
                cd colab
                git clone https://github.com/egy1st/datasets
-               treon --threads=1
+               treon --threads=2
 
       - run:
           name: CodeCov pyTest
@@ -63,7 +60,9 @@ jobs:
       - store_artifacts:
           path: htmlcov
         
-      
+      - slack/notify:
+          template: basic_success_1
+          channel: C0326UK1VFY 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
