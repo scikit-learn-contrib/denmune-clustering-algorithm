@@ -54,12 +54,12 @@ from numpy import genfromtxt
 from sklearn.manifold import TSNE
 from treelib import Tree as tr
 
-sns.set_context('poster')
+sns.set_context("poster")
 sns.set_color_codes()
-plot_kwds = {'alpha': 0.99, 's': 80, 'linewidths': 0}
+plot_kwds = {"alpha": 0.99, "s": 80, "linewidths": 0}
 
 
-class DataPoint():
+class DataPoint:
     """each point in our dataset is initiated using this class"""
 
     def __init__(self, id):
@@ -79,21 +79,26 @@ class DataPoint():
         """dataset points will be sorted according to this measure"""
 
 
-class DenMune():
+class DenMune:
     """The main class of the algorithm. any object should be initiated using this class"""
 
     def __init__(
-                 self,
-                 train_data=None """trainig data: rquired""",
-                 test_data=None  """testing data: rquired only if testing labels is set""",
-                 train_truth=None, test_truth=None,
-                 file_2d=None, k_nearest=0,
-                 rgn_tsne=False, prop_step=0,
-                 ):
+        self,
+        train_data=None,
+        test_data=None,
+        train_truth=None,
+        test_truth=None,
+        file_2d=None,
+        k_nearest=0,
+        rgn_tsne=False,
+        prop_step=0,
+    ):
         """Initiate object in Null-state. User should set paramters properly, otherwise an error would raise"""
 
         if train_data is None:
-            raise Exception("No data is provided. At least train data should be provided. Set train_data argmunt properly.")
+            raise Exception(
+                "No data is provided. At least train data should be provided. Set train_data argmunt properly."
+            )
         else:
             self.data_indicator = 1
 
@@ -106,27 +111,38 @@ class DenMune():
         if test_truth is not None:
             self.data_indicator += 8
 
-        if  train_data is not None and train_truth is None and test_truth is not None:
-            raise Exception("you should provide labels for your traing data to be allowed to work with test data. Set train_truth argmunt properly.")
-        if train_data is not None and train_truth is None and  test_data is not None :
-            raise Exception("you should provide labels for your traing data to be allowed to work with test data. Set train_truth argmunt properly.")
-        if train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None:
-              raise Exception("Although labels of testing data is provided, the test data itself isnot. Set test_data argument properly.")
+        if train_data is not None and train_truth is None and test_truth is not None:
+            raise Exception(
+                "you should provide labels for your traing data to be allowed to work with test data. Set train_truth argmunt properly."
+            )
+        if train_data is not None and train_truth is None and test_data is not None:
+            raise Exception(
+                "you should provide labels for your traing data to be allowed to work with test data. Set train_truth argmunt properly."
+            )
+        if (
+            train_data is not None
+            and train_truth is not None
+            and test_truth is not None
+            and test_data is None
+        ):
+            raise Exception(
+                "Although labels of testing data is provided, the test data itself isnot. Set test_data argument properly."
+            )
 
         self.analyzer = {}
-        self.analyzer['n_points'] = {}
+        self.analyzer["n_points"] = {}
         if isinstance(train_data, pd.DataFrame):
             train_data = train_data.to_numpy()
-            train_data = train_data.copy(order='C')
+            train_data = train_data.copy(order="C")
         if isinstance(test_data, pd.DataFrame):
             test_data = test_data.to_numpy()
-            test_data = test_data.copy(order='C')
+            test_data = test_data.copy(order="C")
         if isinstance(train_truth, pd.Series):
             train_truth = train_truth.to_numpy()
-            train_truth = train_truth.copy(order='C')
+            train_truth = train_truth.copy(order="C")
         if isinstance(test_truth, pd.Series):
             test_truth = test_truth.to_numpy()
-            test_truth = test_truth.copy(order='C')
+            test_truth = test_truth.copy(order="C")
 
         self.train_sz = len(train_data)
 
@@ -143,14 +159,15 @@ class DenMune():
             self.labels_truth = train_truth
 
         self.analyzer["n_points"]["size"] = len(
-            data)  # data.shape[0] # this will changed in preplot when we plot only train or test data
+            data
+        )  # data.shape[0] # this will changed in preplot when we plot only train or test data
 
-        self.analyzer['exec_time'] = {}
+        self.analyzer["exec_time"] = {}
         self.analyzer["exec_time"]["t_SNE"] = 0
-        self.analyzer['n_points']["noise"] = {}
+        self.analyzer["n_points"]["noise"] = {}
         self.analyzer["n_points"]["noise"]["type-1"] = 0
         self.analyzer["n_points"]["noise"]["type-2"] = 0
-        self.analyzer['n_points']["weak"] = {}
+        self.analyzer["n_points"]["weak"] = {}
         self.analyzer["n_points"]["weak"]["all"] = 0
         self.analyzer["n_points"]["weak"]["succeeded to merge"] = 0
         self.analyzer["n_points"]["weak"]["failed to merge"] = 0
@@ -162,29 +179,29 @@ class DenMune():
         self.debuger = {}
 
         if k_nearest == 0:
-            raise Exception("k-nearest neighbor should be at least 1") 
+            raise Exception("k-nearest neighbor should be at least 1")
 
         if file_2d is None:
-            file_2d =  '_temp_2d' 
+            file_2d = "_temp_2d"
 
-        if data.shape[1] != 2 and file_2d == '_temp_2d':
+        if data.shape[1] != 2 and file_2d == "_temp_2d":
             # raise Exception("Sorry, this is N-D dataset, file-2d parameter should not be empty")
             start = time.time()
-            self.generate_tsne(data, 2, file_2d='_temp_2d')
+            self.generate_tsne(data, 2, file_2d="_temp_2d")
             end = time.time()
             self.analyzer["exec_time"]["t_SNE"] = end - start
-            data = genfromtxt(file_2d, delimiter=',')
-        elif data.shape[1] != 2 and file_2d != '_temp_2d':
+            data = genfromtxt(file_2d, delimiter=",")
+        elif data.shape[1] != 2 and file_2d != "_temp_2d":
             if not os.path.isfile(file_2d) or rgn_tsne == True:
                 start = time.time()
                 self.generate_tsne(data, 2, file_2d)
                 end = time.time()
                 self.analyzer["exec_time"]["t_SNE"] = end - start
-            data = genfromtxt(file_2d, delimiter=',')
+            data = genfromtxt(file_2d, delimiter=",")
 
         start_time = time.time()
 
-        self.alg_name = 'denmune'
+        self.alg_name = "denmune"
         self.prop_step = prop_step
         self.data = data
         self.train_data = train_data
@@ -229,7 +246,9 @@ class DenMune():
             self.dp_dis = []
             for i in range(self.dp_count):
                 query = self.data[i]
-                result = index.search(query, k + 1)[1:]  # we skip first distance from a point to itself
+                result = index.search(query, k + 1)[
+                    1:
+                ]  # we skip first distance from a point to itself
                 self.dp_dis.append(result)
 
             end = time.time()
@@ -237,9 +256,9 @@ class DenMune():
 
     def getValue(self, dic, what, who, other=False):
 
-        if what == 'max' and who == 'value' and other == True:
+        if what == "max" and who == "value" and other == True:
             val = max(dic.items(), key=operator.itemgetter(1))[0]  # max value==>key
-        # these cases will never be used here but keep them for future use.    
+        # these cases will never be used here but keep them for future use.
         """"    
         elif what == 'max' and who == 'key' and other == False:
             val = max(dic.items(), key=operator.itemgetter(0))[0]  # max key
@@ -279,7 +298,7 @@ class DenMune():
                 dp.class_id = 0
                 dp.homogeneity = 0
             return 0
-    """       
+    """
 
     def find_Noise(self):
 
@@ -290,10 +309,14 @@ class DenMune():
             dp = self.DataPoints[i]
             if len(dp.reference) == 0:
                 dp.class_id = -1
-                self.ClassPoints[i] = self.ClassPoints[-1]  # Node(-1, parent=None) # this it is a noise
+                self.ClassPoints[i] = self.ClassPoints[
+                    -1
+                ]  # Node(-1, parent=None) # this it is a noise
             else:  # at least one point
                 dp.class_id = 0  # this is allready set initally
-                self.ClassPoints[i] = self.ClassPoints[0]  # Node(0, parent=None) # this it is a non-clustered point
+                self.ClassPoints[i] = self.ClassPoints[
+                    0
+                ]  # Node(0, parent=None) # this it is a non-clustered point
                 # where -1 is noise and 0 is non-clustered
         return 0
 
@@ -320,14 +343,20 @@ class DenMune():
 
         self.analyzer["n_points"]["strong"] = 0
         for i in range(self.dp_count):
-            self.DataPoints[i].referred_by = self.sort_Tuple(self.DataPoints[i].referred_by, reverse=False)
+            self.DataPoints[i].referred_by = self.sort_Tuple(
+                self.DataPoints[i].referred_by, reverse=False
+            )
             if len(self.DataPoints[i].referred_by) >= self.k_nearest:
                 self.analyzer["n_points"]["strong"] += 1
             else:
                 self.analyzer["n_points"]["weak"]["all"] += 1
 
-            self.DataPoints[i].reference = self.sort_Tuple(self.DataPoints[i].reference, reverse=False)
-            homogeneity = (100 * len(self.DataPoints[i].referred_by)) + len(self.DataPoints[i].reference)
+            self.DataPoints[i].reference = self.sort_Tuple(
+                self.DataPoints[i].reference, reverse=False
+            )
+            homogeneity = (100 * len(self.DataPoints[i].referred_by)) + len(
+                self.DataPoints[i].reference
+            )
             self.DataPoints[i].homogeneity = homogeneity
 
         end = time.time()
@@ -351,7 +380,7 @@ class DenMune():
             result = self.dp_dis[i]
             for k, o in enumerate(result):
                 # no need to this condition, it wont happen
-                #if k >= self.k_nearest:
+                # if k >= self.k_nearest:
                 #    break
 
                 # if k != 0:
@@ -377,7 +406,9 @@ class DenMune():
 
             # remember no strong points & weak points in Tirann
             # all points with at least one refernce are considered  (ignore noises)
-            if len(dp_core.reference) > 0 and len(dp_core.referred_by) >= len(dp_core.refer_to):
+            if len(dp_core.reference) > 0 and len(dp_core.referred_by) >= len(
+                dp_core.refer_to
+            ):
 
                 class_id += 1
                 dp_core.visited = True
@@ -389,8 +420,9 @@ class DenMune():
 
                 for pos2 in dp_core.reference:
                     # if DataPoints[*pos2].visited &&  visited was tested not to affect on results, so you can ommit it
-                    if self.DataPoints[pos2[0]].class_id > 0 and len(self.DataPoints[pos2[0]].referred_by) >= len(
-                            self.DataPoints[pos2[0]].refer_to):
+                    if self.DataPoints[pos2[0]].class_id > 0 and len(
+                        self.DataPoints[pos2[0]].referred_by
+                    ) >= len(self.DataPoints[pos2[0]].refer_to):
 
                         # this condition is a must, as some points may be visited but not classified yet
                         # maa we may neglect is noise as long as it is in our refernce points
@@ -404,13 +436,16 @@ class DenMune():
                         else:
                             weight_map[_class_id] += 1
 
-
                     elif self.DataPoints[pos2[0]].visited == False:
-                        self.DataPoints[pos2[0]].visited = True  # this point is visited but not classified yet
+                        self.DataPoints[
+                            pos2[0]
+                        ].visited = True  # this point is visited but not classified yet
 
                 while len(weight_map) > 0:
                     # weight_no = self.getValue(dic=weight_map, what='max', who='value') # no need to it in DenMune
-                    max_class = self.getValue(dic=weight_map, what='max', who='value', other=True)
+                    max_class = self.getValue(
+                        dic=weight_map, what="max", who="value", other=True
+                    )
 
                     if max_class != -1 and max_class != class_id:
                         self.ClassPoints[max_class].parent = self.ClassPoints[class_id]
@@ -426,7 +461,7 @@ class DenMune():
             # let us update class 0 to be -2
             for dp in self.DataPoints:
                 if dp.class_id == 0:
-                    dp.class_id = -2    
+                    dp.class_id = -2
 
         end = time.time()
 
@@ -474,8 +509,9 @@ class DenMune():
 
             for pos2 in dp_core.reference:
 
-                if self.DataPoints[pos2[0]].visited == True and len(self.DataPoints[pos2[0]].referred_by) >= len(
-                        self.DataPoints[pos2[0]].refer_to):
+                if self.DataPoints[pos2[0]].visited == True and len(
+                    self.DataPoints[pos2[0]].referred_by
+                ) >= len(self.DataPoints[pos2[0]].refer_to):
 
                     clsid = self.DataPoints[pos2[0]].class_id
                     clsroot = self.ClassPoints[clsid].root.name
@@ -488,14 +524,18 @@ class DenMune():
 
             if len(weight_map) != 0:
                 weight_map = dict(sorted(weight_map.items()))
-                max_class = self.getValue(dic=weight_map, what='max', who='value', other=True)
+                max_class = self.getValue(
+                    dic=weight_map, what="max", who="value", other=True
+                )
 
         return max_class  # this will return get_Root(max_class) as we computed earlier _class_id = get_Root(_cls)
 
     def attach_WeakPoint(self, point_id):
 
         weight_map = {}
-        max_class = -1  # max_class in attach weak point = -1 , thus if a point faild to merge with any cluster it is a noise
+        max_class = (
+            -1
+        )  # max_class in attach weak point = -1 , thus if a point faild to merge with any cluster it is a noise
 
         dp_core = self.DataPoints[point_id]
         if len(dp_core.reference) != 0:
@@ -516,19 +556,18 @@ class DenMune():
 
             if len(weight_map) != 0:
                 weight_map = dict(sorted(weight_map.items()))
-                max_class = self.getValue(dic=weight_map, what='max', who='value', other=True)
+                max_class = self.getValue(
+                    dic=weight_map, what="max", who="value", other=True
+                )
 
         return max_class  # this will return get_Root(max_class) as we computed earlier _class_id = get_Root(_cls)
 
-    def fit_predict(self,
-                    validate=True,
-                    show_plots=True,
-                    show_noise=True,
-                    show_analyzer=True
-                    ):
+    def fit_predict(
+        self, validate=True, show_plots=True, show_noise=True, show_analyzer=True
+    ):
         data_type = None
         validity_scores = []
-        solution_file = 'solution.txt'
+        solution_file = "solution.txt"
 
         if os.path.isfile(solution_file):
             os.remove(solution_file)
@@ -537,12 +576,12 @@ class DenMune():
         for dp in self.DataPoints:
             pred_list.append(dp.class_id)
 
-        with open(solution_file, 'w') as f:
+        with open(solution_file, "w") as f:
             f.writelines("%s\n" % pred for pred in pred_list)
 
         labels_dic = {}
-        self.train_pred = pred_list[:self.train_sz]
-        self.test_pred = pred_list[self.train_sz:]
+        self.train_pred = pred_list[: self.train_sz]
+        self.test_pred = pred_list[self.train_sz :]
 
         if self.test_data is not None:
             self.labels_pred = np.append(self.train_pred, self.test_pred, axis=0)
@@ -551,7 +590,9 @@ class DenMune():
 
         if self.prop_step > 0:
             print("Propagation at iteration:", self.prop_step)
-            self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='train')
+            self.plot_clusters(
+                show_plots=show_plots, show_noise=show_noise, data_type="train"
+            )
 
             if show_analyzer:
                 self.show_Analyzer()
@@ -563,31 +604,40 @@ class DenMune():
 
                 if show_analyzer:
                     print("Plotting dataset Groundtruth")
-                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='ground')
+                self.plot_clusters(
+                    show_plots=show_plots, show_noise=show_noise, data_type="ground"
+                )
 
             if validate and self.data_indicator >= 1:
 
                 if self.data_indicator >= 3:
                     self.analyzer["validity"] = {}
-                    self.analyzer["validity"]['train'] = {}
-                    validity_scores = self.validate_Clusters(data_type='train')
+                    self.analyzer["validity"]["train"] = {}
+                    validity_scores = self.validate_Clusters(data_type="train")
 
                 if show_analyzer:
-                    print('Plotting train data')
-                self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='train')
+                    print("Plotting train data")
+                self.plot_clusters(
+                    show_plots=show_plots, show_noise=show_noise, data_type="train"
+                )
                 if show_analyzer:
-                    self.show_Analyzer(root='Validating train data')
+                    self.show_Analyzer(root="Validating train data")
 
                 if self.data_indicator == 15:
-                    validity_scores = self.validate_Clusters(data_type='test')
+                    validity_scores = self.validate_Clusters(data_type="test")
                     if show_analyzer:
                         # self.analyzer["validity"]['test'] = {}
-                        self.show_Analyzer(self.analyzer['validity']['test'], root='Validating test data')
+                        self.show_Analyzer(
+                            self.analyzer["validity"]["test"],
+                            root="Validating test data",
+                        )
 
                 if self.data_indicator > 3:
                     if show_analyzer:
-                        print('Plotting test data')
-                    self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='test')
+                        print("Plotting test data")
+                    self.plot_clusters(
+                        show_plots=show_plots, show_noise=show_noise, data_type="test"
+                    )
 
                 """"
                 if self.data_indicator == 15:
@@ -601,15 +651,15 @@ class DenMune():
                     self.plot_clusters(show_plots=show_plots, show_noise=show_noise, data_type='augmented')
                 """
 
-            labels_dic['train'] = self.train_pred
-            labels_dic['test'] = self.test_pred
+            labels_dic["train"] = self.train_pred
+            labels_dic["test"] = self.test_pred
 
             if self.data_indicator == 1:
                 return labels_dic, None
             elif validate == False:
                 return labels_dic, None
             elif self.data_indicator >= 3 and validate == True:
-                return labels_dic, self.analyzer['validity']
+                return labels_dic, self.analyzer["validity"]
 
     def match_Labels(self):
 
@@ -649,43 +699,45 @@ class DenMune():
         labeled = []
         for n in range(len(index)):
             newval = index[n][1]
-            max_class = max(set(labels_pred), key=labels_pred[index[n][0]:index[n][0] + index[n][2] - 1].count)
+            max_class = max(
+                set(labels_pred),
+                key=labels_pred[index[n][0] : index[n][0] + index[n][2] - 1].count,
+            )
             if max_class not in labeled:
                 labels_pred = [newval if x == max_class else x for x in labels_pred]
                 labeled.append(newval)
 
         labels_pred = np.array(labels_pred, dtype=np.int64)
         self.labels_pred = labels_pred
-        self.train_pred = labels_pred[:self.train_sz]
-        self.test_pred = labels_pred[self.train_sz:]
+        self.train_pred = labels_pred[: self.train_sz]
+        self.test_pred = labels_pred[self.train_sz :]
 
         return labels_pred
 
     def validate_Clusters(self, data_type=None):
 
         labels_true = self.labels_truth
-        if data_type == 'train':
-            labels_true = labels_true[:self.train_sz]
-        elif data_type == 'test':
-            labels_true = labels_true[self.train_sz:]
-        #elif data_type == 'augmented':
-            # keep it as it
-           
+        if data_type == "train":
+            labels_true = labels_true[: self.train_sz]
+        elif data_type == "test":
+            labels_true = labels_true[self.train_sz :]
+        # elif data_type == 'augmented':
+        # keep it as it
+
         if isinstance(self.labels_pred, np.ndarray):
             # labels_pred = np.array(self.labels_pred, dtype=np.int64)
             self.labels_pred = self.labels_pred.tolist()
 
         labels_pred = self.labels_pred
-        if self.prop_step == 0: # do not match labels if yoy are in propagation mode
+        if self.prop_step == 0:  # do not match labels if yoy are in propagation mode
             labels_pred = self.match_Labels()
 
-
-        if data_type == 'train':
-            labels_pred = labels_pred[:self.train_sz]
-        elif data_type == 'test':
-            labels_pred = labels_pred[self.train_sz:]
-        #elif data_type == 'augmented':
-            # keep it as it
+        if data_type == "train":
+            labels_pred = labels_pred[: self.train_sz]
+        elif data_type == "test":
+            labels_pred = labels_pred[self.train_sz :]
+        # elif data_type == 'augmented':
+        # keep it as it
 
         self.analyzer["n_clusters"]["actual"] = len(np.unique(labels_true))
 
@@ -700,6 +752,7 @@ class DenMune():
         ## where a higher Calinski-Harabasz score relates to a model with better defined clusters.
 
         from sklearn import metrics  # for homogeneity, completeness, fowlkes
+
         ##  homogeneity: each cluster contains only members of a single class.
         ## completeness: all members of a given class are assigned to the same cluster.
         # v-measure the harmonic mean of homogeneity and completeness called V-measure 2007
@@ -709,10 +762,14 @@ class DenMune():
         # mi = metrics.mutual_info_score(labels_true, labels_pred)
         # print("mutual_info_score: %f." %  mi)
 
-        nmi = metrics.normalized_mutual_info_score(labels_true, labels_pred, average_method='arithmetic')
+        nmi = metrics.normalized_mutual_info_score(
+            labels_true, labels_pred, average_method="arithmetic"
+        )
         # print("normalized_mutual_info_score: %f." % nmi)
 
-        ami = adjusted_mutual_info_score(labels_true, labels_pred, average_method='arithmetic')
+        ami = adjusted_mutual_info_score(
+            labels_true, labels_pred, average_method="arithmetic"
+        )
         # print("Adjusted_mutual_info_score: %f." %  adj_nmi)
 
         homogeneity = metrics.homogeneity_score(labels_true, labels_pred)
@@ -721,7 +778,7 @@ class DenMune():
         completeness = metrics.completeness_score(labels_true, labels_pred)
         # print("completeness_score: %f." % completeness_score)
 
-        f1_weight = metrics.f1_score(labels_true, labels_pred, average='weighted')
+        f1_weight = metrics.f1_score(labels_true, labels_pred, average="weighted")
         # f1_micro = metrics.f1_score(labels_true, labels_pred, average='micro')
         # f1_macro = metrics.f1_score(labels_true, labels_pred, average='macro')
         # print("f1_score: %f." % f1_score)
@@ -731,14 +788,15 @@ class DenMune():
 
         f1 = f1_weight
 
-        validity = {"ACC": acc,
-                    "F1": f1,
-                    "NMI": nmi,
-                    "AMI": ami,
-                    "ARI": ari,
-                    "homogeneity": homogeneity,
-                    "completeness": completeness
-                    }
+        validity = {
+            "ACC": acc,
+            "F1": f1,
+            "NMI": nmi,
+            "AMI": ami,
+            "ARI": ari,
+            "homogeneity": homogeneity,
+            "completeness": completeness,
+        }
 
         # val = [acc, f1, nmi, ami, ari, homogeneity, completeness]
         self.analyzer["validity"][data_type] = validity
@@ -749,24 +807,24 @@ class DenMune():
     def preplot_Clusters(self, data_type=None):
 
         self.analyzer["n_points"]["size"] = self.dp_count
-        if data_type == 'test':
+        if data_type == "test":
             self.analyzer["n_points"]["plot_size"] = self.test_sz
-        elif data_type == 'train':
+        elif data_type == "train":
             self.analyzer["n_points"]["plot_size"] = self.train_sz
-        #elif data_type == 'augmented':
+        # elif data_type == 'augmented':
         #    self.analyzer["n_points"]["plot_size"] = self.dp_count
 
-        if data_type == 'ground':
+        if data_type == "ground":
             labels = self.labels_truth
             labels = np.array(labels, dtype=np.int64)
         else:
             labels = self.labels_pred
-            if data_type == 'train':
-                labels = labels[:self.train_sz]
-            elif data_type == 'test':
-                labels = labels[self.train_sz:]
-            #elif data_type == 'augmented':
-                # nothing to do
+            if data_type == "train":
+                labels = labels[: self.train_sz]
+            elif data_type == "test":
+                labels = labels[self.train_sz :]
+            # elif data_type == 'augmented':
+            # nothing to do
 
         noise_1 = list(labels).count(-1)
         self.analyzer["n_points"]["noise"]["type-1"] = noise_1
@@ -774,9 +832,13 @@ class DenMune():
         noise_2 = list(labels).count(-2)
         self.analyzer["n_points"]["noise"]["type-2"] = noise_2
 
-        self.analyzer["n_points"]["weak"]["succeeded to merge"] = self.analyzer["n_points"]["weak"]["all"] - \
-                                                                  self.analyzer["n_points"]["noise"]["type-2"]
-        self.analyzer["n_points"]["weak"]["failed to merge"] = self.analyzer["n_points"]["noise"]["type-2"]
+        self.analyzer["n_points"]["weak"]["succeeded to merge"] = (
+            self.analyzer["n_points"]["weak"]["all"]
+            - self.analyzer["n_points"]["noise"]["type-2"]
+        )
+        self.analyzer["n_points"]["weak"]["failed to merge"] = self.analyzer[
+            "n_points"
+        ]["noise"]["type-2"]
 
         unique_labels = np.unique(labels)
         num_of_clusters = len(unique_labels)
@@ -784,7 +846,7 @@ class DenMune():
         fake_clusters = 0  # otlier = -1 and weak points that fail to merge (noise) = 0
 
         i = 0
-        for n in (unique_labels):
+        for n in unique_labels:
 
             if n >= 0:  # num_of_clusters:
                 labels = np.where(labels == n, i, labels)
@@ -804,35 +866,50 @@ class DenMune():
 
         if show_plots:
 
-            palette = sns.color_palette('deep',
-                                        np.unique(labels).max() + 2)  # deep, dark, bright, muted, pastel, colorblind
+            palette = sns.color_palette(
+                "deep", np.unique(labels).max() + 2
+            )  # deep, dark, bright, muted, pastel, colorblind
 
             if self.prop_step:
-              colors = [palette[x] if x >= 0 else ((0.0, 0.0, 0.0) if x == -1 else (0.0, 0.0, 0.0)) for x in labels]
-              v = 0
-              for c in colors:
-                  if (c[0] + c[1] + c[2]) > 0.0:  # outlier :: keep it away. Note that even outliers are -1, -2, it become in black after the previous step: color (0.0, 0.0, 0.0
-                      colors2.append((c[0], c[1], c[2], 1.0))
-                      data2.append((self.data[v][0], self.data[v][1]))
-                  v += 1
-              data2 = np.array(data2)
+                colors = [
+                    palette[x]
+                    if x >= 0
+                    else ((0.0, 0.0, 0.0) if x == -1 else (0.0, 0.0, 0.0))
+                    for x in labels
+                ]
+                v = 0
+                for c in colors:
+                    if (
+                        c[0] + c[1] + c[2]
+                    ) > 0.0:  # outlier :: keep it away. Note that even outliers are -1, -2, it become in black after the previous step: color (0.0, 0.0, 0.0
+                        colors2.append((c[0], c[1], c[2], 1.0))
+                        data2.append((self.data[v][0], self.data[v][1]))
+                    v += 1
+                data2 = np.array(data2)
 
             else:
                 if show_noise == False:
-                    colors = [palette[x] if x >= 0 else (1.0, 1.0, 1.0) for x in
-                              labels]  # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
+                    colors = [
+                        palette[x] if x >= 0 else (1.0, 1.0, 1.0) for x in labels
+                    ]  # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
                 else:
-                    colors = [palette[x] if x >= 0 else ((0.0, 0.0, 0.0) if x == -1 else (0.9, 0.9, 0.9)) for x in
-                              labels]  # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
+                    colors = [
+                        palette[x]
+                        if x >= 0
+                        else ((0.0, 0.0, 0.0) if x == -1 else (0.9, 0.9, 0.9))
+                        for x in labels
+                    ]  # noise points wont be printed due to x > 0 , else (1.0, 1.0, 1.0)
 
             # plt.figure(figsize=(12, 8))
 
             if self.prop_step:
                 # lenght of data2 will be always equlas to length of the specific data type (test, train)
-                #print ('datatype', data_type)
-                if data_type == 'train':
-                    plt.scatter(data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker='o')
-                    #plt.scatter(data2[:self.train_sz].T[0], data2[:self.train_sz].T[1], c=colors2, **plot_kwds, marker='o')
+                # print ('datatype', data_type)
+                if data_type == "train":
+                    plt.scatter(
+                        data2.T[0], data2.T[1], c=colors2, **plot_kwds, marker="o"
+                    )
+                    # plt.scatter(data2[:self.train_sz].T[0], data2[:self.train_sz].T[1], c=colors2, **plot_kwds, marker='o')
 
                 """"
                 elif data_type == 'test':
@@ -848,20 +925,41 @@ class DenMune():
                 """
 
             else:
-                if data_type == 'train':
-                    plt.scatter(self.data[:self.train_sz].T[0], self.data[:self.train_sz].T[1], c=colors, **plot_kwds,
-                                marker='o')
-                elif data_type == 'test':
-                    plt.scatter(self.data[self.train_sz:].T[0], self.data[self.train_sz:].T[1], c=colors, **plot_kwds,
-                                marker='o')
-                #elif data_type == 'augmented':
+                if data_type == "train":
+                    plt.scatter(
+                        self.data[: self.train_sz].T[0],
+                        self.data[: self.train_sz].T[1],
+                        c=colors,
+                        **plot_kwds,
+                        marker="o"
+                    )
+                elif data_type == "test":
+                    plt.scatter(
+                        self.data[self.train_sz :].T[0],
+                        self.data[self.train_sz :].T[1],
+                        c=colors,
+                        **plot_kwds,
+                        marker="o"
+                    )
+                # elif data_type == 'augmented':
                 #    plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
-                elif data_type == 'ground':
+                elif data_type == "ground":
                     if self.data_indicator == 15:
-                        plt.scatter(self.data.T[0], self.data.T[1], c=colors, **plot_kwds, marker='o')
+                        plt.scatter(
+                            self.data.T[0],
+                            self.data.T[1],
+                            c=colors,
+                            **plot_kwds,
+                            marker="o"
+                        )
                     else:
-                        plt.scatter(self.data[:self.train_sz].T[0], self.data[:self.train_sz].T[1], c=colors,
-                                    **plot_kwds, marker='o')
+                        plt.scatter(
+                            self.data[: self.train_sz].T[0],
+                            self.data[: self.train_sz].T[1],
+                            c=colors,
+                            **plot_kwds,
+                            marker="o"
+                        )
 
             self.colors = colors
             frame = plt.gca()
@@ -869,10 +967,10 @@ class DenMune():
             frame.axes.get_yaxis().set_visible(False)
             if show_plots:
                 if self.prop_step:
-                    prop_folder = 'propagation'
+                    prop_folder = "propagation"
                     if not os.path.exists(prop_folder):
                         os.mkdir(prop_folder)
-                    plt.savefig(prop_folder + '/' + str(self.prop_step) + '.png')
+                    plt.savefig(prop_folder + "/" + str(self.prop_step) + ".png")
                 plt.show()
                 # plt.clf()    # this is a must to clear figures if you plot continously
 
@@ -880,15 +978,19 @@ class DenMune():
 
     def generate_tsne(self, data, d, file_2d):
 
-        dim_two = TSNE(n_components=d, random_state=1971, init='random').fit_transform(data)
+        dim_two = TSNE(n_components=d, random_state=1971, init="random").fit_transform(
+            data
+        )
 
         mystr = ""
         data_len = len(dim_two)
         for i in range(data_len):
             for n in range(d):
                 mystr += str(round(dim_two[i][n], 6))
-                if (n < d - 1): mystr += ','
-                if (n == d - 1): mystr += '\n'
+                if n < d - 1:
+                    mystr += ","
+                if n == d - 1:
+                    mystr += "\n"
 
         text_file = open(file_2d, "w")
         text_file.write(mystr)
@@ -906,13 +1008,13 @@ class DenMune():
 
         def creat_TreefromDict(self, tree, mydict, key, parent):
             if type(mydict[key]) is not dict:
-                val = key + ': ' + str(round(mydict[key], 3))
+                val = key + ": " + str(round(mydict[key], 3))
                 tree.create_node(val, key, parent=parent)
 
         for d in mydic:
             # print ('sub_roots', d)
             if type(mydic[d]) is not dict:
-                creat_TreefromDict(self, tree, mydic, d, parent='root')
+                creat_TreefromDict(self, tree, mydic, d, parent="root")
                 # print('0', 'key:', d , 'value:', mydic[d], 'parent: root')
             else:
                 tree.create_node(d, d, parent="root")
