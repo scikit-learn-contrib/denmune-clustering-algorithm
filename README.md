@@ -43,7 +43,7 @@ Based on the paper
 
 |Paper|
 |-------------------------------------------------------------------------------------------
-|Mohamed Abbas, Adel El-Zoghabi, Amin Ahoukry,                                                                       
+|Mohamed Abbas, Adel El-Zoghabi, Amin Shoukry,                                                                       
 |*DenMune: Density peak based clustering using mutual nearest neighbors*                                           
 |In: Journal of Pattern Recognition, Elsevier,                                                                 
 |volume 109, number 107589, January 2021                                                                      
