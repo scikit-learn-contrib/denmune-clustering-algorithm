@@ -521,6 +521,6 @@ Task List
 - [x] Continuous integration
 - [x] scikit-learn compatible
 - [X] creating unit tests (coverage: 100%)
-- [ ] generating API documentation
+- [X] generating API documentation
 - [ ] create conda package
 
