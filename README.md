@@ -406,7 +406,7 @@ for snapshot in snapshots:
 
 Interact with the algorithm
 ---------------------------
-[![chameleon datasets](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/chameleon_detection.png)](https://qr.zerobytes.one/)
+[![Propagation in DenMune]](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o-tP3uvDGjxBOGYkir1lnbr74sZ06e0U?usp=sharing)
 
 This notebook allows you interact with the algorithm in many aspects:
 - you can choose which dataset to cluster (among 4 chameleon datasets)
