@@ -29,7 +29,7 @@
 
 | downloads/day                                               | download/week                                               | download/month                                              |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| ![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune) | ![PyPI - Downloads](https://img.shields.io/pypi/dw/denmune) | ![PyPI - Downloads](https://img.shields.io/pypi/dy/denmune) |
+| ![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune) | ![PyPI - Downloads](https://img.shields.io/pypi/dw/denmune) | ![PyPI - Downloads](https://img.shields.io/pypi/dm/denmune) |
 
   Suggestions & Reporting Issues
   -------------------------------
