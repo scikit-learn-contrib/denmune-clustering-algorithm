@@ -532,7 +532,6 @@ abstract = {Many clustering algorithms fail when clusters are of arbitrary shape
    [![BSD 3-Clause “New” or “Revised” License" ](https://img.shields.io/badge/license-BSD-green)](https://choosealicense.com/licenses/bsd-3-clause/)
 
 
-
   Task List
   ------------
 
