@@ -27,9 +27,9 @@
   Downloads Stats
   --------------------
 
-| downloads/day                                               | download/week                                               | download/month                                              |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| ![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune) | ![PyPI - Downloads](https://img.shields.io/pypi/dw/denmune) | ![PyPI - Downloads](https://img.shields.io/pypi/dm/denmune) |
+| downloads/day                                               | download/week                                               | download/month     | Total Downloads                                         |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |------------------------------|
+| ![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=week&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=month&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune)
 
   Suggestions & Reporting Issues
   -------------------------------
