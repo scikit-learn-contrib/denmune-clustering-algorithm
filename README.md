@@ -31,12 +31,10 @@
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |------------------------------|
 | ![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=week&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=month&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune)
 
-  Suggestions & Reporting Issues
+  ResearchGate Stats
   -------------------------------
+  ![Researchgate Stats](https://github.com/egy1st/images/blob/main/clustering/researshgate.png)
 
-| Github                                                       | Gitter                                                       | Slack                                                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![GitHub Discussions](https://img.shields.io/github/discussions/egy1st/denmune-clustering-algorithm)](https://github.com/egy1st/denmune-clustering-algorithm/discussions) | [![Gitter](https://badges.gitter.im/EG1ST/community.svg)](https://gitter.im/EG1ST/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) | [![Slack](https://img.shields.io/badge/chat-on%20slack-orange)](https://app.slack.com/client/T032DJEC8AW/C0326UK1VFY) |
 
   Based on the paper
   -------------------
