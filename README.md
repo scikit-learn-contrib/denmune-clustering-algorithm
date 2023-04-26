@@ -6,9 +6,9 @@
   Scientific Work
   ---------------------
 
-| Paper                                                        | Journal                                                      | Data                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927) | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0) | [![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)](https://data.mendeley.com/datasets/b73cw5n43r/4) |
+| Paper                                                        | Journal                                                      | Data                                                         | ResearchGate stats                          |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
+| [![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927) | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0) | [![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)](https://data.mendeley.com/datasets/b73cw5n43r/4) | ![Researchgate Stats](https://github.com/egy1st/images/blob/main/clustering/researshgate.png) |
 
   Coding, Security & Maintenance
   -----------------------
@@ -20,24 +20,19 @@
   Docs & Tutorials
   ----------------------------
 
-| Read the Docs                                                | Repo2Docker                                                  | Colab                                                        | kaggle                                                       | ReviewNB                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest) | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) | [![Review NB](https://img.shields.io/badge/review-on%20reviewNB-blueviolet)](https://app.reviewnb.com/egy1st/denmune-clustering-algorithm/) |
+| Read the Docs                                                | Repo2Docker                                                  | Colab                                                        | kaggle                                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | 
+| [![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest) | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
 
   Downloads Stats
   --------------------
 
-| download/day                                               | download/week                                               | download/month     | Total downloads                                         |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |------------------------------|
-| ![PyPI - Downloads](https://img.shields.io/pypi/dd/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=week&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=month&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune)
+| download/week                                               | download/month     | Total downloads                                         |
+| ----------------------------------------------------------- | ----------------------------------------------------------- |------------------------------|
+| [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=week&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=month&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune)
 
-  ResearchGate Stats
-  -------------------------------
-  ![Researchgate Stats](https://github.com/egy1st/images/blob/main/clustering/researshgate.png)
-
-
-  Based on the paper
-  -------------------
+ Based on the paper
+ -------------------
 
   |Paper|
   |-------------------------------------------------------------------------------------------
