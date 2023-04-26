@@ -46,9 +46,9 @@
   ---------------
 
  Documentation, including tutorials, are available on:
-   -  [https://docs.zerobytes.one/](https://docs.zerobytes.one)
    -  [![read the docs](https://img.shields.io/badge/read_the-docs-orange)](https://denmune.readthedocs.io/en/latest/?badge=latest)
-
+   -  [https://docs.zerobytes.one/](https://docs.zerobytes.one)
+ 
 
   Watch it in action
   -------------------
