@@ -25,6 +25,8 @@ jobs:
     # Change the version below to your required version of python
     docker:
       - image: cimg/python:3.7
+      - image: cimg/python:3.8
+      - image: cimg/python:3.9
    
       
     # Checkout the code as the first step. This is a dedicated CircleCI step.
