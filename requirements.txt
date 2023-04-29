@@ -3,7 +3,7 @@ pandas>=1.0.3
 matplotlib>=3.2.1
 scikit-learn>=0.22.1
 seaborn>=0.12.2
-ngt
+ngt>=2.0.2
 anytree>=2.8.0
 pytest>=6.2.5
 treelib>=1.6.1
