@@ -8,7 +8,7 @@ Collaborative Test Drive (New)
 
 Now you can reproduce all the research experiments, and even share the results and collaborate to the algorithm using my capsule on CodeOcean, your collaborative test drive.
 
-https://codeocean.com/capsule/3560333/tree/v1
+https://codeocean.com/capsule/3560333/tree/v2
 
 
 
