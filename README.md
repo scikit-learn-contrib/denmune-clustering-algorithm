@@ -6,9 +6,12 @@ DenMune is a clustering algorithm that can find clusters of arbitrary size, shap
 Collaborative Test Drive (New)
 ------------------------------
 
-Now you can reproduce all the research experiments, and even share the results and collaborate to the algorithm using my capsule on CodeOcean, your collaborative test drive.
+Now you can reproduce all the research experiments, and even share the results and collaborate to the algorithm using our capsule on CodeOcean. Each Capsule is a self-contained computational experiment with computing environment, code, data, version history, and results. 
 
-https://codeocean.com/capsule/3560333/tree/v2
+| Capsule URL                                   | Description                                     |
+| --------------------------------------------- | ----------------------------------------------- |
+| https://codeocean.com/capsule/3560333/tree/v1 | importing DenmUne from source code files        |
+| https://codeocean.com/capsule/3560333/tree/v2 | importing DenmUne after installing it using pip |
 
 
 
