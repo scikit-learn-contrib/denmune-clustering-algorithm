@@ -276,9 +276,8 @@ def __init__ (self,
     - leave this parameter set to 0, the default value, unless you are willing intentionally to enter the propagation mode.
     - default: 0
 
-     
 
-    2. Parameters used within the fit_predict function:
+2. Parameters used within the fit_predict function:
 
   ```python
  def fit_predict(self,
