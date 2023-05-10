@@ -35,7 +35,7 @@ Docs & Tutorials
 
 | Read the Docs                                                | Repo2Docker                                                  | Colab                                                        | kaggle                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest) | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
+| [![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest) | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/scikit-learn-contrib/denmune-clustering-algorithm/HEAD)) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
 
 Downloads Stats
 --------------------
@@ -457,7 +457,7 @@ How to run and test
 
      Simply use our repo2docker offered by mybinder.org, which encapsulate the algorithm and all required data in one virtual machine instance. All Jupyter notebooks examples found in this repository will be also available to you in action to practice in this respo2docer. Thanks mybinder.org, you made it possible!
 
-     [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/egy1st/denmune-clustering-algorithm/HEAD)
+     [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/scikit-learn-contrib/denmune-clustering-algorithm/HEAD)
 
 
 
