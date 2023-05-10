@@ -11,7 +11,7 @@ Now you can reproduce all the research experiments, and even share the results a
 | Capsule URL                                   | Description                                     |
 | --------------------------------------------- | ----------------------------------------------- |
 | https://codeocean.com/capsule/3560333/tree/v1 | importing DenmUne from source code files        |
-| https://codeocean.com/capsule/3560333/tree/v2 | importing DenmUne after installing it using pip |
+| https://codeocean.com/capsule/3560333/tree/v3 | importing DenmUne after installing it using pip |
 
 
 
