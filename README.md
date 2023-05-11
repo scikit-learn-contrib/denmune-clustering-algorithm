@@ -9,7 +9,7 @@ also, you may use our repo2docker offered by mybinder.org, which encapsulate the
 | Test-drive                                    | URL                                                          |
 | --------------------------------------------- | ------------------------------------------------------------ |
 | Reproduce our code capsule on Code Ocean      | [![Open in Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://denmune.egy1st.org/codeocean-capsule) |
-| https://codeocean.com/capsule/3560333/tree/v1 | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://denmune.egy1st.org/mybinder-repo2docker) |
+|Use our test-drive on MyBinder | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://denmune.egy1st.org/mybinder-repo2docker) |
 
 ## Scientific Work
 | Paper                                                        | Journal                                                      | Data                                                         | ResearchGate stats                                           |
