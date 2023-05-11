@@ -1,52 +1,37 @@
 # DenMune: A density-peak clustering algorithm
 DenMune is a clustering algorithm that can find clusters of arbitrary size, shapes and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of the algorithm. Enjoy the simplicity but the power of DenMune.
 
-
-
-Collaborative Test Drive (New)
-------------------------------
-
+## Reproducibility & Test Drives
 Now you can reproduce all the research experiments, and even share the results and collaborate to the algorithm using our capsule on CodeOcean. Each Capsule is a self-contained computational experiment with computing environment, code, data, version history, and results. 
 
-| Capsule URL                                   | Description                                     |
-| --------------------------------------------- | ----------------------------------------------- |
-| https://codeocean.com/capsule/3560333/tree/v1 | importing DenmUne from source code files        |
-| https://codeocean.com/capsule/3560333/tree/v3 | importing DenmUne after installing it using pip |
+also, you may use our repo2docker offered by mybinder.org, which encapsulate the algorithm and all required data in one virtual machine instance. All Jupyter notebooks examples found in this repository will be also available to you in action to practice in this respo2docer. Thanks mybinder.org, you made it possible!
 
+| Test-drive                                    | URL                                                          |
+| --------------------------------------------- | ------------------------------------------------------------ |
+| Reproduce our code capsule on Code Ocean      | [![Open in Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://denmune.egy1st.org/codeocean-capsule) |
+| https://codeocean.com/capsule/3560333/tree/v1 | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://denmune.egy1st.org/mybinder-repo2docker) |
 
-
-
-Scientific Work
----------------------
-
+## Scientific Work
 | Paper                                                        | Journal                                                      | Data                                                         | ResearchGate stats                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://denmune.egy1st.org/denmune-paper) | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0) | [![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)](https://data.mendeley.com/datasets/b73cw5n43r/4) | ![Researchgate Stats](https://raw.githubusercontent.com/egy1st/images/main/clustering/researshgate.png) |
+| [![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://denmune.egy1st.org/research-paper) | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0) | [![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)]( https://denmune.egy1st.org/mendeley-data) | ![Researchgate Stats](https://raw.githubusercontent.com/egy1st/images/main/clustering/researshgate.png) |
 
-Coding, Security & Maintenance
------------------------
-
+## Coding, Security & Maintenance
 | Code Style                                                   | Installation                                                 | CI Workflow                                                  | Code Coverage                                                | Code Scanning                                                |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | ![Code Style: Black](https://img.shields.io/badge/code%20style-black-black) | [![PyPI Version](https://img.shields.io/pypi/v/denmune.svg)]( https://pypi.org/project/denmune/) | [![CircleCI, continuous integration](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main.svg?style=shield)](https://circleci.com/gh/egy1st/denmune-clustering-algorithm/tree/main) | [![codecov](https://codecov.io/gh/egy1st/denmune-clustering-algorithm/branch/main/graph/badge.svg?token=QCbRdRtzYE)](https://codecov.io/gh/egy1st/denmune-clustering-algorithm) | [![CodeQL](https://github.com/adrinjalali/denmune-clustering-algorithm/actions/workflows/codeql.yml/badge.svg)](https://github.com/adrinjalali/denmune-clustering-algorithm/actions/workflows/codeql.yml) |
 
-Docs & Tutorials
-----------------------------
-
-| Read the Docs                                                | Repo2Docker                                                  | Colab                                                        | kaggle                                                       |
+## Docs & Tutorials
+| Reproducible Capsule                                         | Repo2Docker                                                  | Colab                                                        | kaggle                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest) | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://denmune.egy1st.org/mybinder-repo2docker) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
+| [![Open in Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://denmune.egy1st.org/codeocean-capsule) | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://denmune.egy1st.org/mybinder-repo2docker) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
 
-Downloads Stats
---------------------
-
+## Downloads Stats
 | download/week                                                | download/month                                               | Total downloads                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=week&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=month&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) | [![Downloads](https://static.pepy.tech/personalized-badge/denmune?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/denmune) |
 
-Based on the paper
--------------------
-
+## Based on the paper
 |Paper|
 |-------------------------------------------------------------------------------------------
 |Mohamed Abbas, Adel El-Zoghabi, Amin Shoukry,                                                                       
@@ -55,16 +40,14 @@ Based on the paper
 |volume 109, number 107589, January 2021                                                                      
 |DOI: https://doi.org/10.1016/j.patcog.2020.107589                                                 
 
-Documentation:
----------------
-
+## Documentation:
 Documentation, including tutorials, are available on:
    -  [![read the docs](https://img.shields.io/badge/read_the-docs-orange)](https://denmune.readthedocs.io/en/latest/?badge=latest)
    -  [https://docs.zerobytes.one/](https://docs.zerobytes.one)
 
 
-Watch it in action
--------------------
+
+## Watch it in action
 
 This 30 seconds will tell you how a density-based algorithm, DenMune propagates:
 
@@ -73,10 +56,7 @@ This 30 seconds will tell you how a density-based algorithm, DenMune propagates:
   [![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/propagation.gif)]()
 
 
-
-When less means more
---------------------
-
+## When less means more
 Most classic clustering algorithms fail in detecting complex clusters where clusters are of different size, shape, density, and being exist in noisy data.
   Recently, a density-based algorithm named DenMune showed great ability in detecting complex shapes even in noisy data. it can detect number of clusters automatically, detect both pre-identified-noise and post-identified-noise automatically and removing them.
 
@@ -84,8 +64,9 @@ Most classic clustering algorithms fail in detecting complex clusters where clus
 
   Keep in mind, the algorithm reduce any N-D dataset to only 2-D dataset initially, so it is a good benefit of this algorithm is being always to plot your data and explore it which make this algorithm a good candidate for data exploration. Finally, the algorithm comes with neat package for visualizing data, validating it and analyze the whole clustering process.
 
-How to install DenMune
-------------------------
+
+
+## How to install DenMune
 
 Simply install DenMune clustering algorithm using pip command from the official Python repository
 
@@ -105,8 +86,7 @@ pip install denmune
 
 
 
-How to use  DenMune
---------------------
+## How to use  DenMune
 
 Once DenMune is installed, you just need to import it 
 
@@ -114,13 +94,11 @@ Once DenMune is installed, you just need to import it
 from denmune import DenMune
   ```
 
-  ###### Please note that first denmune (the package) in small letters, while the other one(the class itself) has D and M in capital case.
+*<u>Please note that first denmune (the package) in small letters, while the other one(the class itself) has D and M in capital case</u>.*
 
 
 
-
-Read data
------------
+## Read data
 
 There are four possible cases of data:
 
@@ -221,10 +199,10 @@ test data as predicted by DenMune on training the dataset at k=50
   ![pendigits test](https://raw.githubusercontent.com/egy1st/images/main/clustering/pendigits_test_50.png)
 
 
-Algorithm's Parameters
------------------------
 
-    1. Parameters used within the initialization of the DenMune class
+## Algorithm's Parameters
+
+1. **Parameters used within the initialization of the DenMune class**
 
   ```python
 def __init__ (self,
@@ -275,9 +253,11 @@ def __init__ (self,
     - size of increment used in showing the clustering propagation.
     - leave this parameter set to 0, the default value, unless you are willing intentionally to enter the propagation mode.
     - default: 0
+    
+    
 
 
-2. Parameters used within the fit_predict function:
+2. **Parameters used within the fit_predict function:**
 
   ```python
  def fit_predict(self,
@@ -304,19 +284,20 @@ def __init__ (self,
     - show/hide the analyzer
     - default: True
     
-    
 
-The Analyzer
--------------
+
+
+## The Analyzer
 
 The algorithm provide an exploratory tool called analyzer, once called it will provide you with in-depth analysis on how your clustering results perform.
 
   ![DenMune Analyzer](https://raw.githubusercontent.com/egy1st/images/main/clustering/analyzer.png)
 
-Noise Detection
-----------------
 
-  DenMune detects noise and outlier automatically, no need to any further work from your side.
+
+## Noise Detection
+
+DenMune detects noise and outlier automatically, no need to any further work from your side.
 
   - It plots pre-identified noise in black
   - It plots post-identified noise in light grey
@@ -343,10 +324,10 @@ labels, validity = dm.fit_predict(show_noise=False)
 | ![noisy data](https://raw.githubusercontent.com/egy1st/images/main/clustering/noisy_data.png) | ![clean data](https://raw.githubusercontent.com/egy1st/images/main/clustering/clean_data.png) |
 
 
-Validation
---------------
 
-  You can get your validation results using 3 methods
+## Validation
+
+You can get your validation results using 3 methods
 
   - by showing the Analyzer
   - extract values from the validity returned list from fit_predict function
@@ -362,16 +343,17 @@ Validation
 
   ![Validation snapshot](https://raw.githubusercontent.com/egy1st/images/main/clustering/validation.png) 
 
-K-nearest Evolution
--------------------
+
+
+## K-nearest Evolution
 
 The following chart shows the evolution of pre and post identified noise in correspondence to increase of number of knn. Also, detected number of clusters is analyzed in the same chart in relation with both types of identified  noise.
 
   ![knn evolution chart](https://raw.githubusercontent.com/egy1st/images/main/clustering/knn_vs_noise.png)
 
 
-The Scalability
-----------------
+
+## The Scalability
 
 | data size          | time                   |
 | ------------------ | ---------------------- |
@@ -394,19 +376,17 @@ The Scalability
 | data  size: 85000  | time: 251.7625 seconds |
 | data  size: 100000 | time: 257.563 seconds  |
 
-  | ![noisy data chart](https://raw.githubusercontent.com/egy1st/images/main/clustering/scalability.png)
+  |![noisy data chart](https://raw.githubusercontent.com/egy1st/images/main/clustering/scalability.png)
 
 
-The Stability
---------------
-
+## The Stability
   The algorithm is only single-parameter, even more it not sensitive to changes in that parameter, k. You may guess that from the following chart yourself. This is of great benefit for you as a data exploration analyst. You can simply explore the dataset using an arbitrary k. Being Non-sensitive to changes in k, make it robust and stable.
 
   ![DenMune Stability chart](https://raw.githubusercontent.com/egy1st/images/main/clustering/stability.png)
 
 
-Reveal the propagation
------------------------
+
+## Reveal the propagation
 
 one of the top performing feature in this algorithm is enabling you to watch how your clusters propagate to construct the final output clusters. just use the parameter 'prop_step' as in the following example:
 
@@ -437,12 +417,17 @@ for snapshot in snapshots:
 
   [![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/propagation.gif)]()
 
-Interact with the algorithm
----------------------------
 
-  [![chameleon datasets](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/chameleon_detection.png)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing)
 
-  This notebook allows you interact with the algorithm in many aspects:
+## Interact with the algorithm
+
+[![chameleon datasets](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/chameleon_detection.png)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing)
+
+*click image to interact* 
+
+
+
+ This notebook allows you interact with the algorithm in many aspects:
 
   - you can choose which dataset to cluster (among 4 chameleon datasets)
   - you can decide which number of k-nearest neighbor to use 
@@ -450,32 +435,23 @@ Interact with the algorithm
   - show analyzer on/off
 
 
-How to run and test
---------------------
 
-  1. Launch Examples in Repo2Docker Binder
+## We love Jupyter Notebooks
 
-     Simply use our repo2docker offered by mybinder.org, which encapsulate the algorithm and all required data in one virtual machine instance. All Jupyter notebooks examples found in this repository will be also available to you in action to practice in this respo2docer. Thanks mybinder.org, you made it possible!
+Need to test examples one by one, then here other two options
 
-     [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://denmune.egy1st.org/mybinder-repo2docker)
-
-
-
-  2. Launch each Example in Google Research, CoLab
-         
-     Need to test examples one by one, then here other two options
-     -  Use colab offered by google research to test each example individually.
-     -  If you are a kaggler like me, then Kaggle, the best workspace where data scientist meet, should fit you to test the algorithm with great experience. 
+-  Use colab offered by google research to test each example individually.
+-  If you are a kaggler like me, then Kaggle, the best workspace where data scientist meet, should fit you to test the algorithm with great experience. 
 
 
 
 Here is a list of Google CoLab & Kaggle notebooks  to practice the use of  the algorithm interactively.
 
 
-| Dataset            | CoLab notebook                                               | Kaggle notebook                                              |
-| ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| How to use it?     | [![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/how-to-use) | [![When less means more - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/how-to-use) |
-| Chameleon datasets | [![Chameleon datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/chameleon-datasets) | [![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/chameleon-datasets) |
+| Dataset                                  | CoLab notebook                                               | Kaggle notebook                                              |
+| ---------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| How to use it?                           | [![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/how-to-use) | [![When less means more - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/how-to-use) |
+| Chameleon datasets                       | [![Chameleon datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/chameleon-datasets) | [![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/chameleon-datasets) |
 | 2D Shape datasets                        | [![2D Shape datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/2d-shapes) | [![2D Shape datasets - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/2d-shapes) |
 | MNIST dataset                            | [![MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/mnist-dataset) | [![MNIST dataset - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/mnist-dataset) |
 | iris dataset                             | [![iris dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/iris-dataset) | [![iris dataset - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/iris-dataset) |
@@ -491,9 +467,7 @@ Here is a list of Google CoLab & Kaggle notebooks  to practice the use of  the a
 
 
 
-How to cite
-------------
-
+## How to cite
 If you have used this codebase in a scientific publication and wish to cite it, please use the [Journal of Pattern Recognition article](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927)
 
       Mohamed Abbas McInnes, Adel El-Zoghaby, Amin Ahoukry, *DenMune: Density peak based clustering using mutual nearest neighbors*
@@ -519,18 +493,14 @@ abstract = {Many clustering algorithms fail when clusters are of arbitrary shape
 
 
 
-Licensing
-------------
-
+## Licensing
 The DenMune algorithm is 3-clause BSD licensed. Enjoy.
 
  [![BSD 3-Clause “New” or “Revised” License" ](https://img.shields.io/badge/license-BSD-green)](https://choosealicense.com/licenses/bsd-3-clause/)
 
 
 
-Task List
-------------
-
+## Task List
   - [x] Update Github with the DenMune sourcecode
   - [x] create repo2docker repository
   - [x] Create pip Package
@@ -543,4 +513,4 @@ Task List
   - [x] creating unit tests (coverage: 100%)
   - [x] generating API documentation
   - [x] create reproducible capsule on codeocean
-  - [ ] create conda package
+  - [ ] create conda package (*postponed untill NGT has conda installation*)
