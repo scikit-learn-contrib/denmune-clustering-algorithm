@@ -35,7 +35,7 @@ Docs & Tutorials
 
 | Read the Docs                                                | Repo2Docker                                                  | Colab                                                        | kaggle                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest) | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/scikit-learn-contrib/denmune-clustering-algorithm/HEAD) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
+| [![Documentation Status](https://readthedocs.org/projects/denmune/badge/?version=latest)](https://denmune.readthedocs.io/en/latest/?badge=latest) | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://denmune.egy1st.org/mybinder-repo2docker) | [![Launch notebook examples in Colaboratory, Google Research]( https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
 
 Downloads Stats
 --------------------
@@ -457,58 +457,37 @@ How to run and test
 
      Simply use our repo2docker offered by mybinder.org, which encapsulate the algorithm and all required data in one virtual machine instance. All Jupyter notebooks examples found in this repository will be also available to you in action to practice in this respo2docer. Thanks mybinder.org, you made it possible!
 
-     [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/scikit-learn-contrib/denmune-clustering-algorithm/HEAD)
+     [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://denmune.egy1st.org/mybinder-repo2docker)
 
 
 
   2. Launch each Example in Google Research, CoLab
          
-     Need to test examples one by one, then here another option. Use colab offered by google research to test each example individually.
-
-     Here is a list of Google CoLab URL to use the algorithm interactively
-     ----------------------------------------------------------------------
-
-
-| Dataset                                          | CoLab URL                                                    |
-| ------------------------------------------------ | ------------------------------------------------------------ |
-| How to use it - colab                            | [![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1J_uKdhZ3z1KeY0-wJ7Ruw2PZSY1orKQm) |
-| Chameleon datasets - colab                       | [![Chameleon datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing) |
-| 2D Shape datasets - colab                        | [![2D Shape datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1EaqTPCRHSuTKB-qEbnWHpGKFj6XytMIk?usp=sharing) |
-| MNIST dataset - colab                            | [![MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1a9FGHRA6IPc5jhLOV46iEbpUeQXptSJp?usp=sharing) |
-| iris dataset - colab                             | [![iris dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nKql57Xh7xVVu6NpTbg3vRdRg42R7hjm?usp=sharing) |
-| Get 97% by training MNIST dataset - colab        | [![Get 97% by training MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1NeOtXEQY94oD98Ufbh3IhTHnnYwIA659) |
-| Non-groundtruth datasets - colab                 | [![Non-groundtruth datasets - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1d17ejQ83aUy0CZIeQ7bHTugSC9AjJ2mU?usp=sharing) |
-| Noise detection - colab                          | [![Noise detection - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1Bp3c-cJfjLWxupmrBJ_6Q4-nqIfZcII4) |
-| Validation - colab                               | [![Validation - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/13_EVaQOv_QiNmQiMWJAcFFHPJHGCrQLe) |
-| How it propagates - colab                        | [![How it propagates - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o-tP3uvDGjxBOGYkir1lnbr74sZ06e0U?usp=sharing) |
-| Snapshots of propagation - colab                 | [![snapshots of the propagation - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vPXNKa8Rf3TnqDHSD3YSWl3g1iNSqjl2?usp=sharing) |
-| Scalability - colab                              | [![Scalability - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1d55wkBndLLapO7Yx1ePHhE8mL61j9-TH?usp=sharing) |
-| Stability vs number of nearest neighbors - colab | [![Stability vs number of nearest neighbors - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17VgVRMFBWvkSIH1yA3tMl6UQ7Eu68K2l?usp=sharing) |
-| k-nearest-evolution - colab                      | [![k-nearest-evolution - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/drive/1DZ-CQPV3WwJSiaV3-rjwPwmXw4RUh8Qj) |
+     Need to test examples one by one, then here other two options
+     -  Use colab offered by google research to test each example individually.
+     -  If you are a kaggler like me, then Kaggle, the best workspace where data scientist meet, should fit you to test the algorithm with great experience. 
 
 
 
-  3. Launch each Example in Kaggle workspace
-
-     If you are a kaggler like me, then Kaggle, the best workspace where data scientist meet, should fit you to test the algorithm with great experience. 
+Here is a list of Google CoLab & Kaggle notebooks  to practice the use of  the algorithm interactively.
 
 
-     | Dataset                                  | Kaggle URL                                                   |
-     | ---------------------------------------- | ------------------------------------------------------------ |
-     | When less means more - kaggle            | [![When less means more - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/when-less-means-more) |
-     | Non-groundtruth datasets - kaggle        | [![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detecting-non-groundtruth-datasets) |
-     | 2D Shape datasets - kaggle               | [![2D Shape datasets - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/detection-of-2d-shape-datasets) |
-     | MNIST dataset kaggle                     | [![MNIST dataset - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/get-97-using-simple-yet-one-parameter-algorithm) |
-     | Iris dataset kaggle                      | [![iris dataset - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/denmune-clustering-iris-dataset) |
-     | Training MNIST to get 97%                | [![Training MNIST to get 97%](https://kaggle.com/static/images/open-in-kaggle.svg)](  https://www.kaggle.com/egyfirst/training-mnist-dataset-to-get-97) |
-     | Noise detection - kaggle                 | [![Noise detection - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://www.kaggle.com/egyfirst/noise-detection) |
-     | Validation - kaggle                      | [![Validation - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/validate-in-5-built-in-validity-insexes) |
-     | The beauty of propagation - kaggle       | [![The beauty of propagation - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-clusters-propagation) |
-     | The beauty of propagation part2 - kaggle | [![The beauty of propagation part 2 - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/the-beauty-of-propagation-part2) |
-     | Snapshots of propagation -kaggle         | [![The beauty of propagation - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/beauty-of-propagation-part3) |
-     | Scalability kaggle                       | [![Scalability - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/scalability-vs-speed) |
-     | Stability - kaggle                       | [![Stability - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/stability-vs-number-of-nearest-neighbor) |
-     | k-nearest-evolution - kaggle             | [![k-nearest-evolution - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/egyfirst/k-nearest-evolution) |
+| Dataset            | CoLab notebook                                               | Kaggle notebook                                              |
+| ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| How to use it?     | [![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/how-to-use) | [![When less means more - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/how-to-use) |
+| Chameleon datasets | [![Chameleon datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/chameleon-datasets) | [![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/chameleon-datasets) |
+| 2D Shape datasets                        | [![2D Shape datasets - colab]( https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/2d-shapes) | [![2D Shape datasets - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/2d-shapes) |
+| MNIST dataset                            | [![MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/mnist-dataset) | [![MNIST dataset - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/mnist-dataset) |
+| iris dataset                             | [![iris dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/iris-dataset) | [![iris dataset - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/iris-dataset) |
+| Get 97% by training MNIST dataset        | [![Get 97% by training MNIST dataset - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/score-97-mnist-dataset) | [![Training MNIST to get 97%](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://denmune.egy1st.org/kaggle/score-97-mnist-dataset) |
+| Non-groundtruth datasets                 | [![Non-groundtruth datasets - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/non-groundtruth-datasets) | [![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/non-groundtruth-datasets) |
+| Noise detection                          | [![Noise detection - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/noise-detection ) | [![Noise detection - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://denmune.egy1st.org/kaggle/noise-detection) |
+| Validation                               | [![Validation - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/how-to-validate ) | [![Validation - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://denmune.egy1st.org/kaggle/how-to-validate) |
+| How does it propagate?                   | [![How it propagates - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/how-does-it-propagate ) | [![The beauty of propagation - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://denmune.egy1st.org/kaggle/how-does-it-propagate)<br /> [![The beauty of propagation part 2 - kaggle]( https://kaggle.com/static/images/open-in-kaggle.svg)]( https://denmune.egy1st.org/kaggle/how-does-it-propagate-part2 ) |
+| Snapshots of propagation                 | [![snapshots of the propagation - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/snapshots-of-propagation ) | [![The beauty of propagation - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://denmune.egy1st.org/kaggle/snapshots-of-propagation ) |
+| Scalability                              | [![Scalability - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/stability ) | [![Scalability - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/scalability) |
+| Stability vs number of nearest neighbors | [![Stability vs number of nearest neighbors - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/stability) | [![Stability - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/stability) |
+| k-nearest-evolution                      | [![k-nearest-evolution - colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://denmune.egy1st.org/colab/k-nearest-evolution) | [![k-nearest-evolution - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]( https://denmune.egy1st.org/kaggle/k-nearest-evolution ) |
 
 
 
