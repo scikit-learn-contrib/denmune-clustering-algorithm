@@ -21,7 +21,7 @@ Scientific Work
 
 | Paper                                                        | Journal                                                      | Data                                                         | ResearchGate stats                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927) | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0) | [![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)](https://data.mendeley.com/datasets/b73cw5n43r/4) | ![Researchgate Stats](https://raw.githubusercontent.com/egy1st/images/main/clustering/researshgate.png) |
+| [![Elsevier, journal's article publisher ](https://img.shields.io/badge/elsevier-published-orange)](https://denmune.egy1st.org/denmune-paper) | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0) | [![Research datasets at  Mendeley ](https://img.shields.io/badge/mendeley-data-bluegreen)](https://data.mendeley.com/datasets/b73cw5n43r/4) | ![Researchgate Stats](https://raw.githubusercontent.com/egy1st/images/main/clustering/researshgate.png) |
 
 Coding, Security & Maintenance
 -----------------------
