@@ -56,9 +56,10 @@ This 30 seconds will tell you how a density-based algorithm, DenMune propagates:
   [![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/propagation.gif)]()
 
 ## Still interested?
-Watch this 9-min illustrative video on Vimeo (no ads). We like Vimeo
+Watch this ***10-min*** illustrative video on Vimeo (no ads). Thank you Vimeo for making it possible without any distraction (No ads. We hate ads).
 
-[![read the docs](https://img.shields.io/badge/watch_it-vimeo-orange)](https://player.vimeo.com/video/827209757)
+- [![watch on Vimeo](https://img.shields.io/badge/watch_on-vimeo-orange)](https://player.vimeo.com/video/827209757)
+- [![YouTube Video Views](https://img.shields.io/youtube/views/o77raaasuOM?style=for-the-badge)](https://www.youtube.com/watch?v=o77raaasuOM) 
 
 
 
