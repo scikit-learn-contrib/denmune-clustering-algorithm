@@ -216,7 +216,7 @@ test data as predicted by DenMune on training the dataset at k=50
 def __init__ (self,
                   train_data=None, test_data=None,
                   train_truth=None, test_truth=None, 
-                  file_2d =None, k_nearest=None, 
+                  file_2d =None, k_nearest=1, 
                   rgn_tsne=False, prop_step=0,
                   ):    
   ```
@@ -243,7 +243,7 @@ def __init__ (self,
   - k_nearest:
 
     - number of nearest neighbor
-    - default: 0. the default is invalid. k-nearest neighbor should be at least 1.
+    - default: 1. k-nearest neighbor should be at least 1.
 
   - rgn_tsn: 
 
