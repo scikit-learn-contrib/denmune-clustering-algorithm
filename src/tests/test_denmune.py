@@ -4,7 +4,7 @@ import pandas as pd
 import pytest
 from sklearn.datasets import make_blobs
 from sklearn.datasets import load_iris
-from src.denmune import DenMune
+from denmune import DenMune
 
        
 # test DenMune's results
