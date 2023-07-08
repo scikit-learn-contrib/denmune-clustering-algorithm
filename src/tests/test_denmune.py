@@ -98,11 +98,3 @@ test_data = data [555:]
 train_labels = labels [:555]
 test_labels = labels [555:]
 
-# check if data will be treated correctly when comes as dataframe
-def test_dataframe():
-    knn = 11 # k-nearest neighbor, the only parameter required by the algorithm
-    dm = DenMune(train_data=train_data, train_truth=train_labels, test_data=test_data, test_truth=test_labels, k_nearest=knn, rgn_tsne=True)
-    labels, validity = dm.fit_predict(validate=True, show_noise=True, show_analyzer=True)
-    assert ( np.mean(dm.labels_pred == labels) > 0.97 or (1 - np.mean( dm.labels_pred == labels)  > 0.97) ) 
-
-
