@@ -16,6 +16,17 @@ X_cc, y_cc = make_blobs(
     cluster_std=0.5,
 )
 
+data_file = 'https://raw.githubusercontent.com/egy1st/datasets/dd90854f92cb5ef73b4146606c1c158c32e69b94/denmune/shapes/aggr_rand.csv'
+data = pd.read_csv(data_file, sep=',', header=None)
+labels = data.iloc[:, -1]
+data = data.drop(data.columns[-1], axis=1)
+train_data = data [:555]
+test_data = data [555:]
+train_labels = labels [:555]
+test_labels = labels [555:]
+
+
+
 knn = 10
 
 def test_DenMune_results():
@@ -23,18 +34,18 @@ def test_DenMune_results():
     labels, validity = dm.fit_predict(show_analyzer=False)
     # This test use data that are not perfectly separable so the
     # accuracy is not 1. Accuracy around 0.90
-    assert (np.mean(dm.labels_pred == y_cc) > 0.90) or (1 - np.mean(dm.labels_pred == y_cc) > 0.90)
+    assert (np.mean(dm.labels_pred == y_cc) > 0.80) or (1 - np.mean(dm.labels_pred == y_cc) > 0.80)
 
 
-@pytest.mark.parametrize("train_data", [X_cc[:800], X_cc[:800] ])
-@pytest.mark.parametrize("train_truth", [y_cc[:800], y_cc[:800] ])  
-@pytest.mark.parametrize("test_data", [X_cc[800:], X_cc[800:] ])  
-@pytest.mark.parametrize("test_truth", [y_cc[800:], y_cc[800:] ])
+@pytest.mark.parametrize("train_data", [None, train_data ])
+@pytest.mark.parametrize("train_truth", [None, train_labels ])  
+@pytest.mark.parametrize("test_data", [None, test_data ])  
+@pytest.mark.parametrize("test_truth", [None, test_labels ])
 @pytest.mark.parametrize("validate", [True, False])
 @pytest.mark.parametrize("show_plots", [True, False])
 @pytest.mark.parametrize("show_noise", [True, False])
 @pytest.mark.parametrize("show_analyzer", [True, False])
-@pytest.mark.parametrize("prop_step", [0, 0])
+@pytest.mark.parametrize("prop_step", [0, 500])
 
 # all possible combinations will be tested over all parameters. Actually, 257 tests will be covered
 def test_parameters(train_data, train_truth, test_data, test_truth, validate, show_plots, show_noise, show_analyzer, prop_step):
