@@ -68,13 +68,3 @@ def test_DenMune_propagation():
     # if snapshot iteration = 1000, this means we could propagate to the end properly    
     assert (snapshot == 1000)
 
-# we are going to do some tests using iris data    
-X_iris = load_iris()["data"]
-y_iris = load_iris()["target"]
-
-# we test t_SNE reduction by applying it on Iris dataset which has 4 dimentions.
-@pytest.mark.parametrize("file_2d", [None, 'iris_2d.csv'])
-@pytest.mark.parametrize("rgn_tsne", [True, False])
-
-
-
