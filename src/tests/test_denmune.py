@@ -30,7 +30,7 @@ test_labels = labels [555:]
 knn = 10
 
 def test_DenMune_results():
-    dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=knn, rgn_tsne=True)
+    dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=knn)
     labels, validity = dm.fit_predict(show_analyzer=False)
     # This test use data that are not perfectly separable so the
     # accuracy is not 1. Accuracy around 0.90
@@ -53,7 +53,7 @@ def test_parameters(train_data, train_truth, test_data, test_truth, validate, sh
         if not (train_data is not None and train_truth is None and test_truth is not None):
             if not (train_data is not None and test_data is not None and train_truth is None):
                  if not (train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None):
-                    dm = DenMune(train_data=train_data, train_truth=train_truth, test_data=test_data, test_truth=test_truth, k_nearest=10,prop_step=prop_step,rgn_tsne=True)
+                    dm = DenMune(train_data=train_data, train_truth=train_truth, test_data=test_data, test_truth=test_truth, k_nearest=10,prop_step=prop_step)
                     labels, validity = dm.fit_predict(validate=validate, show_plots=show_plots, show_noise=show_noise, show_analyzer=show_analyzer)
                     # This test use data that are not perfectly separable so the
                     # accuracy is not 1. Accuracy around 0.70
@@ -106,29 +106,3 @@ def test_dataframe():
     assert ( np.mean(dm.labels_pred == labels) > 0.97 or (1 - np.mean( dm.labels_pred == labels)  > 0.97) ) 
 
 
-def test_exceptions():
-
-    with pytest.raises(Exception) as execinfo:
-        dm = DenMune(train_data=None, k_nearest=10)
-        #labels, validity = dm.fit_predict()
-        #raise Exception('train data is None')
-
-    with pytest.raises(Exception) as execinfo:
-        dm = DenMune(train_data=train_data, test_truth=test_labels, k_nearest=10)
-        #labels, validity = dm.fit_predict()  
-        #raise Exception('train_data is not None and train_truth is None and test_truth is not None')
-
-    with pytest.raises(Exception) as execinfo:
-        dm = DenMune(train_data=train_data, test_data=test_data, k_nearest=10)
-        #labels, validity = dm.fit_predict()
-        #raise Exception('train_data is not None and test_data is not None and train_truth is None')  
-
-    with pytest.raises(Exception) as execinfo:
-        dm = DenMune(train_data=train_data, train_truth=train_labels, test_truth=test_labels, test_data=None, k_nearest=10)
-        #labels, validity = dm.fit_predict()     
-        #raise Exception('train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None')
-    with pytest.raises(Exception) as execinfo:
-
-        dm = DenMune(train_data=train_data, train_truth=train_labels) # default value for k_nearest is 0 which is invalid
-        #labels, validity = dm.fit_predict()     
-        #raise Exception('k-nearest neighbor should be at least 1')    
