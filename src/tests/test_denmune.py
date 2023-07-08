@@ -26,10 +26,10 @@ def test_DenMune_results():
     assert (np.mean(dm.labels_pred == y_cc) > 0.90) or (1 - np.mean(dm.labels_pred == y_cc) > 0.90)
 
 
-@pytest.mark.parametrize("train_data", [None, X_cc[:800] ])
-@pytest.mark.parametrize("train_truth", [None, y_cc[:800] ])  
-@pytest.mark.parametrize("test_data", [None, X_cc[800:] ])  
-@pytest.mark.parametrize("test_truth", [None, y_cc[800:] ])
+@pytest.mark.parametrize("train_data", [X_cc[:800], X_cc[:800] ])
+@pytest.mark.parametrize("train_truth", [y_cc[:800], y_cc[:800] ])  
+@pytest.mark.parametrize("test_data", [X_cc[800:], X_cc[800:] ])  
+@pytest.mark.parametrize("test_truth", [y_cc[800:], y_cc[800:] ])
 @pytest.mark.parametrize("validate", [True, False])
 @pytest.mark.parametrize("show_plots", [True, False])
 @pytest.mark.parametrize("show_noise", [True, False])
