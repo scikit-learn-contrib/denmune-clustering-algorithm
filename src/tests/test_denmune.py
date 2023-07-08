@@ -30,7 +30,7 @@ test_labels = labels [555:]
 knn = 10
 
 def test_DenMune_results():
-    dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=knn)
+    dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=knn, rgn_tsne=True)
     labels, validity = dm.fit_predict(show_analyzer=False)
     # This test use data that are not perfectly separable so the
     # accuracy is not 1. Accuracy around 0.90
