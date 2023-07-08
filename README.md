@@ -2,7 +2,7 @@
 DenMune is a clustering algorithm that can find clusters of arbitrary size, shapes, and densities in two-dimensions. Higher dimensions are first reduced to 2-D using the t-sne. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of the algorithm. Enjoy the simplicity but the power of DenMune.
 
 ## Reproducibility & Test Drives
-Now you can reproduce all the research experiments, and even share the results and collaborate to the algorithm using our capsule on CodeOcean. Each Capsule is a self-contained computational experiment with computing environment, code, data, version history, and results.
+Now you can reproduce all the research experiments, and even share the results and collaborate with the algorithm using our capsule on CodeOcean. Each Capsule is a self-contained computational experiment with computing environment, code, data, version history, and results.
 
 also, you may use our repo2docker offered by mybinder.org, which encapsulate the algorithm and all required data in one virtual machine instance. All Jupyter notebooks examples found in this repository will be also available to you in action to practice in this respo2docer. Thanks mybinder.org, you made it possible!
 
