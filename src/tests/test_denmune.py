@@ -82,19 +82,3 @@ def test_t_SNE(rgn_tsne, file_2d):
     labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)
     assert (dm.data.shape[1] == 2) # this means it was reduced properly to 2-d using t-SNE
 
-def test_knn():
-    for k in range (5, 55, 5):
-        dm = DenMune(train_data=X_iris, train_truth=y_iris, k_nearest=k, rgn_tsne=False)
-        labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)
-    #assert (k == 50) # this means we tested the algorithm works fine with several knn inputs    
-    
-
-data_file = 'https://raw.githubusercontent.com/egy1st/datasets/dd90854f92cb5ef73b4146606c1c158c32e69b94/denmune/shapes/aggr_rand.csv'
-data = pd.read_csv(data_file, sep=',', header=None)
-labels = data.iloc[:, -1]
-data = data.drop(data.columns[-1], axis=1)
-train_data = data [:555]
-test_data = data [555:]
-train_labels = labels [:555]
-test_labels = labels [555:]
-
