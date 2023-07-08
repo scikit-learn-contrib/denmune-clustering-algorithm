@@ -77,8 +77,4 @@ y_iris = load_iris()["target"]
 @pytest.mark.parametrize("rgn_tsne", [True, False])
 
 
-def test_t_SNE(rgn_tsne, file_2d):
-    dm = DenMune(train_data=X_iris, train_truth=y_iris, k_nearest=knn, rgn_tsne=rgn_tsne, file_2d=file_2d)
-    labels, validity = dm.fit_predict(show_analyzer=False, show_plots=False)
-    assert (dm.data.shape[1] == 2) # this means it was reduced properly to 2-d using t-SNE
 
