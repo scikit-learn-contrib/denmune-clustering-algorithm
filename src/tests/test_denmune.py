@@ -46,7 +46,7 @@ def test_parameters(train_data, train_truth, test_data, test_truth, validate, sh
                     labels, validity = dm.fit_predict(validate=validate, show_plots=show_plots, show_noise=show_noise, show_analyzer=show_analyzer)
                     # This test use data that are not perfectly separable so the
                     # accuracy is not 1. Accuracy around 0.70
-                    assert ( np.mean(dm.labels_pred == y_cc) > 0.70 or (1 - np.mean( dm.labels_pred == y_cc)  > 0.70) ) 
+                    assert ( np.mean(labels == y_cc) > 0.70 or (1 - np.mean( labels == y_cc)  > 0.70) ) 
 
 
 def test_DenMune_propagation():
@@ -118,6 +118,6 @@ def test_exceptions():
         #raise Exception('train_data is not None and  train_truth is not None and test_truth is not None  and test_data is None')
     with pytest.raises(Exception) as execinfo:
 
-        dm = DenMune(train_data=train_data, train_truth=train_labels) # default value for k_nearest is 0 which is invalid
+        dm = DenMune(train_data=train_data, train_truth=train_labels, k_nearest=0) # default value for k_nearest is 1 which is valid
         #labels, validity = dm.fit_predict()     
         #raise Exception('k-nearest neighbor should be at least 1')    

@@ -11,7 +11,7 @@ orbs:
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   codecov: codecov/codecov@3.0.0
   slack: circleci/slack@4.4.4
-  python: circleci/python@1.2
+  python: circleci/python@2.1.1
   
 
 # Define a job to be invoked later in a workflow.
@@ -66,7 +66,7 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  Python-3.8: # This is the name of the workflow, feel free to change it to better match your workflow.
+  Python-3.10: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test:
