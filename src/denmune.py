@@ -127,6 +127,7 @@ class DenMune():
             train_data = train_data.copy(order='C')
         else:  
             print(type(train_data))
+            print(train_data)
             train_data = train_data.copy(order='C')
 
         if train_truth is not None:
