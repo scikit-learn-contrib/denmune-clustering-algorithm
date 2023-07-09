@@ -23,12 +23,12 @@ def test_DenMune_results():
     labels, validity = dm.fit_predict(show_analyzer=False)
     # This test use data that are not perfectly separable so the
     # accuracy is not 1. Accuracy around 0.90
-    assert (np.mean(dm.labels_pred == y_cc) > 0.80) or (1 - np.mean(dm.labels_pred == y_cc) > 0.80)
+    assert (np.mean(dm.labels_pred == y_cc) > 0.90) or (1 - np.mean(dm.labels_pred == y_cc) > 0.90)
 
 
 @pytest.mark.parametrize("train_data", [None, X_cc[:800] ])
 @pytest.mark.parametrize("train_truth", [None, y_cc[:800] ])  
-@pytest.mark.parametrize("test_data", [None,  X_cc[800:] ])  
+@pytest.mark.parametrize("test_data", [None, X_cc[800:] ])  
 @pytest.mark.parametrize("test_truth", [None, y_cc[800:] ])
 @pytest.mark.parametrize("validate", [True, False])
 @pytest.mark.parametrize("show_plots", [True, False])
