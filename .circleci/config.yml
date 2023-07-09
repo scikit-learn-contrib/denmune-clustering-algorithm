@@ -11,7 +11,7 @@ orbs:
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   codecov: codecov/codecov@3.0.0
   slack: circleci/slack@4.4.4
-  python: circleci/python@1.2
+  python: circleci/python@2.1.1
   
 
 # Define a job to be invoked later in a workflow.
