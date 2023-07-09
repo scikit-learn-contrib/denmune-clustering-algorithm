@@ -125,7 +125,7 @@ class DenMune():
         if isinstance(train_data, pd.DataFrame):
             train_data = train_data.to_numpy()
             train_data = train_data.copy(order='C')
-        elif type(train_data == np.ndarray) and (not train_data.data.c_contiguous)  
+        elif type(train_data == np.ndarray) and (not train_data.data.c_contiguous):  
             print(type(train_data))
             print(train_data)
             train_data = train_data.copy(order='C')
