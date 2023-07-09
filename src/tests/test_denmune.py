@@ -18,3 +18,10 @@ X_cc, y_cc = make_blobs(
 
 
 knn = 10
+
+def test_DenMune_results():
+    dm = DenMune(train_data=X_cc, train_truth=y_cc, k_nearest=knn)
+    labels, validity = dm.fit_predict(show_analyzer=False)
+    # This test use data that are not perfectly separable so the
+    # accuracy is not 1. Accuracy around 0.90
+    assert (np.mean(dm.labels_pred == y_cc) > 0.80) or (1 - np.mean(dm.labels_pred == y_cc) > 0.80)
