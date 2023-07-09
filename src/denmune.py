@@ -134,7 +134,7 @@ class DenMune():
           if isinstance(train_truth, pd.Series):
               train_truth = train_truth.to_numpy()
               train_truth = train_truth.copy(order='C')
-          elif type(train_truth == np.ndarray and not train_truth.data.c_contiguous):  
+          else: #type(train_truth == np.ndarray and not train_truth.data.c_contiguous):  
             train_truth = train_truth.copy(order='C')   
 
         if test_data is not None:
