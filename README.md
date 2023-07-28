@@ -520,4 +520,5 @@ The DenMune algorithm is 3-clause BSD licensed. Enjoy.
   - [x] creating unit tests (coverage: 100%)
   - [x] generating API documentation
   - [x] create reproducible capsule on codeocean
+  - [ ] Submitting pyMune to Software Impacts (under acceptance)
   - [ ] create conda package (*postponed untill NGT has conda installation*)
