@@ -508,7 +508,7 @@ The DenMune algorithm is 3-clause BSD licensed. Enjoy.
 
 
 ## Task List
-  - [x] Update Github with the DenMune sourcecode
+  - [x] Update Github with the DenMune source code
   - [x] create repo2docker repository
   - [x] Create pip Package
   - [x] create CoLab shared examples
@@ -519,6 +519,6 @@ The DenMune algorithm is 3-clause BSD licensed. Enjoy.
   - [x] scikit-learn compatible
   - [x] creating unit tests (coverage: 100%)
   - [x] generating API documentation
-  - [x] create reproducible capsule on codeocean
-  - [ ] Submitting pyMune to Software Impacts (under acceptance)
-  - [ ] create conda package (*postponed untill NGT has conda installation*)
+  - [x] Create a reproducible capsule on code ocean
+  - [ ] Submitting pyMune to Software Impacts (under review)
+  - [ ] create conda package (*postponed until NGT has conda installation*)
