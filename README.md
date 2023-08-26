@@ -450,8 +450,10 @@ Here is a list of Google CoLab & Kaggle notebooks to practice the use of the alg
 | Stability                    | [![Stability vs number of nearest neighbors - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/stability) | [![Stability - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/stability) |
 | k-nearest-evolution          | [![k-nearest-evolution - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/knn-evolution) | [![k-nearest-evolution - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/knn-evolution) |
 
-
 ## How to cite
+
+- How to cite ***The paper***
+
 If you have used this codebase in a scientific publication and wish to cite it, please use the [Journal of Pattern Recognition article](https://www.sciencedirect.com/science/article/abs/pii/S0031320320303927):
 
 ```
@@ -476,6 +478,30 @@ abstract = {Many clustering algorithms fail when clusters are of arbitrary shape
 }
 ```
 
+
+
+- How to cite ***The Software***
+If you have used this codebase in a scientific publication and wish to cite it, please use the [Journal of Software Impacts article](https://www.sciencedirect.com/science/article/pii/S266596382300101X):
+
+```
+Abbas, M. A., El-Zoghabi, A., & Shoukry, A. (2023). PyMune: A Python package for complex clusters detection. Software Impacts, 17, 100564. https://doi.org/10.1016/j.simpa.2023.100564
+```
+
+```bib  
+@article{ABBAS2023100564,
+title = {pyMune: A Python package for complex clusters detection},
+journal = {Software Impacts},
+volume = {17},
+pages = {100564},
+year = {2023},
+issn = {2665-9638},
+doi = {https://doi.org/10.1016/j.simpa.2023.100564},
+url = {https://www.sciencedirect.com/science/article/pii/S266596382300101X},
+author = {Mohamed Ali Abbas and Adel El-Zoghabi and Amin Shoukry},
+keywords = {Machine learning, Pattern recognition, Dimensionality reduction, Mutual nearest neighbors, Nearest neighbors approximation, DenMune},
+abstract = {We introduce pyMune, an open-source Python library for robust clustering of complex real-world datasets without density cutoff parameters. It implements DenMune (Abbas et al., 2021), a mutual nearest neighbor algorithm that uses dimensionality reduction and approximate nearest neighbor search to identify and expand cluster cores. Noise is removed with a mutual nearest-neighbor voting system. In addition to clustering, pyMune provides classification, visualization, and validation functionalities. It is fully compatible with scikit-learn and has been accepted into the scikit-learn-contrib repository. The code, documentation, and demos are available on GitHub, PyPi, and CodeOcean for easy use and reproducibility.}
+}
+```
 ## Licensing 
 
 The DenMune algorithm is 3-clause BSD licensed. Enjoy.
