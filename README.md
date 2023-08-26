@@ -15,9 +15,9 @@ Also, you may use our repo2docker offered by mybinder.org, which encapsulates th
 
 ## Scientific Work  
 
-| Paper                                                        | Journal                                                      | Data                                                         | ResearchGate Stats                                           |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![Elsevier, journal's article publisher](https://img.shields.io/badge/elsevier-published-orange)](https://denmune.egy1st.org/research-paper) | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823&tip=sid&clean=0) | [![Research datasets at Mendeley](https://img.shields.io/badge/mendeley-data-bluegreen)](https://denmune.egy1st.org/mendeley-data) | ![ResearchGate Stats](https://raw.githubusercontent.com/egy1st/images/main/clustering/researshgate.png) |
+|                         Paper & data                         |                           Journals                           |                      ResearchGate Stats                      |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| [![Elsevier, journal's article publisher](https://img.shields.io/badge/elsevier-published-orange)](https://denmune.egy1st.org/research-paper)<br />[![Research datasets at Mendeley](https://img.shields.io/badge/mendeley-data-bluegreen)](https://denmune.egy1st.org/mendeley-data) | [![scimagojr](https://www.scimagojr.com/journal_img.php?id=24823)](https://www.scimagojr.com/journalsearch.php?q=24823) [![scimagojr](https://www.scimagojr.com/journal_img.php?id=21101060167)](https://www.scimagojr.com/journalsearch.php?q=21101060167) | ![ResearchGate Stats](https://raw.githubusercontent.com/egy1st/images/main/clustering/researshgate.png) |
 
 ## Coding, Security & Maintenance
 
@@ -495,5 +495,5 @@ The DenMune algorithm is 3-clause BSD licensed. Enjoy.
   - [x] creating unit tests (coverage: 100%)
   - [x] generating API documentation
   - [x] Create a reproducible capsule on code ocean
-  - [x] Submitting pyMune to Software Impacts
+  - [x] Submitting pyMune to Software Impacts (Published August 5 , 2023)
   - [ ] create conda package (*postponed until NGT has conda installation*)
