@@ -450,6 +450,19 @@ Here is a list of Google CoLab & Kaggle notebooks to practice the use of the alg
 | Stability                    | [![Stability vs number of nearest neighbors - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/stability) | [![Stability - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/stability) |
 | k-nearest-evolution          | [![k-nearest-evolution - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/knn-evolution) | [![k-nearest-evolution - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/knn-evolution) |
 
+
+
+## Software Impact
+Discover robust clustering without density cutoffs using this open-source Python library pyMune, implementing the parameter-free DenMune algorithm. PyMune identifies and expands cluster cores while removing noise. Fully scikit-learn compatible. pyMune (DenMune implementation) is a cutting-edge tool incorporating advanced techniques, robust performance, and effective propagation strategies. This positions it as the current state-of-the-art in its field, contributing to its high adoption and impact.
+
+- After extensive research and rigorous validation, we are proud to release pyMune as an open-source tool on GitHub and PyPi for the benefit of the scientific community.
+- With over 160,000 downloads already, pyMune has demonstrated its real-world impact and usefulness. We integrated it with CodeOcean to further enhance reproducibility and reuse - encapsulating code, data, and outputs for turnkey sharing.
+- It is part of a special issue of R-badged articles, https://www.sciencedirect.com/journal/software-impacts/special-issue/10XXN6LQ0J1
+- it is part of Scikit-learn-contrib , https://github.com/scikit-learn-contrib
+
+![Software Impact](https://github.com/egy1st/images/blob/main/clustering/software-impacts.png?raw=true)
+
+
 ## How to cite
 
 - How to cite ***The paper***
