@@ -70,8 +70,10 @@ Watch this ***10-min*** illustrative video on:
 ## When less means more
 
 Most classic clustering algorithms fail to detect complex clusters where clusters are of different sizes, shapes, density, and exist in noisy data. Recently, a density-based algorithm named DenMune showed great ability in detecting complex shapes even in noisy data. it can detect a number of clusters automatically, detect both pre-identified-noise and post-identified-noise automatically, and remove them.
+
 It can achieve an accuracy reach 100% in some classic pattern problems, achieve 97% in the MNIST dataset. A great advantage of this algorithm is being a single-parameter algorithm. All you need is to set a number of k-nearest neighbors and the algorithm will care about the rest. Being Non-sensitive to changes in k, make it robust and stable.
-Keep in mind, that the algorithm reduces any N-D dataset to only a 2-D dataset initially, so it is a good benefit of this algorithm is always to plot your data and explore it which makes this algorithm a good candidate for data exploration. Finally, the algorithm comes with a neat package for visualizing data, validating it, and analyzing the whole
+
+Keep in mind, that the algorithm reduces any N-D dataset to only a 2-D dataset initially, so it is a good benefit of this algorithm is always to plot your data and explore it which makes this algorithm a good candidate for data exploration. Finally, the algorithm comes with a neat package for visualizing data, validating it, and analyzing the whole clustering process.
 
 ## How to install DenMune
 
