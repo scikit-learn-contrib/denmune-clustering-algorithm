@@ -27,11 +27,12 @@ This is the source code of DenMune Clustering Algorithm accompanied with the exp
 
 ### About me
 - Name: Mohamed Ali Abbas
--  Egypt - Alexandria - Smouha
+- Egypt - Alexandria - Smouha
 - Cell-phone: +20-01007500290
 - Personal E-mail: mohamed.alyabbas@outlook.com
 - Business E-meal: 01@zerobytes.one
 - website: https://zerobytes.one
+- website: https://egy1st.org
 - LinkedIn: https://www.linkedin.com/in/mohabbas/
 - Github: https://github.com/egy1st
 - Kaggle: https://www.kaggle.com/egyfirst
@@ -48,6 +49,7 @@ import matplotlib.pyplot as plt
 import ngtpy
 import numpy as np
 import pandas as pd
+from pandas._libs.lib import fast_unique_multiple_list_gen
 import seaborn as sns
 from anytree import Node
 from numpy import genfromtxt
@@ -87,7 +89,7 @@ class DenMune():
                  train_data=None,
                  test_data=None,
                  train_truth=None, test_truth=None,
-                 file_2d=None, k_nearest=0,
+                 file_2d=None, k_nearest=1,
                  rgn_tsne=False, prop_step=0,
                  ):
         """Initiate object in Null-state. User should set paramters properly, otherwise an error would raise"""
@@ -115,18 +117,38 @@ class DenMune():
 
         self.analyzer = {}
         self.analyzer['n_points'] = {}
+
+      # Let us check that we are working with Contiguous Numpy ndarray
+      # otherwise unxpected results appears
+      # check https://stackoverflow.com/questions/27266338/what-does-the-order-parameter-in-numpy-array-do-aka-what-is-contiguous-order
+      
         if isinstance(train_data, pd.DataFrame):
             train_data = train_data.to_numpy()
             train_data = train_data.copy(order='C')
-        if isinstance(test_data, pd.DataFrame):
+        elif type(train_data == np.ndarray and not train_data.data.c_contiguous):  
+            train_data = train_data.copy(order='C')
+
+        if train_truth is not None:
+          if isinstance(train_truth, pd.Series):
+              train_truth = train_truth.to_numpy()
+              train_truth = train_truth.copy(order='C')
+          elif type(train_truth == np.ndarray and not train_truth.data.c_contiguous):  
+            train_truth = train_truth.copy(order='C')   
+
+        if test_data is not None:
+          if isinstance(test_data, pd.DataFrame):
             test_data = test_data.to_numpy()
             test_data = test_data.copy(order='C')
-        if isinstance(train_truth, pd.Series):
-            train_truth = train_truth.to_numpy()
-            train_truth = train_truth.copy(order='C')
-        if isinstance(test_truth, pd.Series):
-            test_truth = test_truth.to_numpy()
-            test_truth = test_truth.copy(order='C')
+          elif type(test_data == np.ndarray and not test_data.data.c_contiguous): 
+            print ('I am in two') 
+            test_data = test_data.copy(order='C')
+    
+        if test_truth is not None:
+          if isinstance(test_truth, pd.Series):
+              test_truth = test_truth.to_numpy()
+              test_truth = test_truth.copy(order='C')
+          elif type(test_truth == np.ndarray and not test_truth.data.c_contiguous):  
+              test_truth = test_truth.copy(order='C')       
 
         self.train_sz = len(train_data)
 
