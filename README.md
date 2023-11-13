@@ -1,4 +1,4 @@
-# DenMune: A Density-Peak Clustering Algorithm
+# DenMune: A Density-Peak Clustering Algorithm 
 
 DenMune is a clustering algorithm that can find clusters of arbitrary size, shapes, and densities in two-dimensions. Higher dimensions are first reduced to 2D using t-SNE. The algorithm relies on a single parameter K (the number of nearest neighbors). The results show the superiority of the algorithm. Enjoy the simplicity but the power of DenMune.
 
