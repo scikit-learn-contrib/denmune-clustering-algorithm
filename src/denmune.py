@@ -125,29 +125,49 @@ class DenMune():
         if isinstance(train_data, pd.DataFrame):
             train_data = train_data.to_numpy()
             train_data = train_data.copy(order='C')
+<<<<<<< HEAD
         elif type(train_data == np.ndarray and not train_data.data.c_contiguous):  
+=======
+        # elif type(train_data == np.ndarray) and (not train_data.data.c_contiguous):
+        else:    
+>>>>>>> fab0f898e426ae3585229c36af4820b81e786a1a
             train_data = train_data.copy(order='C')
 
         if train_truth is not None:
           if isinstance(train_truth, pd.Series):
               train_truth = train_truth.to_numpy()
               train_truth = train_truth.copy(order='C')
+<<<<<<< HEAD
           elif type(train_truth == np.ndarray and not train_truth.data.c_contiguous):  
+=======
+          # elif type(train_truth == np.ndarray) and (not train_truth.data.c_contiguous):  
+          else:  
+>>>>>>> fab0f898e426ae3585229c36af4820b81e786a1a
             train_truth = train_truth.copy(order='C')   
 
         if test_data is not None:
           if isinstance(test_data, pd.DataFrame):
             test_data = test_data.to_numpy()
             test_data = test_data.copy(order='C')
+<<<<<<< HEAD
           elif type(test_data == np.ndarray and not test_data.data.c_contiguous): 
             print ('I am in two') 
+=======
+          # elif type(test_data == np.ndarray) and (not test_data.data.c_contiguous): 
+          else:    
+>>>>>>> fab0f898e426ae3585229c36af4820b81e786a1a
             test_data = test_data.copy(order='C')
     
         if test_truth is not None:
           if isinstance(test_truth, pd.Series):
               test_truth = test_truth.to_numpy()
               test_truth = test_truth.copy(order='C')
+<<<<<<< HEAD
           elif type(test_truth == np.ndarray and not test_truth.data.c_contiguous):  
+=======
+          # elif type(test_truth == np.ndarray) and (not test_truth.data.c_contiguous):  
+          else:    
+>>>>>>> fab0f898e426ae3585229c36af4820b81e786a1a
               test_truth = test_truth.copy(order='C')       
 
         self.train_sz = len(train_data)
