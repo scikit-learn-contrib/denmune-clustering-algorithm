@@ -435,7 +435,7 @@ Here is a list of Google CoLab & Kaggle notebooks to practice the use of the alg
 
 | Dataset                      | CoLab Notebook                                               | Kaggle Notebook                                              |
 | ---------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| How to use it?               | [![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/how-to-use) | [![When less means more - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/how-to-use) |
+| How to use it?               | [![How to use it - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://bit.ly/colab-how-to-use) | [![When less means more - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://bit.ly/kaggle-how-to-use) |
 | Chameleon datasets           | [![Chameleon datasets - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/chameleon) | [![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/chameleon) |
 | 2D Shape datasets            | [![2D Shape datasets - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/2d-shapes) | [![2D Shape datasets - kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/2d-shapes) |
 | Clustering unlabeled data    | [![Non-groundtruth datasets - colab](https://colab.research.google.com/assets/colab-badge.svg)](https://denmune.egy1st.org/colab/unlabeled-data) | [![Non-groundtruth datasets](https://kaggle.com/static/images/open-in-kaggle.svg)](https://denmune.egy1st.org/kaggle/unlabeled-data) |
@@ -536,5 +536,5 @@ The DenMune algorithm is 3-clause BSD licensed. Enjoy.
   - [x] creating unit tests (coverage: 100%)
   - [x] generating API documentation
   - [x] Create a reproducible capsule on code ocean
-  - [x] Submitting pyMune to Software Impacts (Published August 5 , 2023)
+  - [x] Submitting pyMune to Software Impacts (Published August 5, 2023)
   - [ ] create conda package (*postponed until NGT has conda installation*)
