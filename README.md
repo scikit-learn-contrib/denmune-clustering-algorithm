@@ -50,7 +50,7 @@ Also, you may use our repo2docker offered by mybinder.org, which encapsulates th
 ## Documentation:
 
    -  [![read the docs](https://img.shields.io/badge/read_the-docs-orange)](https://denmune.readthedocs.io/en/latest/?badge=latest)
-   -  [![Read my docs](https://img.shields.io/badge/read_my-docs-green)]([https://docs.egy1st.org](https://denmune-docs.vercel.app/))
+   -  [![Read my docs](https://img.shields.io/badge/read_my-docs-green)](https://denmune-docs.vercel.app)
 
 ## Watch it in action
 
