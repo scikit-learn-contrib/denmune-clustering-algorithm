@@ -10,8 +10,8 @@ Also, you may use our repo2docker offered by mybinder.org, which encapsulates th
 
 | Test-drive                               | URL                                                          |
 | ---------------------------------------- | ------------------------------------------------------------ |
-| Reproduce our code capsule on Code Ocean | [![Open in Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://denmune.egy1st.org/codeocean-capsule) |
-| Use our test-drive on MyBinder           | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://denmune.egy1st.org/mybinder-repo2docker) |
+| Reproduce our code capsule on Code Ocean | [![Open in Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://bit.ly/codeocean-capsule) |
+| Use our test-drive on MyBinder           | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://bit.ly/mybinder-repo2docker) |
 
 ## Scientific Work  
 
@@ -29,7 +29,7 @@ Also, you may use our repo2docker offered by mybinder.org, which encapsulates th
 
 | Reproducible Capsule                                         | Repo2Docker                                                  | Colab                                                        | Kaggle                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![Open in Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://denmune.egy1st.org/codeocean-capsule) | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://denmune.egy1st.org/mybinder-repo2docker) | [![Launch notebook examples in Colaboratory, Google Research](https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
+| [![Open in Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://bit.ly/codeocean-capsule) | [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://bit.ly/mybinder-repo2docker) | [![Launch notebook examples in Colaboratory, Google Research](https://colab.research.google.com/assets/colab-badge.svg)](#colab) | [![Launch notebook examples in Kaggle, the workspace where data scientist meet](https://kaggle.com/static/images/open-in-kaggle.svg)](#kaggle) |
 
 ## Downloads Stats  
 
@@ -536,5 +536,5 @@ The DenMune algorithm is 3-clause BSD licensed. Enjoy.
   - [x] creating unit tests (coverage: 100%)
   - [x] generating API documentation
   - [x] Create a reproducible capsule on code ocean
-  - [x] Submitting pyMune to Software Impacts (Published August 5, 2023)
+  - [x] Submitting pyMune to Software Impacts (Published August 5 , 2023)
   - [ ] create conda package (*postponed until NGT has conda installation*)
