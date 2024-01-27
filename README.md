@@ -456,7 +456,7 @@ Here is a list of Google CoLab & Kaggle notebooks to practice the use of the alg
 Discover robust clustering without density cutoffs using this open-source Python library pyMune, implementing the parameter-free DenMune algorithm. PyMune identifies and expands cluster cores while removing noise. Fully scikit-learn compatible. pyMune (DenMune implementation) is a cutting-edge tool incorporating advanced techniques, robust performance, and effective propagation strategies. This positions it as the current state-of-the-art in its field, contributing to its high adoption and impact.
 
 - After extensive research and rigorous validation, we are proud to release pyMune as an open-source tool on GitHub and PyPi for the benefit of the scientific community.
-- With over 160,000 downloads already, pyMune has demonstrated its real-world impact and usefulness. We integrated it with CodeOcean to further enhance reproducibility and reuse - encapsulating code, data, and outputs for turnkey sharing.
+- With over 200,000 downloads already, pyMune has demonstrated its real-world impact and usefulness. We integrated it with [![Open in Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://bit.ly/codeocean-capsule) and [![Launch notebook examples in Binder](https://static.mybinder.org/badge_logo.svg)](https://bit.ly/mybinder-repo2docker) to further enhance reproducibility and reuse - encapsulating code, data, and outputs for turnkey sharing.
 - It is part of a special issue of R-badged articles, https://www.sciencedirect.com/journal/software-impacts/special-issue/10XXN6LQ0J1
 - it is part of Scikit-learn-contrib , https://github.com/scikit-learn-contrib
 
