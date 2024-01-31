@@ -404,12 +404,9 @@ for snapshot in snapshots:
     labels, validity = dm.fit_predict(show_analyzer=False, show_noise=False)   
 ```
 
-[![Propagation in DenMune](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/propagation.gif)]()
-
-
 ## Interact with the algorithm  
 
-[![chameleon datasets](https://raw.githubusercontent.com/egy1st/denmune-clustering-algorithm/main/images/chameleon_detection.png)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing)
+[![chameleon datasets](https://raw.githubusercontent.com/scikit-learn-contrib/denmune-clustering-algorithm/main/images/denmune_propagation.png)](https://colab.research.google.com/drive/1EUROd6TRwxW3A_XD3KTxL8miL2ias4Ue?usp=sharing)
 
 *click image to interact*
 
