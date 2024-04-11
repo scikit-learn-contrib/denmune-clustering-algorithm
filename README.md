@@ -84,13 +84,13 @@ Simply install DenMune clustering algorithm using pip command from the official 
   From the shell run the command
 
   ```shell
-  pip install denmune
+pip install denmune
   ```
 
   From Jupyter notebook cell run the command
 
   ```ipython3
-  !pip install denmune
+!pip install denmune
   ```
 
 ## How to use DenMune
@@ -98,7 +98,7 @@ Simply install DenMune clustering algorithm using pip command from the official 
 Once DenMune is installed, you just need to import it
 
   ```python
-  from denmune import DenMune
+from denmune import DenMune
   ```
 
 *<u>Please note that first denmune (the package) in small letters, while the other one(the class itself) has D and M in capital case</u>.*
@@ -229,23 +229,23 @@ def __init__ (self,
 - test_data:
 
   - data used for testing the algorithm
-  
+
 - test_truth:
 
   - labels of testing data
   - default: None
-  
+
 - k_nearest:
 
   - number of nearest neighbor
   - default: 1. k-nearest neighbor should be at least 1.
-  
+
 - rgn_tsn:
 
   - when set to True: It will regenerate the reduced 2-D version of the N-D dataset each time the algorithm run.
   - when set to False: It will generate the reduced 2-D version of the N-D dataset first time only, then will reuse the saved exist file
   - default: True
-  
+
 - file_2d: name (include location) of file used save/load the reduced 2-d version
 
   - if empty: the algorithm will create temporary file named '_temp_2d'
@@ -272,19 +272,18 @@ def fit_predict(self,
 - validate:
   - validate data on/off according to five measures integrated with DenMune (Accuracy. F1-score, NMI index, AMI index, ARI index)
   - default: True
-  
+
 - show_plots:
   - show/hide plotting of data 
   - default: True
-  
+
 - show_noise:
   - show/hide noise and outlier
   - default: True
-  
+
 - show_analyzer:
   - show/hide the analyzer
   - default: True
-  
 
 ## The Analyzer  
 
@@ -371,6 +370,7 @@ The following chart shows the evolution of pre and post identified noise in corr
 
 
 ## The Stability
+
 The algorithm is only single-parameter, even more it not sensitive to changes in that parameter, k. You may guess that from the following chart yourself. This is of great benefit for you as a data exploration analyst. You can simply explore the dataset using an arbitrary k. Being Non-sensitive to changes in k, make it robust and stable.
 
 ![DenMune Stability chart](https://raw.githubusercontent.com/egy1st/images/main/clustering/stability.png)
@@ -450,6 +450,7 @@ Here is a list of Google CoLab & Kaggle notebooks to practice the use of the alg
 
 
 ## Software Impact
+
 Discover robust clustering without density cutoffs using this open-source Python library pyMune, implementing the parameter-free DenMune algorithm. PyMune identifies and expands cluster cores while removing noise. Fully scikit-learn compatible. pyMune (DenMune implementation) is a cutting-edge tool incorporating advanced techniques, robust performance, and effective propagation strategies. This positions it as the current state-of-the-art in its field, contributing to its high adoption and impact.
 
 - After extensive research and rigorous validation, we are proud to release pyMune as an open-source tool on GitHub and PyPi for the benefit of the scientific community.
@@ -458,6 +459,31 @@ Discover robust clustering without density cutoffs using this open-source Python
 - it is part of Scikit-learn-contrib , https://github.com/scikit-learn-contrib
 
 ![Software Impact](https://github.com/egy1st/images/blob/main/clustering/software-impacts.png?raw=true)
+
+### Warning: Plagiarized Works
+
+It has come to our attention that the following papers have plagiarized significant portions of the DenMune algorithm and research work:
+
+1. **Paper 1:** "DEDIC: Density Estimation Clustering Method Using Directly Interconnected Cores" published in IEEE Access, doi: 10.1109/ACCESS.2022.3229582 Authors: Yisen Lin, Xinlun Zhang, Lei Liu, and Huichen Qu, reported at https://pubpeer.com/publications/AFC4E173A4FC0A2AD7E70DE688DDA5
+2. **Paper 2:** "Research on stress curve clustering algorithm of Fiber Bragg grating sensor" published in Nature Scientific Reports,  doi: 10.1038/s41598-023-39058-w  Authors: Yisen Lin, Ye Wang, Huichen Qu  & Yiwen Xiong, reported at https://pubpeer.com/publications/7AEF7D0F7505A8B8C130D142522741
+
+We have conducted a thorough analysis and found extensive evidence of plagiarism in these papers, including:
+
+- Verbatim copying of the core algorithm logic and steps from DenMune, with only superficial naming and implementation differences intended to obfuscate the similarity.
+- Plagiarized background, related work, and technical details from the original DenMune paper, with minor paraphrasing and without proper attribution.
+- Copying of mathematical formulations, concepts, and point classifications from DenMune.
+- Reuse of experimental setup, datasets, and compared algorithms from DenMune without justification or acknowledgment.
+- Fabricated experimental results, with values directly copied from DenMune's results and falsely claimed as their own.
+- Lack of substantive analysis or discussion, further indicating that the experiments were likely not conducted.
+
+Despite our efforts to address these concerns through proper channels, the publishers have decided to allow these plagiarized papers to remain published with only a correction acknowledging the issues, rather than retracting them or mandating a comprehensive correction.
+
+We strongly condemn such academic misconduct and the potential enabling of plagiarism by reputable publishers. Researchers and practitioners should exercise caution when referring to or using the methods described in these plagiarized works.
+
+For the original, properly cited implementation of the DenMune clustering algorithm, please refer to the official repository and resources provided here.
+
+We remain committed to upholding academic integrity and ethical research practices, and we urge the scientific community to take a firm stance against plagiarism and misconduct in scholarly publications.
+
 
 
 ## How to cite
@@ -493,7 +519,7 @@ abstract = {Many clustering algorithms fail when clusters are of arbitrary shape
 
 
 - How to cite ***The Software***
-If you have used this codebase in a scientific publication and wish to cite it, please use the [Journal of Software Impacts article](https://www.sciencedirect.com/science/article/pii/S266596382300101X):
+  If you have used this codebase in a scientific publication and wish to cite it, please use the [Journal of Software Impacts article](https://www.sciencedirect.com/science/article/pii/S266596382300101X):
 
 ```
 Abbas, M. A., El-Zoghabi, A., & Shoukry, A. (2023). PyMune: A Python package for complex clusters detection. Software Impacts, 17, 100564. https://doi.org/10.1016/j.simpa.2023.100564
@@ -514,6 +540,7 @@ keywords = {Machine learning, Pattern recognition, Dimensionality reduction, Mut
 abstract = {We introduce pyMune, an open-source Python library for robust clustering of complex real-world datasets without density cutoff parameters. It implements DenMune (Abbas et al., 2021), a mutual nearest neighbor algorithm that uses dimensionality reduction and approximate nearest neighbor search to identify and expand cluster cores. Noise is removed with a mutual nearest-neighbor voting system. In addition to clustering, pyMune provides classification, visualization, and validation functionalities. It is fully compatible with scikit-learn and has been accepted into the scikit-learn-contrib repository. The code, documentation, and demos are available on GitHub, PyPi, and CodeOcean for easy use and reproducibility.}
 }
 ```
+
 ## Licensing 
 
 The DenMune algorithm is 3-clause BSD licensed. Enjoy.
@@ -521,6 +548,7 @@ The DenMune algorithm is 3-clause BSD licensed. Enjoy.
 [![BSD 3-Clause “New” or “Revised” License](https://img.shields.io/badge/license-BSD-green)](https://choosealicense.com/licenses/bsd-3-clause/)
 
 ## Task List
+
   - [x] Update Github with the DenMune source code
   - [x] create repo2docker repository 
   - [x] Create pip Package
