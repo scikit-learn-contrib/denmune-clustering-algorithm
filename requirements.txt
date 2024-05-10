@@ -1,10 +1,10 @@
 ngt>=2.0.4
-numpy>=1.22.4
+numpy>=1.23.5
 pandas>=1.5.3
-matplotlib>=3.7.1
+matplotlib>=3.7.2
 scikit-learn>=1.2.2
 seaborn>=0.12.2
-anytree>=2.8.0
+anytree>=2.8
 treelib>=1.6.1
 pytest>=6.2.5
 coverage>=6.3.1
