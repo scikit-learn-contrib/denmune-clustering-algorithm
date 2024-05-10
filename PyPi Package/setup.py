@@ -2,14 +2,15 @@ from setuptools import setup
 
 setup(
 install_requires=[
-    'numpy>=1.18.5',
-    'pandas>=1.0.3',
-    'matplotlib>=3.2.1',
-    'scikit-learn>=0.22.1',
-    'seaborn>=0.10.1',
-    'ngt>=1.11.6',
-    'anytree>=2.8.0',
-    'treelib>=1.6.1',
+
+    'numpy==1.23.5',
+    'pandas==1.5.3',
+    'matplotlib==3.7.2',
+    'scikit-learn==1.2.2',
+    'seaborn==0.12.2',
+    'ngt==2.0.4',
+    'anytree==2.8',
+    'treelib==1.6.1',
     ]
 
 )
