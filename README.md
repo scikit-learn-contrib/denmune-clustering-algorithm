@@ -4,7 +4,8 @@ DenMune is a clustering algorithm that can find clusters of arbitrary size, shap
 
 ## Listen to this amazing interview podcast 
 
-![DenMune Podcast](https://raw.githubusercontent.com/egy1st/images/refs/heads/main/clustering/denmune-podcast.png)
+[![DenMune Podcast](https://raw.githubusercontent.com/egy1st/images/refs/heads/main/clustering/denmune-podcast.png)]
+(https://on.soundcloud.com/z7WeqJnHjDd26hD76)
 
 *click image to listen (24 min)*
 
