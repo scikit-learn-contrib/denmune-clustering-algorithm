@@ -464,7 +464,7 @@ Discover robust clustering without density cutoffs using this open-source Python
 - It is part of a special issue of R-badged articles, https://www.sciencedirect.com/journal/software-impacts/special-issue/10XXN6LQ0J1
 - it is part of Scikit-learn-contrib , https://github.com/scikit-learn-contrib
 
-![Software Impact](https://github.com/egy1st/images/blob/main/clustering/software-impacts.png?raw=true)
+![Software Impact](https://github.com/egy1st/images/blob/main/clustering/software-impacts.jpg?raw=true)
 
 ### Warning: Plagiarized Works
 
